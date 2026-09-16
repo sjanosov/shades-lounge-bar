@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" width="900" height="1200" role="img" aria-label="Míchané drinky — placeholder, Shades Lounge Bar">
+  <title>Míchané drinky — připravujeme fotografii</title>
+  <defs>
+    <linearGradient id="bg-g6" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0" stop-color="#29261f"/>
+      <stop offset="0.55" stop-color="#211f1c"/>
+      <stop offset="1" stop-color="#1a1917"/>
+    </linearGradient>
+    <radialGradient id="glow-g6" cx="0.5" cy="0.26" r="0.72">
+      <stop offset="0" stop-color="#a9864f" stop-opacity="0.26"/>
+      <stop offset="1" stop-color="#a9864f" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="900" height="1200" fill="url(#bg-g6)"/>
+  <rect width="900" height="1200" fill="url(#glow-g6)"/>
+  <rect x="18" y="18" width="864" height="1164" fill="none" stroke="#a9864f" stroke-opacity="0.3"/>
+  <path d="M261 795 V474 a189 189 0 0 1 378 0 V795 Z" fill="none" stroke="#cdae7c" stroke-opacity="0.55" stroke-width="2"/>
+  <path d="M329 795 V474 a121 121 0 0 1 242 0 V795 Z" fill="#a9864f" fill-opacity="0.07" stroke="#a9864f" stroke-opacity="0.25"/>
+  <g fill="#cdae7c" fill-opacity="0.8" transform="translate(450 540) scale(0.818)">
+    <path d="M0 -58 L14 -16 56 0 14 16 0 58 -14 16 -56 0 -14 -16 Z"/>
+  </g>
+  <text x="450" y="909" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="52" fill="#eee7da">Míchané drinky</text>
+  <text x="450" y="975" text-anchor="middle" font-family="Jost, Helvetica, Arial, sans-serif" font-size="25" letter-spacing="7.2" fill="#9c9488">DRINKY</text>
+  <text x="450" y="1134" text-anchor="middle" font-family="Jost, Helvetica, Arial, sans-serif" font-size="22" letter-spacing="5.4" fill="#a9864f" fill-opacity="0.75">SHADES LOUNGE BAR</text>
+</svg>
