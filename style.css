@@ -474,6 +474,267 @@ section[id], .menu-card, .menu-highlight { scroll-margin-top: 104px; }
   .menu-quicknav a { padding: 8px 13px; font-size: 0.7rem; }
 }
 
+/* ---------- Fotogalerie ---------- */
+
+.gallery-section { background: linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 100%); }
+
+.gallery-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: -18px 0 46px;
+}
+
+.gallery-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 18px;
+  background: none;
+  border: 1px solid var(--line-soft);
+  border-radius: 999px;
+  color: var(--grey);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.gallery-chip:hover { color: var(--gold-light); border-color: var(--gold); background: rgba(169, 134, 79, 0.08); }
+
+.gallery-chip.is-active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--ink);
+}
+
+.chip-count { font-size: 0.68rem; letter-spacing: 0.06em; color: var(--gold); }
+.gallery-chip.is-active .chip-count { color: rgba(26, 25, 23, 0.6); }
+
+/* Zednické zdivo přes CSS sloupce — fotky si drží vlastní poměr stran, nic se neořezává */
+
+.gallery-grid {
+  columns: 3;
+  column-gap: 18px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.gallery-item { break-inside: avoid; margin: 0 0 18px; }
+
+/* Postupné odkrývání — jen když běží JS, aby bez něj nezůstala galerie neviditelná */
+.has-js .gallery-item { opacity: 0; transform: translateY(22px); }
+.has-js .gallery-item.is-visible {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.gallery-link {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--line-soft);
+  background: var(--ink-3);
+  transition: border-color 0.3s ease;
+}
+
+.gallery-link:hover { border-color: var(--gold); }
+
+.gallery-link figure { margin: 0; position: relative; display: block; }
+
+.gallery-link img {
+  width: 100%;
+  height: auto;
+  filter: saturate(0.92) brightness(0.9);
+  transition: transform 0.7s ease, filter 0.5s ease;
+}
+
+.gallery-link:hover img,
+.gallery-link:focus-visible img { transform: scale(1.05); filter: none; }
+
+.gallery-link figcaption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 52px 20px 18px;
+  background: linear-gradient(transparent, rgba(16, 15, 14, 0.9));
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.gallery-link:hover figcaption,
+.gallery-link:focus-visible figcaption { opacity: 1; transform: none; }
+
+.gallery-cap-title {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  color: var(--paper);
+}
+
+.gallery-cap-cat {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+/* Lupa v rohu */
+.gallery-link::after {
+  content: '+';
+  position: absolute;
+  top: 12px; right: 12px;
+  width: 36px; height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 18px 18px 5px 5px; /* arch motiv z loga */
+  background: rgba(26, 25, 23, 0.72);
+  color: var(--gold-light);
+  font-size: 1.1rem;
+  line-height: 1;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.gallery-link:hover::after,
+.gallery-link:focus-visible::after { opacity: 1; transform: none; }
+
+.gallery-empty, .gallery-note {
+  max-width: 62ch;
+  margin: 32px auto 0;
+  text-align: center;
+  color: var(--grey);
+  font-size: 0.85rem;
+}
+
+.gallery-note code {
+  font-size: 0.8rem;
+  color: var(--gold-light);
+  background: rgba(169, 134, 79, 0.1);
+  padding: 1px 6px;
+}
+
+.gallery-note a { border-bottom: 1px solid var(--line); }
+.gallery-note a:hover { color: var(--gold-light); border-color: var(--gold); }
+
+/* Na dotykových zařízeních není hover — popisek necháme vidět */
+@media (hover: none) {
+  .gallery-link figcaption { opacity: 1; transform: none; }
+  .gallery-link::after { opacity: 1; transform: none; }
+}
+
+@media (max-width: 900px) { .gallery-grid { columns: 2; } }
+@media (max-width: 560px) { .gallery-grid { columns: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .has-js .gallery-item { opacity: 1; transform: none; }
+}
+
+/* ---------- Lightbox ---------- */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 72px 24px;
+}
+
+.lightbox[hidden] { display: none; }
+
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(12, 11, 10, 0.94);
+  backdrop-filter: blur(4px);
+}
+
+.lightbox-figure {
+  position: relative;
+  margin: 0;
+  max-width: min(1100px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  animation: lightbox-in 0.35s ease;
+}
+
+.lightbox-figure img {
+  max-height: 74vh;
+  max-width: 100%;
+  width: auto;
+  margin: 0 auto;
+  border: 1px solid var(--line);
+}
+
+.lightbox-figure figcaption {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 20px;
+  color: var(--paper);
+  font-size: 0.9rem;
+}
+
+.lightbox-counter {
+  color: var(--gold-light);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  white-space: nowrap;
+}
+
+@keyframes lightbox-in {
+  from { opacity: 0; transform: scale(0.97); }
+  to   { opacity: 1; transform: none; }
+}
+
+.lightbox-btn {
+  position: absolute;
+  z-index: 2;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(26, 25, 23, 0.8);
+  border: 1px solid var(--line);
+  color: var(--paper);
+  font-family: 'Jost', sans-serif;
+  font-size: 1.7rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.lightbox-btn:hover { color: var(--gold-light); border-color: var(--gold); background: rgba(169, 134, 79, 0.12); }
+.lightbox-btn[hidden] { display: none; }
+
+.lightbox-close { top: 18px; right: 20px; border-radius: 4px; }
+.lightbox-prev, .lightbox-next { top: 50%; transform: translateY(-50%); border-radius: 24px; }
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
+
+body.lightbox-open { overflow: hidden; }
+
+@media (max-width: 680px) {
+  .lightbox { padding: 64px 14px 96px; }
+  .lightbox-figure figcaption { flex-direction: column; gap: 4px; }
+  .lightbox-prev, .lightbox-next { top: auto; bottom: 22px; transform: none; }
+  .lightbox-prev { left: 22%; }
+  .lightbox-next { right: 22%; }
+}
+
 /* ---------- Kontakt ---------- */
 
 .contact-grid {

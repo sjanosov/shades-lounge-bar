@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shades Lounge Bar — Vyškov</title>
-<meta name="description" content="Shades Lounge Bar — vodní dýmky, míchané drinky a signature koktejly v centru Vyškova. Nádražní 2/1, Vyškov.">
+<meta name="description" content="Shades Lounge Bar — vodní dýmky, míchané drinky a signature koktejly v centru Vyškova. Ceník, fotogalerie a kontakt. Nádražní 2/1, Vyškov.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,6 +18,7 @@
     <ul class="nav-links" id="nav-links">
       <li><a href="#domov">Domů</a></li>
       <li><a href="#o-nas">O nás</a></li>
+      <li><a href="#galerie">Fotogalerie</a></li>
       <li><a href="#cennik">Ceník</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
     </ul>
@@ -56,6 +57,149 @@
           </ul>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section id="galerie" class="gallery-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Fotogalerie</span>
+        <h2>Nahlédněte k nám do baru</h2>
+        <p>Interiér, dýmky, drinky i večery ve Vyškově. Vyberte si kategorii, klikněte na fotku a projděte galerii jako promítačku.</p>
+      </div>
+
+      <div class="gallery-filter" role="group" aria-label="Filtr fotogalerie">
+        <button type="button" class="gallery-chip is-active" data-filter="vse" aria-pressed="true">Vše<span class="chip-count">9</span></button>
+        <button type="button" class="gallery-chip" data-filter="interier" aria-pressed="false">Interiér<span class="chip-count">3</span></button>
+        <button type="button" class="gallery-chip" data-filter="dymky" aria-pressed="false">Vodní dýmky<span class="chip-count">2</span></button>
+        <button type="button" class="gallery-chip" data-filter="drinky" aria-pressed="false">Drinky<span class="chip-count">2</span></button>
+        <button type="button" class="gallery-chip" data-filter="atmosfera" aria-pressed="false">Atmosféra<span class="chip-count">2</span></button>
+      </div>
+
+      <ul class="gallery-grid" id="gallery-grid">
+
+        <li class="gallery-item" data-cat="interier">
+          <a class="gallery-link" href="galerie/galerie-01-bar.svg">
+            <figure>
+              <img src="galerie/galerie-01-bar.svg" width="1200" height="900" loading="lazy" decoding="async"
+                   alt="Barový pult v Shades Lounge Baru ve Vyškově">
+              <figcaption>
+                <span class="gallery-cap-title">Barový pult</span>
+                <span class="gallery-cap-cat">Interiér</span>
+              </figcaption>
+            </figure>
+          </a>
+        </li>
+
+        <li class="gallery-item" data-cat="dymky">
+          <a class="gallery-link" href="galerie/galerie-02-dymka.svg">
+            <figure>
+              <img src="galerie/galerie-02-dymka.svg" width="900" height="1200" loading="lazy" decoding="async"
+                   alt="Připravená vodní dýmka na stole v lounge baru ve Vyškově">
+              <figcaption>
+                <span class="gallery-cap-title">Vodní dýmka</span>
+                <span class="gallery-cap-cat">Vodní dýmky</span>
+              </figcaption>
+            </figure>
+          </a>
+        </li>
+
+        <li class="gallery-item" data-cat="drinky">
+          <a class="gallery-link" href="galerie/galerie-03-koktejl.svg">
+            <figure>
+              <img src="galerie/galerie-03-koktejl.svg" width="1000" height="1000" loading="lazy" decoding="async"
+                   alt="Signature koktejl namíchaný v Shades Lounge Baru">
+              <figcaption>
+                <span class="gallery-cap-title">Signature koktejl</span>
+                <span class="gallery-cap-cat">Drinky</span>
+              </figcaption>
+            </figure>
+          </a>
+        </li>
+
+        <li class="gallery-item" data-cat="interier">
+          <a class="gallery-link" href="galerie/galerie-04-lounge.svg">
+            <figure>
+              <img src="galerie/galerie-04-lounge.svg" width="1200" height="800" loading="lazy" decoding="async"
+                   alt="Lounge sezení s pohovkami v Shades Lounge Baru ve Vyškově">
+              <figcaption>
+                <span class="gallery-cap-title">Lounge sezení</span>
+                <span class="gallery-cap-cat">Interiér</span>
+              </figcaption>
+            </figure>
+          </a>
+        </li>
+
+        <li class="gallery-item" data-cat="atmosfera">
+          <a class="gallery-link" href="galerie/galerie-05-vecer.svg">
+            <figure>
+              <img src="galerie/galerie-05-vecer.svg" width="1200" height="900" loading="lazy" decoding="async"
+                   alt="Večerní atmosféra v Shades Lounge Baru ve Vyškově">
+              <figcaption>
+                <span class="gallery-cap-title">Večer v baru</span>
+                <span class="gallery-cap-cat">Atmosféra</span>
+              </figcaption>
+            </figure>
+          </a>
+        </li>
+
+        <li class="gallery-item" data-cat="drinky">
+          <a class="gallery-link" href="galerie/galerie-06-drinky.svg">
+            <figure>
+              <img src="galerie/galerie-06-drinky.svg" width="900" height="1200" loading="lazy" decoding="async"
+                   alt="Míchané drinky a koktejly z nabídky Shades Lounge Baru">
+              <figcaption>
+                <span class="gallery-cap-title">Míchané drinky</span>
+                <span class="gallery-cap-cat">Drinky</span>
+              </figcaption>
+            </figure>
+          </a>
+        </li>
+
+        <li class="gallery-item" data-cat="interier">
+          <a class="gallery-link" href="galerie/galerie-07-detail.svg">
+            <figure>
+              <img src="galerie/galerie-07-detail.svg" width="1200" height="900" loading="lazy" decoding="async"
+                   alt="Detail interiéru s oblouky a zlatými linkami v Shades Lounge Baru">
+              <figcaption>
+                <span class="gallery-cap-title">Detail interiéru</span>
+                <span class="gallery-cap-cat">Interiér</span>
+              </figcaption>
+            </figure>
+          </a>
+        </li>
+
+        <li class="gallery-item" data-cat="dymky">
+          <a class="gallery-link" href="galerie/galerie-08-mix.svg">
+            <figure>
+              <img src="galerie/galerie-08-mix.svg" width="1000" height="1000" loading="lazy" decoding="async"
+                   alt="Míchání tabáku do vodní dýmky na míru podle chuti hosta">
+              <figcaption>
+                <span class="gallery-cap-title">Míchání tabáku</span>
+                <span class="gallery-cap-cat">Vodní dýmky</span>
+              </figcaption>
+            </figure>
+          </a>
+        </li>
+
+        <li class="gallery-item" data-cat="atmosfera">
+          <a class="gallery-link" href="galerie/galerie-09-oslava.svg">
+            <figure>
+              <img src="galerie/galerie-09-oslava.svg" width="1200" height="800" loading="lazy" decoding="async"
+                   alt="Dýmkařský a barový catering na oslavě mimo prostory baru">
+              <figcaption>
+                <span class="gallery-cap-title">Oslava a catering</span>
+                <span class="gallery-cap-cat">Atmosféra</span>
+              </figcaption>
+            </figure>
+          </a>
+        </li>
+
+      </ul>
+
+      <p class="gallery-empty" id="gallery-empty" hidden>V této kategorii zatím nic není.</p>
+
+      <p class="gallery-note">Fotografie jsou zatím náhradní — skutečné snímky doplníme, soubory v <code>galerie/</code> stačí přepsat. Nejnovější fotky mezitím najdete na <a href="https://www.instagram.com/shadesloungebar/" target="_blank" rel="noopener">Instagramu</a>.</p>
     </div>
   </section>
 
@@ -396,6 +540,54 @@
     <span><a href="tel:+420731050372">+420 731 050 372</a> &middot; Nádražní 2/1, Vyškov</span>
   </div>
 </footer>
+
+<!-- Lightbox — bez JS se odkazy v galerii chovají jako běžné odkazy na obrázek -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Fotogalerie Shades Lounge Bar" hidden>
+  <div class="lightbox-backdrop" data-lightbox-close></div>
+  <button type="button" class="lightbox-btn lightbox-close" data-lightbox-close aria-label="Zavřít galerii">&times;</button>
+  <button type="button" class="lightbox-btn lightbox-prev" data-lightbox-prev aria-label="Předchozí fotka">&#8249;</button>
+  <button type="button" class="lightbox-btn lightbox-next" data-lightbox-next aria-label="Další fotka">&#8250;</button>
+  <figure class="lightbox-figure">
+    <img id="lightbox-img" alt="">
+    <figcaption>
+      <span id="lightbox-caption"></span>
+      <span class="lightbox-counter" id="lightbox-counter" aria-live="polite"></span>
+    </figcaption>
+  </figure>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  "name": "Fotogalerie — Shades Lounge Bar Vyškov",
+  "description": "Interiér, vodní dýmky, míchané drinky a večerní atmosféra v Shades Lounge Baru na Nádražní 2/1 ve Vyškově.",
+  "inLanguage": "cs",
+  "about": {
+    "@type": "BarOrPub",
+    "name": "Shades Lounge Bar",
+    "telephone": "+420731050372",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Nádražní 2/1",
+      "addressLocality": "Vyškov",
+      "postalCode": "682 01",
+      "addressCountry": "CZ"
+    }
+  },
+  "associatedMedia": [
+    { "@type": "ImageObject", "contentUrl": "galerie/galerie-01-bar.svg", "name": "Barový pult", "description": "Barový pult v Shades Lounge Baru ve Vyškově", "width": 1200, "height": 900 },
+    { "@type": "ImageObject", "contentUrl": "galerie/galerie-02-dymka.svg", "name": "Vodní dýmka", "description": "Připravená vodní dýmka na stole v lounge baru ve Vyškově", "width": 900, "height": 1200 },
+    { "@type": "ImageObject", "contentUrl": "galerie/galerie-03-koktejl.svg", "name": "Signature koktejl", "description": "Signature koktejl namíchaný v Shades Lounge Baru", "width": 1000, "height": 1000 },
+    { "@type": "ImageObject", "contentUrl": "galerie/galerie-04-lounge.svg", "name": "Lounge sezení", "description": "Lounge sezení s pohovkami v Shades Lounge Baru ve Vyškově", "width": 1200, "height": 800 },
+    { "@type": "ImageObject", "contentUrl": "galerie/galerie-05-vecer.svg", "name": "Večer v baru", "description": "Večerní atmosféra v Shades Lounge Baru ve Vyškově", "width": 1200, "height": 900 },
+    { "@type": "ImageObject", "contentUrl": "galerie/galerie-06-drinky.svg", "name": "Míchané drinky", "description": "Míchané drinky a koktejly z nabídky Shades Lounge Baru", "width": 900, "height": 1200 },
+    { "@type": "ImageObject", "contentUrl": "galerie/galerie-07-detail.svg", "name": "Detail interiéru", "description": "Detail interiéru s oblouky a zlatými linkami v Shades Lounge Baru", "width": 1200, "height": 900 },
+    { "@type": "ImageObject", "contentUrl": "galerie/galerie-08-mix.svg", "name": "Míchání tabáku", "description": "Míchání tabáku do vodní dýmky na míru podle chuti hosta", "width": 1000, "height": 1000 },
+    { "@type": "ImageObject", "contentUrl": "galerie/galerie-09-oslava.svg", "name": "Oslava a catering", "description": "Dýmkařský a barový catering na oslavě mimo prostory baru", "width": 1200, "height": 800 }
+  ]
+}
+</script>
 
 <script src="main.js"></script>
 

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000" role="img" aria-label="Signature koktejl — placeholder, Shades Lounge Bar">
+  <title>Signature koktejl — připravujeme fotografii</title>
+  <defs>
+    <linearGradient id="bg-g3" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0" stop-color="#29261f"/>
+      <stop offset="0.55" stop-color="#211f1c"/>
+      <stop offset="1" stop-color="#1a1917"/>
+    </linearGradient>
+    <radialGradient id="glow-g3" cx="0.5" cy="0.26" r="0.72">
+      <stop offset="0" stop-color="#a9864f" stop-opacity="0.26"/>
+      <stop offset="1" stop-color="#a9864f" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1000" height="1000" fill="url(#bg-g3)"/>
+  <rect width="1000" height="1000" fill="url(#glow-g3)"/>
+  <rect x="18" y="18" width="964" height="964" fill="none" stroke="#a9864f" stroke-opacity="0.3"/>
+  <path d="M290 734 V377 a210 210 0 0 1 420 0 V734 Z" fill="none" stroke="#cdae7c" stroke-opacity="0.55" stroke-width="2"/>
+  <path d="M366 734 V377 a134 134 0 0 1 269 0 V734 Z" fill="#a9864f" fill-opacity="0.07" stroke="#a9864f" stroke-opacity="0.25"/>
+  <g fill="#cdae7c" fill-opacity="0.8" transform="translate(500 451) scale(0.909)">
+    <path d="M0 -58 L14 -16 56 0 14 16 0 58 -14 16 -56 0 -14 -16 Z"/>
+  </g>
+  <text x="500" y="829" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="58" fill="#eee7da">Signature koktejl</text>
+  <text x="500" y="884" text-anchor="middle" font-family="Jost, Helvetica, Arial, sans-serif" font-size="28" letter-spacing="8" fill="#9c9488">DRINKY</text>
+  <text x="500" y="945" text-anchor="middle" font-family="Jost, Helvetica, Arial, sans-serif" font-size="24" letter-spacing="6" fill="#a9864f" fill-opacity="0.75">SHADES LOUNGE BAR</text>
+</svg>

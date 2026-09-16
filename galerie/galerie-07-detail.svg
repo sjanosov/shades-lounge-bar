@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img" aria-label="Detail interiéru — placeholder, Shades Lounge Bar">
+  <title>Detail interiéru — připravujeme fotografii</title>
+  <defs>
+    <linearGradient id="bg-g7" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0" stop-color="#29261f"/>
+      <stop offset="0.55" stop-color="#211f1c"/>
+      <stop offset="1" stop-color="#1a1917"/>
+    </linearGradient>
+    <radialGradient id="glow-g7" cx="0.5" cy="0.26" r="0.72">
+      <stop offset="0" stop-color="#a9864f" stop-opacity="0.26"/>
+      <stop offset="1" stop-color="#a9864f" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg-g7)"/>
+  <rect width="1200" height="900" fill="url(#glow-g7)"/>
+  <rect x="18" y="18" width="1164" height="864" fill="none" stroke="#a9864f" stroke-opacity="0.3"/>
+  <path d="M411 660 V339 a189 189 0 0 1 378 0 V660 Z" fill="none" stroke="#cdae7c" stroke-opacity="0.55" stroke-width="2"/>
+  <path d="M479 660 V339 a121 121 0 0 1 242 0 V660 Z" fill="#a9864f" fill-opacity="0.07" stroke="#a9864f" stroke-opacity="0.25"/>
+  <g fill="#cdae7c" fill-opacity="0.8" transform="translate(600 405) scale(0.818)">
+    <path d="M0 -58 L14 -16 56 0 14 16 0 58 -14 16 -56 0 -14 -16 Z"/>
+  </g>
+  <text x="600" y="745" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="52" fill="#eee7da">Detail interiéru</text>
+  <text x="600" y="795" text-anchor="middle" font-family="Jost, Helvetica, Arial, sans-serif" font-size="25" letter-spacing="7.2" fill="#9c9488">INTERIÉR</text>
+  <text x="600" y="851" text-anchor="middle" font-family="Jost, Helvetica, Arial, sans-serif" font-size="22" letter-spacing="5.4" fill="#a9864f" fill-opacity="0.75">SHADES LOUNGE BAR</text>
+</svg>
