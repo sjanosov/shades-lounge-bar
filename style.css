@@ -218,34 +218,37 @@ html {
   margin-bottom: 22px;
 }
 
-.hero h1 {
-  font-size: clamp(2.8rem, 5vw, 4.5rem);
-  line-height: 1.05;
+.hero-copy h1 {
+  font-size: clamp(3.2rem, 6.5vw, 5.2rem);
+  line-height: 1;
+  font-weight: 700;
   letter-spacing: -0.01em;
   color: #FFFFFF;
   max-width: 16ch;
+  margin-bottom: 32px;
 }
 
-.hero-gold {
-  color: #D4AF37;
+.hero-h1-soft {
+  color: #A39C93;
 }
 
 .hero p.lede {
-  font-size: 1.05rem;
-  color: #A39C93;
-  max-width: 44ch;
-  margin: 26px 0 0;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #E5E1DA;
+  max-width: 48ch;
+  margin: 0 0 40px;
 }
 
 .hero-info-list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
   list-style: none;
-  margin: 36px 0 0;
+  margin: 0;
   padding: 0;
-  color: #A39C93;
-  font-size: 0.95rem;
+  color: #FFFFFF;
+  font-size: 1rem;
   line-height: 1.4;
 }
 
@@ -265,28 +268,6 @@ html {
   gap: 18px;
   margin-top: 44px;
   flex-wrap: wrap;
-}
-
-.hero-actions .btn-link {
-  flex-basis: 100%;
-  max-width: -moz-fit-content;
-  max-width: fit-content;
-  margin-top: 8px;
-}
-
-.btn-link {
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #A39C93;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-  padding-bottom: 4px;
-  transition: color 0.35s ease, border-color 0.35s ease;
-}
-
-.btn-link:hover {
-  color: #E5C463;
-  border-color: #D4AF37;
 }
 
 /* Pravá strana — fotografie lícující s okraji sloupce */
@@ -356,35 +337,42 @@ html {
 /* ---------- Minimalistická tlačítka ---------- */
 .btn {
   display: inline-block;
-  padding: 16px 36px;
+  padding: 18px 40px;
   border-radius: 0;
   font-family: "Jost", sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.9rem;
+  font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  border: 1px solid #D4AF37;
+  border: 1px solid transparent;
   transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease, transform 0.35s ease;
 }
 
+/* Primární — plné zlato, praští do očí */
 .btn-primary {
-  background: transparent;
-  color: #FFFFFF;
+  background: #D4AF37;
+  border-color: #D4AF37;
+  color: #0D0B08;
 }
 
 .btn-primary:hover {
-  background: #D4AF37;
+  background: #E5C463;
+  border-color: #E5C463;
   color: #0D0B08;
   transform: translateY(-2px);
 }
 
+/* Sekundární — tenká bílá linka, při hoveru se vyplní bílou */
 .btn-ghost {
-  color: #A39C93;
-  border-color: rgba(212, 175, 55, 0.3);
+  background: transparent;
+  color: #FFFFFF;
+  border-color: #FFFFFF;
 }
 
 .btn-ghost:hover {
-  color: #FFFFFF;
-  border-color: #D4AF37;
+  background: #FFFFFF;
+  color: #0D0B08;
+  border-color: #FFFFFF;
   transform: translateY(-2px);
 }
 
@@ -392,7 +380,7 @@ html {
   .hero-copy {
     padding: 96px 7% 96px 8%;
   }
-  .hero h1 {
+  .hero-copy h1 {
     max-width: none;
   }
 }
@@ -416,15 +404,23 @@ html {
   }
 }
 @media (max-width: 520px) {
+  .hero-copy h1 {
+    font-size: clamp(2.6rem, 11vw, 3.2rem);
+    margin-bottom: 24px;
+  }
+  .hero p.lede {
+    font-size: 1.1rem;
+    margin-bottom: 32px;
+  }
   .hero-actions {
     gap: 14px;
   }
   .hero-actions .btn {
     width: 100%;
     text-align: center;
-  }
-  .hero-actions .btn-link {
-    margin: 8px auto 0;
+    padding: 18px 20px;
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
   }
 }
 /* ---------- Sections ---------- */
@@ -830,18 +826,15 @@ section[id], .menu-card, .menu-highlight {
 }
 
 .gallery-grid {
-  -moz-columns: 3;
-       columns: 3;
-  -moz-column-gap: 18px;
-       column-gap: 18px;
+  columns: 3;
+  column-gap: 18px;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .gallery-item {
-  -moz-column-break-inside: avoid;
-       break-inside: avoid;
+  break-inside: avoid;
   margin: 0 0 18px;
 }
 
@@ -981,14 +974,12 @@ section[id], .menu-card, .menu-highlight {
 }
 @media (max-width: 900px) {
   .gallery-grid {
-    -moz-columns: 2;
-         columns: 2;
+    columns: 2;
   }
 }
 @media (max-width: 560px) {
   .gallery-grid {
-    -moz-columns: 1;
-         columns: 1;
+    columns: 1;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -1216,4 +1207,6 @@ body.lightbox-open {
 } /* ---------- Footer ---------- */
 .site-footer {
   background: #0D0B08;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */
