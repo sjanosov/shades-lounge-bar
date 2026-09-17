@@ -163,3 +163,16 @@ if (grid) {
     touchX = null;
   }, { passive: true });
 }
+
+/* ==========================================================================
+   Hero — zlatá nitka se při scrollu natáhne
+   ========================================================================== */
+
+window.addEventListener('scroll', () => {
+  const scrollLine = document.querySelector('.hero-scroll-line');
+  if (scrollLine) {
+    const scrollPercent = window.scrollY / (window.innerHeight * 0.8);
+    const newHeight = 40 + Math.min(scrollPercent * 110, 110);
+    scrollLine.style.height = `${newHeight}px`;
+  }
+}, { passive: true });

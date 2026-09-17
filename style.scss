@@ -1,0 +1,637 @@
+/* ==========================================================================
+   SHADES LOUNGE BAR — SCSS verze s upravenou paletou barev
+   ========================================================================== */
+
+@import url('https://googleapis.com');
+
+// --- SCSS PROMĚNNÉ (VARIABLES) ---
+$ink-nav-footer: #0D0B08;     // Navigace a patička — stejná hluboká černá jako pozadí
+$bg-main:        #0D0B08;     // Hluboká, teplá černá — pozadí celého webu i navigace
+$bg-alt:         #161411;     // Mírně světlejší temný tón pro sekce a karty níže
+$bg-card:        #221F1A;     // Pozadí pro jednotlivé menu položky
+$gold-accent:    #D4AF37;     // Výrazné prvky (antické zlato) podle zadání
+$gold-light:     #E5C463;     // Světlejší zlato pro hover efekty
+$text-light:     #FFFFFF;     // Maximální kontrast pro hlavní texty a nadpisy
+$text-muted:     #A39C93;     // Čitelná šedá pro sekundární texty
+$line-gold:      rgba(212, 175, 55, 0.3);   // Jemné zlaté linky
+$line-soft:      rgba(255, 255, 255, 0.08); // Jemné bílé předěly
+$max-width:      1100px;
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: $bg-main;
+  color: $text-light;
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  color: $text-light;
+  margin: 0;
+}
+
+h1 { font-size: clamp(2.6rem, 6vw, 4.2rem); line-height: 1.05; letter-spacing: 0.01em; }
+h2 { font-size: clamp(1.9rem, 3.2vw, 2.5rem); }
+h3 { font-size: 1.2rem; font-weight: 600; }
+
+p { margin: 0 0 1em; color: $text-light; max-width: 58ch; }
+
+a { color: inherit; text-decoration: none; }
+
+.container { max-width: $max-width; margin: 0 auto; padding: 0 28px; }
+
+.eyebrow {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: $gold-light;
+}
+
+a:focus-visible, button:focus-visible {
+  outline: 1px solid $gold-accent;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
+}
+
+html { scroll-behavior: smooth; }
+
+/* ---------- Arch motif ---------- */
+
+.arch {
+  border-radius: 200px 200px 4px 4px;
+  border: 1px solid $line-gold;
+}
+
+.arch-fill { background: $bg-alt; }
+
+/* ---------- Header / nav ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(13, 11, 8, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid $line-soft;
+  width: 100%; // Změněno z 100vw na 100%, což zabrání vzniku horizontálního scrollbaru
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  max-width: 100%; 
+  margin: 0;       
+  padding: 0 8% 0 7%; 
+  box-sizing: border-box; // DŮLEŽITÉ: Zajistí, že padding se započítá DO šířky a nevytlačí menu ven
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  color: $text-light;
+}
+
+.brand img { 
+  height: 65px; 
+  width: auto; 
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.nav-links a { 
+  color: $text-muted; 
+  padding: 4px 0; 
+  border-bottom: 1px solid transparent; 
+  transition: color 0.3s ease, border-color 0.3s ease; 
+}
+.nav-links a:hover { 
+  color: $gold-light; 
+  border-color: $gold-accent; 
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid $line-gold;
+  color: $text-light;
+  padding: 8px 14px;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.85rem;
+}
+
+// Responzivita pro mobily
+@media (max-width: 760px) {
+  .site-header .container {
+    padding: 0 28px; 
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100px; 
+    left: 0; 
+    right: 0;
+    background: $ink-nav-footer;
+    flex-direction: column;
+    gap: 0;
+    border-bottom: 1px solid $line-soft;
+    display: none;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { display: block; padding: 18px 28px; border-bottom: 1px solid $line-soft; }
+  .nav-toggle { display: inline-block; }
+}
+
+
+
+/* ---------- Hero — atmospheric dark split 50/50 ---------- */
+
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr .6fr;
+  width: 100vw;
+  max-width: 100%;   // 100vw bez vodorovného přeteku kvůli šířce scrollbaru
+  padding: 0;
+  background: $bg-main;
+  overflow: hidden;
+}
+
+/* Levá strana — čistá typografie v prostoru */
+
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 8% 120px 12%;
+  background: $bg-main;
+}
+
+.hero .eyebrow { display: block; margin-bottom: 22px; }
+
+.hero h1 {
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: $text-light;
+  max-width: 16ch;
+}
+
+.hero-gold { color: $gold-accent; }
+
+.hero p.lede {
+  font-size: 1.05rem;
+  color: $text-muted;
+  max-width: 44ch;
+  margin: 26px 0 0;
+}
+
+.hero-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  list-style: none;
+  margin: 36px 0 0;
+  padding: 0;
+  color: $text-muted;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.hero-info-list a { border-bottom: 1px solid $line-gold; padding-bottom: 2px; }
+.hero-info-list a:hover { color: $gold-light; border-color: $gold-accent; }
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 44px;
+  flex-wrap: wrap;
+}
+
+.hero-actions .btn-link { flex-basis: 100%; max-width: fit-content; margin-top: 8px; }
+
+.btn-link {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: $text-muted;
+  border-bottom: 1px solid $line-gold;
+  padding-bottom: 4px;
+  transition: color 0.35s ease, border-color 0.35s ease;
+}
+
+.btn-link:hover { color: $gold-light; border-color: $gold-accent; }
+
+/* Pravá strana — fotografie lícující s okraji sloupce */
+
+.hero-photo {
+  min-height: 80vh;
+  position: relative;
+  overflow: hidden;
+  background-image: url("galerie/hero image.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none; // Aby vrstva neblokovala interakciu s webom
+    background: 
+      // JEMNEJŠÍ ĽAVÝ OKRAJ: transparentnosť posunutá až do 65%, prechod do čiernej je pozvoľnejší
+      linear-gradient(to left, rgba(13, 11, 8, 0) 65%, rgba(13, 11, 8, 0.4) 80%, #0D0B08 100%),
+      // SPODNÝ OKRAJ: posunutý na 60% pre zachovanie atmosféry v spodnej časti fotky
+      linear-gradient(to bottom, rgba(13, 11, 8, 0) 60%, #0D0B08 100%);
+  }
+}
+
+// Responzivita pre mobily — na smartfónoch stmavíme horný okraj namiesto ľavého
+@media (max-width: 760px) {
+  .hero-photo {
+    height: 400px;
+    min-height: auto;
+
+    &::after {
+      background: 
+        // Na mobile sa fotka posunie pod text, preto stmavíme vrchný okraj do stratena
+        linear-gradient(to bottom, #0D0B08 0%, rgba(13, 11, 8, 0) 30%, rgba(13, 11, 8, 0) 80%, #0D0B08 100%);
+    }
+  }
+}
+
+
+/* Interaktivní zlatá nitka na dělicí čáře */
+
+.hero-scroll-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.hero-scroll-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 210px;
+  height: 210px;   // rezervuje layout box pro text postavený na hranu
+  transform: rotate(-90deg);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: $text-muted;
+  text-shadow: 0 1px 14px rgba(13, 11, 8, 0.85);
+}
+
+.hero-scroll-line {
+  width: 1px;
+  height: 40px;
+  background: $gold-accent;
+  margin: 20px auto 0;
+  transition: height 0.1s ease-out;
+}
+
+/* ---------- Minimalistická tlačítka ---------- */
+
+.btn {
+  display: inline-block;
+  padding: 16px 36px;
+  border-radius: 0;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: 1px solid $gold-accent;
+  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease, transform 0.35s ease;
+}
+
+.btn-primary {
+  background: transparent;
+  color: $text-light;
+}
+
+.btn-primary:hover {
+  background: $gold-accent;
+  color: $bg-main;
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  color: $text-muted;
+  border-color: $line-gold;
+}
+
+.btn-ghost:hover {
+  color: $text-light;
+  border-color: $gold-accent;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1100px) {
+  .hero-copy { padding: 96px 7% 96px 8%; }
+  .hero h1 { max-width: none; }
+}
+
+@media (max-width: 760px) {
+  .hero { grid-template-columns: 1fr; }
+
+  .hero-copy { padding: 60px 28px 72px; }
+
+  .hero p.lede { max-width: none; }
+
+  .hero-photo {
+    grid-row: 1;          // fotka jako samostatný blok nad textem
+    min-height: 0;
+    height: 56vh;
+  }
+
+  .hero-scroll-indicator { display: none; }
+}
+
+@media (max-width: 520px) {
+  .hero-actions { gap: 14px; }
+  .hero-actions .btn { width: 100%; text-align: center; }
+  .hero-actions .btn-link { margin: 8px auto 0; }
+}
+
+/* ---------- Sections ---------- */
+
+section { padding: 88px 0; }
+
+.section-alt { background: $bg-alt; }
+
+.section-head { text-align: center; max-width: 56ch; margin: 0 auto 56px; }
+.section-head .eyebrow { display: block; margin-bottom: 14px; }
+.section-head p { color: $text-muted; margin: 16px auto 0; }
+
+.divider {
+  width: 1px;
+  height: 44px;
+  background: linear-gradient($gold-accent, transparent);
+  margin: 0 auto 20px;
+}
+
+/* ---------- O nás ---------- */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.about-art {
+  aspect-ratio: 3/4;
+  max-width: 320px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.about-art img { width: 70%; opacity: 0.9; }
+
+.about-copy .eyebrow { display: block; margin-bottom: 16px; }
+
+.feature-list { list-style: none; margin: 28px 0 0; padding: 0; }
+
+.feature-list li {
+  padding: 14px 0;
+  border-top: 1px solid $line-soft;
+  color: $text-muted;
+  font-size: 0.95rem;
+}
+.feature-list li:last-child { border-bottom: 1px solid $line-soft; }
+.feature-list li strong { color: $text-light; font-weight: 500; }
+
+@media (max-width: 820px) {
+  .about-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- Ceník (text menu + line icons) ---------- */
+
+section[id], .menu-card, .menu-highlight { scroll-margin-top: 104px; }
+
+.icon-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+.menu-icon {
+  width: 22px; height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.menu-quicknav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: -16px 0 52px;
+}
+
+.menu-quicknav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 17px;
+  border: 1px solid $line-soft;
+  border-radius: 999px;
+  color: $text-muted;
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: all 0.25s ease;
+}
+
+.menu-quicknav a:hover {
+  color: $gold-light;
+  border-color: $gold-accent;
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.menu-quicknav .menu-icon { width: 16px; height: 16px; color: $gold-accent; }
+
+/* Karty */
+
+.menu-highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-bottom: 22px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  align-items: start;
+}
+
+.menu-card, .menu-highlight {
+  border: 1px solid $line-soft;
+  background: $bg-card;
+  padding: 28px 30px 24px;
+  transition: border-color 0.3s ease;
+}
+
+.menu-card:hover, .menu-highlight:hover { border-color: $line-gold; }
+
+.menu-highlight {
+  border-color: $line-gold;
+  background:
+    radial-gradient(ellipse at 15% 0%, rgba(212, 175, 55, 0.16), transparent 62%),
+    $bg-card;
+}
+
+.menu-card-wide { grid-column: 1 / -1; }
+
+.menu-card-head {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid $line-gold;
+}
+
+.menu-card-head h3 { font-size: 1.15rem; letter-spacing: 0.01em; }
+
+.menu-icon-badge {
+  flex: 0 0 44px;
+  width: 44px; height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $line-gold;
+  border-radius: 22px 22px 6px 6px;
+  background: rgba(212, 175, 55, 0.07);
+  color: $gold-light;
+}
+
+.menu-unit {
+  margin-left: auto;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: $text-muted;
+  white-space: nowrap;
+}
+
+.menu-tag {
+  margin-left: auto;
+  padding: 6px 14px;
+  border: 1px solid $gold-accent;
+  border-radius: 999px;
+  color: $gold-light;
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+}
+
+.menu-highlight-note {
+  color: $text-muted;
+  font-size: 0.88rem;
+  margin: 16px 0 4px;
+}
+
+/* Řádky s cenou */
+
+.menu-list { list-style: none; margin: 4px 0 0; padding: 0; }
+
+.menu-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid $line-soft;
+  font-size: 0.97rem;
+}
+
+.menu-list li:last-child { border-bottom: 0; padding-bottom: 4px; }
+
+.menu-list .item { color: $text-light; font-weight: 400; }
+
+.menu-list .item em {
+  display: block;
+  font-style: normal;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: $text-muted;
+}
+
+.menu-list .leader {
+  flex: 1 1 auto;
+  min-width: 18px;
+  align-self: center;
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.16);
+}
+
+.menu-list .price {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  color: $gold-light;
+  white-space: nowrap;
+}
+
+.menu-list-desc .item em { font-size: 0.82rem; margin-top: 3px; }
+
+/* Míchané drinky */
+
+.cocktail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 34px;
+  margin-top: 6px;
+}
+
+.cocktail-grid > div {
+  padding: 14px 0;
+  border-bottom: 1px solid $line-soft;
+}
+
+.cocktail-name {
+  display: block;
+  color: $text-light;
+  font-size: 1rem;
+}
+
+.cocktail-desc {
+  display: block;
+color: $text-muted;font-size: 0.83rem;line-height: 1.5;}.menu-note {max-width: 60ch;margin: 44px auto 0;text-align: center;color: $text-muted;font-size: 0.85rem;}.menu-note a { border-bottom: 1px solid $line-gold; }.menu-note a:hover { color: $gold-light; border-color: $gold-accent; }@media (max-width: 900px) {.cocktail-grid { grid-template-columns: repeat(2, 1fr); gap: 0 26px; }}@media (max-width: 760px) {.menu-highlights, .menu-grid { grid-template-columns: 1fr; }.menu-card, .menu-highlight { padding: 24px 22px 20px; }.cocktail-grid { grid-template-columns: 1fr; }.menu-quicknav { gap: 8px; }.menu-quicknav a { padding: 8px 13px; font-size: 0.7rem; }}/* ---------- Fotogalerie ---------- */.gallery-section { background: linear-gradient(180deg, $bg-main 0%, $bg-alt 100%); }.gallery-filter {display: flex;flex-wrap: wrap;justify-content: center;gap: 10px;margin: -18px 0 46px;}.gallery-chip {display: inline-flex;align-items: center;gap: 9px;padding: 9px 18px;background: none;border: 1px solid $line-soft;border-radius: 999px;color: $text-muted;font-family: 'Jost', sans-serif;font-size: 0.76rem;letter-spacing: 0.12em;text-transform: uppercase;cursor: pointer;transition: all 0.25s ease;}.gallery-chip:hover { color: $gold-light; border-color: $gold-accent; background: rgba(212, 175, 55, 0.08); }.gallery-chip.is-active {background: $gold-accent;border-color: $gold-accent;color: $ink-nav-footer;font-weight: 500;}.chip-count { font-size: 0.68rem; letter-spacing: 0.06em; color: $gold-accent; }.gallery-chip.is-active .chip-count { color: rgba(13, 11, 8, 0.7); }.gallery-grid {columns: 3;column-gap: 18px;list-style: none;margin: 0;padding: 0;}.gallery-item { break-inside: avoid; margin: 0 0 18px; }.has-js .gallery-item { opacity: 0; transform: translateY(22px); }.has-js .gallery-item.is-visible {opacity: 1;transform: none;transition: opacity 0.6s ease, transform 0.6s ease;}.gallery-link {position: relative;display: block;overflow: hidden;border: 1px solid $line-soft;background: $bg-card;transition: border-color 0.3s ease;}.gallery-link:hover { border-color: $gold-accent; }.gallery-link figure { margin: 0; position: relative; display: block; }.gallery-link img {width: 100%;height: auto;filter: saturate(0.92) brightness(0.9);transition: transform 0.7s ease, filter 0.5s ease;}.gallery-link:hover img,.gallery-link:focus-visible img { transform: scale(1.05); filter: none; }.gallery-link figcaption {position: absolute;left: 0; right: 0; bottom: 0;padding: 52px 20px 18px;background: linear-gradient(transparent, rgba(13, 11, 8, 0.95));opacity: 0;transform: translateY(10px);transition: opacity 0.4s ease, transform 0.4s ease;}.gallery-link:hover figcaption,.gallery-link:focus-visible figcaption { opacity: 1; transform: none; }.gallery-cap-title {display: block;font-family: 'Playfair Display', serif;font-size: 1.05rem;color: $text-light;}.gallery-cap-cat {display: block;font-size: 0.7rem;letter-spacing: 0.18em;text-transform: uppercase;color: $gold-light;}.gallery-link::after {content: '+';position: absolute;top: 12px; right: 12px;width: 36px; height: 36px;display: flex;align-items: center;justify-content: center;border: 1px solid $line-gold;border-radius: 18px 18px 5px 5px;background: rgba(13, 11, 8, 0.8);color: $gold-light;font-size: 1.1rem;line-height: 1;opacity: 0;transform: translateY(-6px);transition: opacity 0.35s ease, transform 0.35s ease;}.gallery-link:hover::after,.gallery-link:focus-visible::after { opacity: 1; transform: none; }.gallery-empty, .gallery-note {max-width: 62ch;margin: 32px auto 0;text-align: center;color: $text-muted;font-size: 0.85rem;}.gallery-note code {font-size: 0.8rem;color: $gold-light;background: rgba(212, 175, 55, 0.1);padding: 1px 6px;}.gallery-note a { border-bottom: 1px solid $line-gold; }.gallery-note a:hover { color: $gold-light; border-color: $gold-accent; }@media (hover: none) {.gallery-link figcaption { opacity: 1; transform: none; }.gallery-link::after { opacity: 1; transform: none; }}@media (max-width: 900px) { .gallery-grid { columns: 2; } }@media (max-width: 560px) { .gallery-grid { columns: 1; } }@media (prefers-reduced-motion: reduce) {.has-js .gallery-item { opacity: 1; transform: none; }}/* ---------- Lightbox ---------- */.lightbox {position: fixed;inset: 0;z-index: 100;display: flex;align-items: center;justify-content: center;padding: 72px 24px;}.lightbox[hidden] { display: none; }.lightbox-backdrop {position: absolute;inset: 0;background: rgba(13, 11, 8, 0.96);backdrop-filter: blur(4px);}.lightbox-figure {position: relative;margin: 0;max-width: min(1100px, 100%);display: flex;flex-direction: column;gap: 14px;animation: lightbox-in 0.35s ease;}.lightbox-figure img {max-height: 74vh;max-width: 100%;width: auto;margin: 0 auto;border: 1px solid $line-gold;}.lightbox-figure figcaption {display: flex;justify-content: space-between;align-items: baseline;gap: 20px;color: $text-light;font-size: 0.9rem;}.lightbox-counter {color: $gold-light;font-size: 0.78rem;letter-spacing: 0.16em;white-space: nowrap;}@keyframes lightbox-in {from { opacity: 0; transform: scale(0.97); }to   { opacity: 1; transform: none; }}.lightbox-btn {position: absolute;z-index: 2;width: 48px;height: 48px;display: flex;align-items: center;justify-content: center;background: rgba(13, 11, 8, 0.86);border: 1px solid $line-gold;color: $text-light;font-family: 'Jost', sans-serif;font-size: 1.7rem;line-height: 1;cursor: pointer;transition: all 0.25s ease;}.lightbox-btn:hover { color: $gold-light; border-color: $gold-accent; background: rgba(212, 175, 55, 0.12); }.lightbox-btn[hidden] { display: none; }.lightbox-close { top: 18px; right: 20px; border-radius: 4px; }.lightbox-prev, .lightbox-next { top: 50%; transform: translateY(-50%); border-radius: 24px; }.lightbox-prev { left: 20px; }.lightbox-next { right: 20px; }body.lightbox-open { overflow: hidden; }@media (max-width: 680px) {.lightbox { padding: 64px 14px 96px; }.lightbox-figure figcaption { flex-direction: column; gap: 4px; }.lightbox-prev, .lightbox-next { top: auto; bottom: 22px; transform: none; }.lightbox-prev { left: 22%; }.lightbox-next { right: 22%; }}/* ---------- Kontakt ---------- */.contact-grid {display: grid;grid-template-columns: 1fr 1fr;gap: 56px;}.contact-block { margin-bottom: 30px; }.contact-block h3 { color: $gold-light; margin-bottom: 10px; }.contact-block p { color: $text-muted; margin-bottom: 4px; }.contact-block a:hover { color: $gold-light; }.hours-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }.hours-table td { padding: 8px 0; border-top: 1px solid $line-soft; color: $text-muted; }.hours-table td:last-child { text-align: right; color: $text-light; }.map-frame {width: 100%;aspect-ratio: 4/3;border: 1px solid $line-gold;overflow: hidden;}.map-frame iframe { width: 100%; height: 100%; border: 0; filter: grayscale(0.5) invert(0.92) contrast(0.9); }@media (max-width: 820px) { .contact-grid { grid-template-columns: 1fr; } }.social-row { display: flex; gap: 14px; margin-top: 8px; }.social-row a {border: 1px solid $line-gold;padding: 10px 18px;font-size: 0.82rem;letter-spacing: 0.1em;text-transform: uppercase;transition: all 0.3s ease;}.social-row a:hover { border-color: $gold-accent; color: $gold-light; background: rgba(212, 175, 55, 0.05); }/* ---------- Footer ---------- */.site-footer {background: $ink-nav-footer; // Barva patičky podle zadáníborder-top: 1px solid $line-soft;padding: 40px 0;}.site-footer .container {display: flex; justify-content: space-between; flex-wrap: wrap;gap: 16px; color: $text-muted; font-size: 0.85rem;}.site-footer a:hover { color: $gold-light; 
+  }

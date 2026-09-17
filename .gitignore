@@ -1,0 +1,12 @@
+# Ignorovat mapy pro ladění CSS
+*.css.map
+
+# Ignorovat složku s moduly (pokud byste v budoucnu používala npm)
+node_modules/
+
+# Ignorovat cache z kompilátoru Sass
+.sass-cache/
+.sass-cache*
+
+# Ignorovat konfigurační složku VS Code (volitelné, ale doporučené)
+.vscode/
