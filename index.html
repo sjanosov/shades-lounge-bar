@@ -1,608 +1,1144 @@
 <!doctype html>
 <html lang="cs">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shades Lounge Bar — Vyškov</title>
-<meta name="description" content="Shades Lounge Bar — vodní dýmky, míchané drinky a signature koktejly v centru Vyškova. Ceník, fotogalerie a kontakt. Nádražní 2/1, Vyškov.">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header class="site-header">
-  <div class="container">
-    <a href="#domov" class="brand">
-      <img src="logo.svg" height="80px" width="auto" alt="Shades Lounge Bar">
-    </a>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#domov">Domů</a></li>
-      <li><a href="#o-nas">O nás</a></li>
-      <li><a href="#galerie">Fotogalerie</a></li>
-      <li><a href="#cennik">Ceník</a></li>
-      <li><a href="#kontakt">Kontakt</a></li>
-    </ul>
-  </div>
-</header>
-
-<main>
-
-  <section class="hero" id="domov">
-    <div class="hero-copy">
-      <span class="eyebrow">Vodní dýmky &amp; míchané drinky ve Vyškově</span>
-      <h1>Shades Lounge <span class="hero-h1-soft">Bar Vyškov</span></h1>
-      <p class="lede">Vodní dýmky namíchané na míru, poctivé míchané drinky a signature koktejly
-        v centru Vyškova, kousek od nádraží. Místo, kam si sednete na jednu dýmku a zůstanete celý večer.</p>
-      <ul class="hero-info-list">
-        <li>Nádražní 2/1, Vyškov — přímo v centru</li>
-        <li>Otevřeno denně od 17:00, v pátek a sobotu do 01:00</li>
-        <li>Rezervace a catering: <a href="tel:+420731050372">+420 731 050 372</a></li>
-      </ul>
-      <div class="hero-actions">
-        <a href="https://wa.me" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Rezervovat přes WhatsApp</a>
-        <a href="#cennik" class="btn btn-ghost">Zobrazit ceník</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shades Lounge Bar — Vyškov</title>
+    <meta
+      name="description"
+      content="Shades Lounge Bar — vodní dýmky, míchané drinky a signature koktejly v centru Vyškova. Ceník, fotogalerie a kontakt. Nádražní 2/1, Vyškov."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a href="#domov" class="brand">
+          <img
+            src="logo.svg"
+            height="80px"
+            width="auto"
+            alt="Shades Lounge Bar"
+          />
+        </a>
+        <button
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="nav-links"
+        >
+          Menu
+        </button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#domov">Domů</a></li>
+          <li><a href="#o-nas">O nás</a></li>
+          <li><a href="#galerie">Fotogalerie</a></li>
+          <li><a href="#cennik">Ceník</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
       </div>
-    </div>
+    </header>
 
-    <div class="hero-photo" role="img"
-         aria-label="Vodní dýmka na stolku v cihlovém interiéru Shades Lounge Baru ve Vyškově"></div>
+    <main>
+      <section class="hero" id="domov">
+        <div class="hero-copy">
+          <span class="eyebrow">Vodní dýmky &amp; míchané drinky</span>
+          <h1>Shades Lounge <span class="hero-h1-soft">Bar Vyškov</span></h1>
+          <p class="hero-invite">Přijďte na dýmku a zůstaňte celý večer.</p>
+          <div class="hero-info">
+            <div class="hero-info-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Nádražní 2/1, Vyškov — přímo v centru</span>
+            </div>
 
-    <div class="hero-scroll-indicator" aria-hidden="true">
-      <span class="hero-scroll-text">SCROLL TO EXPERIENCE</span>
-      <div class="hero-scroll-line"></div>
-    </div>
-  </section>
-
-  <section id="o-nas">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-art arch arch-fill">
-          <img src="logo.png" alt="">
+            <div class="hero-info-item">
+              <i class="fa-regular fa-clock"></i>
+              <span>Otevřeno denně od 17:00, pá–so do 01:00</span>
+            </div>
+          </div>
+          <div class="hero-actions">
+            <a href="#kontakt" class="btn btn-primary"> Rezervovat stůl </a
+            ><a href="#cennik" class="btn btn-ghost">Zobrazit ceník</a>
+          </div>
         </div>
-        <div class="about-copy">
-          <span class="eyebrow">O nás</span>
-          <h2>Bar s nabídkou vodní dýmky</h2>
-          <p>Shades Lounge Bar najdete přímo v centru Vyškova, kousek od nádraží. Dýmky mícháme na míru podle chuti, k tomu poctivé drinky a pár signature koktejlů, které jinde neochutnáte.</p>
-          <p>Řešíte oslavu nebo firemní akci? Zajišťujeme i dýmkařský a barový catering přímo u vás.</p>
-          <ul class="feature-list">
-            <li><strong>Vodní dýmky</strong> — namíchané na místě, síla podle přání</li>
-            <li><strong>Míchané drinky</strong> — klasika i signature koktejly</li>
-            <li><strong>Catering</strong> — dýmky a bar na vaší akci</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="galerie" class="gallery-section">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Fotogalerie</span>
-        <h2>Nahlédněte k nám do baru</h2>
-        <p>Interiér, dýmky, drinky i večery ve Vyškově. Vyberte si kategorii, klikněte na fotku a projděte galerii jako promítačku.</p>
-      </div>
 
-      <div class="gallery-filter" role="group" aria-label="Filtr fotogalerie">
-        <button type="button" class="gallery-chip is-active" data-filter="vse" aria-pressed="true">Vše<span class="chip-count">9</span></button>
-        <button type="button" class="gallery-chip" data-filter="interier" aria-pressed="false">Interiér<span class="chip-count">3</span></button>
-        <button type="button" class="gallery-chip" data-filter="dymky" aria-pressed="false">Vodní dýmky<span class="chip-count">2</span></button>
-        <button type="button" class="gallery-chip" data-filter="drinky" aria-pressed="false">Drinky<span class="chip-count">2</span></button>
-        <button type="button" class="gallery-chip" data-filter="atmosfera" aria-pressed="false">Atmosféra<span class="chip-count">2</span></button>
-      </div>
+        <div
+          class="hero-photo"
+          role="img"
+          aria-label="Vodní dýmka na stolku v cihlovém interiéru Shades Lounge Baru ve Vyškově"
+        ></div>
+      </section>
 
-      <ul class="gallery-grid" id="gallery-grid">
-
-        <li class="gallery-item" data-cat="interier">
-          <a class="gallery-link" href="galerie/galerie-01-bar.svg">
-            <figure>
-              <img src="galerie/galerie-01-bar.svg" width="1200" height="900" loading="lazy" decoding="async"
-                   alt="Barový pult v Shades Lounge Baru ve Vyškově">
-              <figcaption>
-                <span class="gallery-cap-title">Barový pult</span>
-                <span class="gallery-cap-cat">Interiér</span>
-              </figcaption>
-            </figure>
-          </a>
-        </li>
-
-        <li class="gallery-item" data-cat="dymky">
-          <a class="gallery-link" href="galerie/galerie-02-dymka.svg">
-            <figure>
-              <img src="galerie/galerie-02-dymka.svg" width="900" height="1200" loading="lazy" decoding="async"
-                   alt="Připravená vodní dýmka na stole v lounge baru ve Vyškově">
-              <figcaption>
-                <span class="gallery-cap-title">Vodní dýmka</span>
-                <span class="gallery-cap-cat">Vodní dýmky</span>
-              </figcaption>
-            </figure>
-          </a>
-        </li>
-
-        <li class="gallery-item" data-cat="drinky">
-          <a class="gallery-link" href="galerie/galerie-03-koktejl.svg">
-            <figure>
-              <img src="galerie/galerie-03-koktejl.svg" width="1000" height="1000" loading="lazy" decoding="async"
-                   alt="Signature koktejl namíchaný v Shades Lounge Baru">
-              <figcaption>
-                <span class="gallery-cap-title">Signature koktejl</span>
-                <span class="gallery-cap-cat">Drinky</span>
-              </figcaption>
-            </figure>
-          </a>
-        </li>
-
-        <li class="gallery-item" data-cat="interier">
-          <a class="gallery-link" href="galerie/galerie-04-lounge.svg">
-            <figure>
-              <img src="galerie/galerie-04-lounge.svg" width="1200" height="800" loading="lazy" decoding="async"
-                   alt="Lounge sezení s pohovkami v Shades Lounge Baru ve Vyškově">
-              <figcaption>
-                <span class="gallery-cap-title">Lounge sezení</span>
-                <span class="gallery-cap-cat">Interiér</span>
-              </figcaption>
-            </figure>
-          </a>
-        </li>
-
-        <li class="gallery-item" data-cat="atmosfera">
-          <a class="gallery-link" href="galerie/galerie-05-vecer.svg">
-            <figure>
-              <img src="galerie/galerie-05-vecer.svg" width="1200" height="900" loading="lazy" decoding="async"
-                   alt="Večerní atmosféra v Shades Lounge Baru ve Vyškově">
-              <figcaption>
-                <span class="gallery-cap-title">Večer v baru</span>
-                <span class="gallery-cap-cat">Atmosféra</span>
-              </figcaption>
-            </figure>
-          </a>
-        </li>
-
-        <li class="gallery-item" data-cat="drinky">
-          <a class="gallery-link" href="galerie/galerie-06-drinky.svg">
-            <figure>
-              <img src="galerie/galerie-06-drinky.svg" width="900" height="1200" loading="lazy" decoding="async"
-                   alt="Míchané drinky a koktejly z nabídky Shades Lounge Baru">
-              <figcaption>
-                <span class="gallery-cap-title">Míchané drinky</span>
-                <span class="gallery-cap-cat">Drinky</span>
-              </figcaption>
-            </figure>
-          </a>
-        </li>
-
-        <li class="gallery-item" data-cat="interier">
-          <a class="gallery-link" href="galerie/galerie-07-detail.svg">
-            <figure>
-              <img src="galerie/galerie-07-detail.svg" width="1200" height="900" loading="lazy" decoding="async"
-                   alt="Detail interiéru s oblouky a zlatými linkami v Shades Lounge Baru">
-              <figcaption>
-                <span class="gallery-cap-title">Detail interiéru</span>
-                <span class="gallery-cap-cat">Interiér</span>
-              </figcaption>
-            </figure>
-          </a>
-        </li>
-
-        <li class="gallery-item" data-cat="dymky">
-          <a class="gallery-link" href="galerie/galerie-08-mix.svg">
-            <figure>
-              <img src="galerie/galerie-08-mix.svg" width="1000" height="1000" loading="lazy" decoding="async"
-                   alt="Míchání tabáku do vodní dýmky na míru podle chuti hosta">
-              <figcaption>
-                <span class="gallery-cap-title">Míchání tabáku</span>
-                <span class="gallery-cap-cat">Vodní dýmky</span>
-              </figcaption>
-            </figure>
-          </a>
-        </li>
-
-        <li class="gallery-item" data-cat="atmosfera">
-          <a class="gallery-link" href="galerie/galerie-09-oslava.svg">
-            <figure>
-              <img src="galerie/galerie-09-oslava.svg" width="1200" height="800" loading="lazy" decoding="async"
-                   alt="Dýmkařský a barový catering na oslavě mimo prostory baru">
-              <figcaption>
-                <span class="gallery-cap-title">Oslava a catering</span>
-                <span class="gallery-cap-cat">Atmosféra</span>
-              </figcaption>
-            </figure>
-          </a>
-        </li>
-
-      </ul>
-
-      <p class="gallery-empty" id="gallery-empty" hidden>V této kategorii zatím nic není.</p>
-
-      <p class="gallery-note">Fotografie jsou zatím náhradní — skutečné snímky doplníme, soubory v <code>galerie/</code> stačí přepsat. Nejnovější fotky mezitím najdete na <a href="https://www.instagram.com/shadesloungebar/" target="_blank" rel="noopener">Instagramu</a>.</p>
-    </div>
-  </section>
-
-  <section id="cennik" class="section-alt">
-
-    <!-- Icon sprite — jednoduché linkové ikony v barvě zlata -->
-    <svg class="icon-sprite" aria-hidden="true" focusable="false">
-      <symbol id="i-hookah" viewBox="0 0 24 24">
-        <path d="M12 1.5c0 1-1 1.3-1 2.1"/>
-        <path d="M10 5.5h4l-.6 2.6h-2.8Z"/>
-        <path d="M12 8.1v4.2"/>
-        <path d="M12.4 10.4c2.4 0 4.1 1.1 4.6 2.8"/>
-        <circle cx="12" cy="17" r="4.4"/>
-      </symbol>
-      <symbol id="i-sparkle" viewBox="0 0 24 24">
-        <path d="M12 2.5l1.9 5.6 5.6 1.9-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.9Z"/>
-        <path d="M18.5 16.5l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7Z"/>
-      </symbol>
-      <symbol id="i-cocktail" viewBox="0 0 24 24">
-        <path d="M3.5 4.5h17l-8.5 9.5Z"/>
-        <path d="M12 14v5.5"/>
-        <path d="M8 20h8"/>
-      </symbol>
-      <symbol id="i-lemonade" viewBox="0 0 24 24">
-        <path d="M6.5 5h11l-1.3 15H7.8Z"/>
-        <path d="M15.5 2.5 13.2 7"/>
-        <path d="M7.2 11h9.1"/>
-      </symbol>
-      <symbol id="i-soda" viewBox="0 0 24 24">
-        <path d="M9 2.5h6v3.2l1.7 3.1V21H7.3V8.8L9 5.7Z"/>
-        <path d="M7.3 12.5h9.4"/>
-      </symbol>
-      <symbol id="i-coffee" viewBox="0 0 24 24">
-        <path d="M4 8.5h11v5.5a4.5 4.5 0 0 1-4.5 4.5h-2A4.5 4.5 0 0 1 4 14Z"/>
-        <path d="M15 10h2.2a2.6 2.6 0 0 1 0 5.2H15"/>
-        <path d="M3 21h13.5"/>
-        <path d="M8 5.5c0-1 1-1.3 1-2.3"/>
-      </symbol>
-      <symbol id="i-beer" viewBox="0 0 24 24">
-        <path d="M5.5 7.5h9.5V20H5.5Z"/>
-        <path d="M15 10.5h3v6.5h-3"/>
-        <path d="M5.5 7.5a2 2 0 1 1 2.3-2.4 2.6 2.6 0 0 1 4.4 0A2 2 0 1 1 15 7.5"/>
-      </symbol>
-      <symbol id="i-bottle" viewBox="0 0 24 24">
-        <path d="M10 2.5h4v4l1.8 3.2V21H8.2V9.7L10 6.5Z"/>
-        <path d="M8.2 13h7.6"/>
-        <path d="M8.2 17.5h7.6"/>
-      </symbol>
-      <symbol id="i-tumbler" viewBox="0 0 24 24">
-        <path d="M6.5 5.5h11l-1.2 14H7.7Z"/>
-        <path d="M7.4 13.5h9.2"/>
-      </symbol>
-      <symbol id="i-shot" viewBox="0 0 24 24">
-        <path d="M8 6h8l-1 9.5H9Z"/>
-        <path d="M12 15.5v3"/>
-        <path d="M8.5 20h7"/>
-      </symbol>
-      <symbol id="i-liqueur" viewBox="0 0 24 24">
-        <path d="M7.5 4h9l-1.1 6.2a3.5 3.5 0 0 1-6.8 0Z"/>
-        <path d="M12 13.5V19"/>
-        <path d="M8.8 19.5h6.4"/>
-      </symbol>
-    </svg>
-
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Ceník</span>
-        <h2>Celá nabídka, přehledně</h2>
-        <p>Vodní dýmky, míchané drinky, destiláty i nealko — všechno s cenami, bez listování v PDF. Ceny jsou uvedené v Kč.</p>
-      </div>
-
-      <nav class="menu-quicknav" aria-label="Kategorie ceníku">
-        <a href="#m-dymky"><svg class="menu-icon"><use href="#i-hookah"></use></svg>Vodní dýmky</a>
-        <a href="#m-signature"><svg class="menu-icon"><use href="#i-sparkle"></use></svg>Signature</a>
-        <a href="#m-drinky"><svg class="menu-icon"><use href="#i-cocktail"></use></svg>Míchané drinky</a>
-        <a href="#m-limonady"><svg class="menu-icon"><use href="#i-lemonade"></use></svg>Limonády</a>
-        <a href="#m-nealko"><svg class="menu-icon"><use href="#i-soda"></use></svg>Nealko</a>
-        <a href="#m-kava"><svg class="menu-icon"><use href="#i-coffee"></use></svg>Káva</a>
-        <a href="#m-pivo"><svg class="menu-icon"><use href="#i-beer"></use></svg>Pivo</a>
-        <a href="#m-rum"><svg class="menu-icon"><use href="#i-bottle"></use></svg>Destiláty</a>
-      </nav>
-
-      <div class="menu-highlights">
-
-        <article class="menu-highlight" id="m-dymky">
-          <div class="menu-card-head">
-            <span class="menu-icon-badge"><svg class="menu-icon"><use href="#i-hookah"></use></svg></span>
-            <h3>Vodní dýmka</h3>
-          </div>
-          <p class="menu-highlight-note">Mícháme na míru — sílu si řeknete podle chuti.</p>
-          <ul class="menu-list">
-            <li><span class="item">Soft</span><span class="leader"></span><span class="price">355,-</span></li>
-            <li><span class="item">Medium</span><span class="leader"></span><span class="price">355,-</span></li>
-            <li><span class="item">Hard</span><span class="leader"></span><span class="price">403,-</span></li>
-          </ul>
-        </article>
-
-        <article class="menu-highlight" id="m-signature">
-          <div class="menu-card-head">
-            <span class="menu-icon-badge"><svg class="menu-icon"><use href="#i-sparkle"></use></svg></span>
-            <h3>Signature drinks</h3>
-            <span class="menu-tag">190,-</span>
-          </div>
-          <p class="menu-highlight-note">Koktejly, které namícháme jen u nás.</p>
-          <ul class="menu-list menu-list-desc">
-            <li>
-              <span class="item">Monika&rsquo;s Kiss<em>Becherovka Grepfruit, Sprite, růžový tonic</em></span>
-            </li>
-          </ul>
-        </article>
-
-      </div>
-
-      <div class="menu-grid">
-
-        <article class="menu-card menu-card-wide" id="m-drinky">
-          <div class="menu-card-head">
-            <span class="menu-icon-badge"><svg class="menu-icon"><use href="#i-cocktail"></use></svg></span>
-            <h3>Míchané drinky</h3>
-            <span class="menu-tag">145,- / ks</span>
-          </div>
-          <div class="cocktail-grid">
-            <div><span class="cocktail-name">Cosmopolitan</span><span class="cocktail-desc">Vodka, pomerančový likér, brusinkový džus</span></div>
-            <div><span class="cocktail-name">Kamikaze</span><span class="cocktail-desc">Vodka, pomerančový likér, limetová šťáva</span></div>
-            <div><span class="cocktail-name">Blue Lagoon</span><span class="cocktail-desc">Vodka, Blue Curacao, Sprite</span></div>
-            <div><span class="cocktail-name">Sex on the Beach</span><span class="cocktail-desc">Vodka, broskvový likér, džus</span></div>
-            <div><span class="cocktail-name">Mojito</span><span class="cocktail-desc">Bílý rum, limetová šťáva, soda</span></div>
-            <div><span class="cocktail-name">Daiquiri</span><span class="cocktail-desc">Bílý rum, limetová šťáva, cukrový sirup</span></div>
-            <div><span class="cocktail-name">Mai Tai</span><span class="cocktail-desc">Rum, pomerančový likér, mandlový sirup</span></div>
-            <div><span class="cocktail-name">Cuba Libre</span><span class="cocktail-desc">Rum, limetová šťáva, Coca-Cola</span></div>
-            <div><span class="cocktail-name">Gin Fizz</span><span class="cocktail-desc">Gin, citronová šťáva, sirup, soda</span></div>
-            <div><span class="cocktail-name">White Lady</span><span class="cocktail-desc">Gin, pomerančový likér, citronová šťáva</span></div>
-            <div><span class="cocktail-name">Negroni</span><span class="cocktail-desc">Gin, Campari, červený vermut</span></div>
-            <div><span class="cocktail-name">Margarita</span><span class="cocktail-desc">Tequila, pomerančový likér, limetová šťáva</span></div>
-            <div><span class="cocktail-name">Tequila Sunrise</span><span class="cocktail-desc">Tequila, pomerančový džus, grenadina</span></div>
-          </div>
-        </article>
-
-        <article class="menu-card" id="m-limonady">
-          <div class="menu-card-head">
-            <span class="menu-icon-badge"><svg class="menu-icon"><use href="#i-lemonade"></use></svg></span>
-            <h3>Domácí limonády</h3>
-            <span class="menu-unit">0,4 l</span>
-          </div>
-          <ul class="menu-list">
-            <li><span class="item">Passion fruit</span><span class="leader"></span><span class="price">80,-</span></li>
-            <li><span class="item">Bezinka</span><span class="leader"></span><span class="price">80,-</span></li>
-            <li><span class="item">Citrusová</span><span class="leader"></span><span class="price">80,-</span></li>
-          </ul>
-        </article>
-
-        <article class="menu-card" id="m-kava">
-          <div class="menu-card-head">
-            <span class="menu-icon-badge"><svg class="menu-icon"><use href="#i-coffee"></use></svg></span>
-            <h3>Káva</h3>
-          </div>
-          <ul class="menu-list">
-            <li><span class="item">Espresso</span><span class="leader"></span><span class="price">60,-</span></li>
-            <li><span class="item">Latte</span><span class="leader"></span><span class="price">80,-</span></li>
-            <li><span class="item">Cappuccino</span><span class="leader"></span><span class="price">78,-</span></li>
-          </ul>
-        </article>
-
-        <article class="menu-card" id="m-nealko">
-          <div class="menu-card-head">
-            <span class="menu-icon-badge"><svg class="menu-icon"><use href="#i-soda"></use></svg></span>
-            <h3>Nealkoholické nápoje</h3>
-          </div>
-          <ul class="menu-list">
-            <li><span class="item">Coca-Cola / Zero<em>0,33 l</em></span><span class="leader"></span><span class="price">58,-</span></li>
-            <li><span class="item">Fanta<em>0,33 l</em></span><span class="leader"></span><span class="price">58,-</span></li>
-            <li><span class="item">Sprite<em>0,33 l</em></span><span class="leader"></span><span class="price">58,-</span></li>
-            <li><span class="item">Tonic<em>0,33 l</em></span><span class="leader"></span><span class="price">58,-</span></li>
-            <li><span class="item">Tonic pink<em>0,33 l</em></span><span class="leader"></span><span class="price">58,-</span></li>
-            <li><span class="item">Tonic Ginger beer<em>0,2 l</em></span><span class="leader"></span><span class="price">60,-</span></li>
-            <li><span class="item">Tonic Ginger ale<em>0,2 l</em></span><span class="leader"></span><span class="price">60,-</span></li>
-            <li><span class="item">Birell Pomelo-grep<em>0,5 l</em></span><span class="leader"></span><span class="price">50,-</span></li>
-            <li><span class="item">Birell Pomelo-grep<em>0,3 l</em></span><span class="leader"></span><span class="price">35,-</span></li>
-            <li><span class="item">Red Bull<em>0,33 l</em></span><span class="leader"></span><span class="price">85,-</span></li>
-            <li><span class="item">Karafa vody</span><span class="leader"></span><span class="price">80,-</span></li>
-          </ul>
-        </article>
-
-        <article class="menu-card" id="m-pivo">
-          <div class="menu-card-head">
-            <span class="menu-icon-badge"><svg class="menu-icon"><use href="#i-beer"></use></svg></span>
-            <h3>Pivo</h3>
-          </div>
-          <ul class="menu-list">
-            <li><span class="item">Pilsner Urquell<em>0,5 l</em></span><span class="leader"></span><span class="price">65,-</span></li>
-            <li><span class="item">Pilsner Urquell<em>0,3 l</em></span><span class="leader"></span><span class="price">40,-</span></li>
-          </ul>
-        </article>
-
-        <article class="menu-card" id="m-rum">
-          <div class="menu-card-head">
-            <span class="menu-icon-badge"><svg class="menu-icon"><use href="#i-bottle"></use></svg></span>
-            <h3>Rum</h3>
-            <span class="menu-unit">0,04 l</span>
-          </div>
-          <ul class="menu-list">
-            <li><span class="item">Cortez Blanco / Spiced</span><span class="leader"></span><span class="price">75,-</span></li>
-            <li><span class="item">Republica Exclusive</span><span class="leader"></span><span class="price">78,-</span></li>
-            <li><span class="item">Don Papa Masskara</span><span class="leader"></span><span class="price">132,-</span></li>
-            <li><span class="item">Kraken Black Spiced</span><span class="leader"></span><span class="price">100,-</span></li>
-            <li><span class="item">Legendario</span><span class="leader"></span><span class="price">135,-</span></li>
-          </ul>
-        </article>
-
-        <article class="menu-card" id="m-vodka">
-          <div class="menu-card-head">
-            <span class="menu-icon-badge"><svg class="menu-icon"><use href="#i-bottle"></use></svg></span>
-            <h3>Vodka</h3>
-            <span class="menu-unit">0,04 l</span>
-          </div>
-          <ul class="menu-list">
-            <li><span class="item">Smirnoff</span><span class="leader"></span><span class="price">70,-</span></li>
-            <li><span class="item">Pravda</span><span class="leader"></span><span class="price">110,-</span></li>
-            <li><span class="item">Grey Goose</span><span class="leader"></span><span class="price">145,-</span></li>
-            <li><span class="item">Broskvová</span><span class="leader"></span><span class="price">65,-</span></li>
-          </ul>
-        </article>
-
-        <article class="menu-card" id="m-gin">
-          <div class="menu-card-head">
-            <span class="menu-icon-badge"><svg class="menu-icon"><use href="#i-bottle"></use></svg></span>
-            <h3>Gin</h3>
-            <span class="menu-unit">0,04 l</span>
-          </div>
-          <ul class="menu-list">
-            <li><span class="item">Gordon&rsquo;s</span><span class="leader"></span><span class="price">75,-</span></li>
-            <li><span class="item">Gordon&rsquo;s Pink</span><span class="leader"></span><span class="price">75,-</span></li>
-            <li><span class="item">Roku</span><span class="leader"></span><span class="price">135,-</span></li>
-            <li><span class="item">Malfy con Arancia</span><span class="leader"></span><span class="price">107,-</span></li>
-          </ul>
-        </article>
-
-        <article class="menu-card" id="m-whiskey">
-          <div class="menu-card-head">
-            <span class="menu-icon-badge"><svg class="menu-icon"><use href="#i-tumbler"></use></svg></span>
-            <h3>Whiskey</h3>
-            <span class="menu-unit">0,04 l</span>
-          </div>
-          <ul class="menu-list">
-            <li><span class="item">Clan Campbell</span><span class="leader"></span><span class="price">75,-</span></li>
-            <li><span class="item">Jack Daniel&rsquo;s</span><span class="leader"></span><span class="price">85,-</span></li>
-            <li><span class="item">Johnnie Walker Black</span><span class="leader"></span><span class="price">100,-</span></li>
-          </ul>
-        </article>
-
-        <article class="menu-card" id="m-tequila">
-          <div class="menu-card-head">
-            <span class="menu-icon-badge"><svg class="menu-icon"><use href="#i-shot"></use></svg></span>
-            <h3>Tequila</h3>
-            <span class="menu-unit">0,04 l</span>
-          </div>
-          <ul class="menu-list">
-            <li><span class="item">Sierra Blanco</span><span class="leader"></span><span class="price">75,-</span></li>
-            <li><span class="item">Sierra Reposado</span><span class="leader"></span><span class="price">75,-</span></li>
-          </ul>
-        </article>
-
-        <article class="menu-card" id="m-likery">
-          <div class="menu-card-head">
-            <span class="menu-icon-badge"><svg class="menu-icon"><use href="#i-liqueur"></use></svg></span>
-            <h3>Likéry</h3>
-            <span class="menu-unit">0,04 l</span>
-          </div>
-          <ul class="menu-list">
-            <li><span class="item">Fernet Stock Blood Orange</span><span class="leader"></span><span class="price">65,-</span></li>
-            <li><span class="item">Peppermint zelená</span><span class="leader"></span><span class="price">62,-</span></li>
-            <li><span class="item">Cointreau</span><span class="leader"></span><span class="price">85,-</span></li>
-            <li><span class="item">Malibu</span><span class="leader"></span><span class="price">70,-</span></li>
-            <li><span class="item">Jägermeister</span><span class="leader"></span><span class="price">65,-</span></li>
-            <li><span class="item">Aperol</span><span class="leader"></span><span class="price">58,-</span></li>
-          </ul>
-        </article>
-
-      </div>
-
-      <p class="menu-note">Ceny jsou v Kč včetně DPH. Nabídka se může sezónně měnit — aktuální novinky najdete na <a href="https://www.instagram.com/shadesloungebar/" target="_blank" rel="noopener">Instagramu</a>.</p>
-    </div>
-  </section>
-
-  <section id="kontakt">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Kontakt</span>
-        <h2>Najdete nás tady</h2>
-      </div>
-      <div class="contact-grid">
-        <div>
-          <div class="contact-block">
-            <h3>Adresa</h3>
-            <p>Nádražní 2/1<br>682 01 Vyškov</p>
-          </div>
-          <div class="contact-block">
-            <h3>Otevírací doba</h3>
-            <table class="hours-table">
-              <tr><td>Pondělí</td><td>17:00 — 23:00</td></tr>
-              <tr><td>Úterý</td><td>17:00 — 23:00</td></tr>
-              <tr><td>Středa</td><td>17:00 — 23:00</td></tr>
-              <tr><td>Čtvrtek</td><td>17:00 — 23:00</td></tr>
-              <tr><td>Pátek</td><td>17:00 — 01:00</td></tr>
-              <tr><td>Sobota</td><td>17:00 — 01:00</td></tr>
-              <tr><td>Neděle</td><td>17:00 — 23:00</td></tr>
-            </table>
-          </div>
-          <div class="contact-block">
-            <h3>Rezervace a catering</h3>
-            <p><a href="tel:+420731050372">+420 731 050 372</a></p>
-          </div>
-          <div class="contact-block">
-            <h3>Sledujte nás</h3>
-            <div class="social-row">
-              <a href="https://www.instagram.com/shadesloungebar/" target="_blank" rel="noopener">Instagram</a>
-              <a href="https://linktr.ee/Shadesloungebar" target="_blank" rel="noopener">Linktree</a>
+      <section id="o-nas">
+        <div class="container">
+          <div class="about-grid">
+            <div class="about-art arch arch-fill">
+              <img src="logo.png" alt="" />
+            </div>
+            <div class="about-copy">
+              <span class="eyebrow">O nás</span>
+              <h2>Bar s nabídkou vodní dýmky</h2>
+              <p>
+                Shades Lounge Bar najdete přímo v centru Vyškova, kousek od
+                nádraží. Dýmky mícháme na míru podle chuti, k tomu poctivé
+                drinky a pár signature koktejlů, které jinde neochutnáte.
+              </p>
+              <p>
+                Řešíte oslavu nebo firemní akci? Zajišťujeme i dýmkařský a
+                barový catering přímo u vás.
+              </p>
+              <ul class="feature-list">
+                <li>
+                  <strong>Vodní dýmky</strong> — namíchané na místě, síla podle
+                  přání
+                </li>
+                <li>
+                  <strong>Míchané drinky</strong> — klasika i signature koktejly
+                </li>
+                <li><strong>Catering</strong> — dýmky a bar na vaší akci</li>
+              </ul>
             </div>
           </div>
         </div>
-        <div class="map-frame">
-          <iframe
-            src="https://www.google.com/maps?q=N%C3%A1dra%C5%BEn%C3%AD%202%2F1%2C%20682%2001%20Vy%C5%A1kov&output=embed"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Mapa — Shades Lounge Bar, Nádražní 2/1, Vyškov">
-          </iframe>
+      </section>
+      <section id="galerie" class="gallery-section">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Fotogalerie</span>
+            <h2>Nahlédněte k nám do baru</h2>
+            <p>
+              Interiér, dýmky, drinky i večery ve Vyškově. Vyberte si kategorii,
+              klikněte na fotku a projděte galerii jako promítačku.
+            </p>
+          </div>
+
+          <div
+            class="gallery-filter"
+            role="group"
+            aria-label="Filtr fotogalerie"
+          >
+            <button
+              type="button"
+              class="gallery-chip is-active"
+              data-filter="vse"
+              aria-pressed="true"
+            >
+              Vše<span class="chip-count">9</span>
+            </button>
+            <button
+              type="button"
+              class="gallery-chip"
+              data-filter="interier"
+              aria-pressed="false"
+            >
+              Interiér<span class="chip-count">3</span>
+            </button>
+            <button
+              type="button"
+              class="gallery-chip"
+              data-filter="dymky"
+              aria-pressed="false"
+            >
+              Vodní dýmky<span class="chip-count">2</span>
+            </button>
+            <button
+              type="button"
+              class="gallery-chip"
+              data-filter="drinky"
+              aria-pressed="false"
+            >
+              Drinky<span class="chip-count">2</span>
+            </button>
+            <button
+              type="button"
+              class="gallery-chip"
+              data-filter="atmosfera"
+              aria-pressed="false"
+            >
+              Atmosféra<span class="chip-count">2</span>
+            </button>
+          </div>
+
+          <ul class="gallery-grid" id="gallery-grid">
+            <li class="gallery-item" data-cat="interier">
+              <a class="gallery-link" href="galerie/galerie-01-bar.svg">
+                <figure>
+                  <img
+                    src="galerie/galerie-01-bar.svg"
+                    width="1200"
+                    height="900"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Barový pult v Shades Lounge Baru ve Vyškově"
+                  />
+                  <figcaption>
+                    <span class="gallery-cap-title">Barový pult</span>
+                    <span class="gallery-cap-cat">Interiér</span>
+                  </figcaption>
+                </figure>
+              </a>
+            </li>
+
+            <li class="gallery-item" data-cat="dymky">
+              <a class="gallery-link" href="galerie/galerie-02-dymka.svg">
+                <figure>
+                  <img
+                    src="galerie/galerie-02-dymka.svg"
+                    width="900"
+                    height="1200"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Připravená vodní dýmka na stole v lounge baru ve Vyškově"
+                  />
+                  <figcaption>
+                    <span class="gallery-cap-title">Vodní dýmka</span>
+                    <span class="gallery-cap-cat">Vodní dýmky</span>
+                  </figcaption>
+                </figure>
+              </a>
+            </li>
+
+            <li class="gallery-item" data-cat="drinky">
+              <a class="gallery-link" href="galerie/galerie-03-koktejl.svg">
+                <figure>
+                  <img
+                    src="galerie/galerie-03-koktejl.svg"
+                    width="1000"
+                    height="1000"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Signature koktejl namíchaný v Shades Lounge Baru"
+                  />
+                  <figcaption>
+                    <span class="gallery-cap-title">Signature koktejl</span>
+                    <span class="gallery-cap-cat">Drinky</span>
+                  </figcaption>
+                </figure>
+              </a>
+            </li>
+
+            <li class="gallery-item" data-cat="interier">
+              <a class="gallery-link" href="galerie/galerie-04-lounge.svg">
+                <figure>
+                  <img
+                    src="galerie/galerie-04-lounge.svg"
+                    width="1200"
+                    height="800"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Lounge sezení s pohovkami v Shades Lounge Baru ve Vyškově"
+                  />
+                  <figcaption>
+                    <span class="gallery-cap-title">Lounge sezení</span>
+                    <span class="gallery-cap-cat">Interiér</span>
+                  </figcaption>
+                </figure>
+              </a>
+            </li>
+
+            <li class="gallery-item" data-cat="atmosfera">
+              <a class="gallery-link" href="galerie/galerie-05-vecer.svg">
+                <figure>
+                  <img
+                    src="galerie/galerie-05-vecer.svg"
+                    width="1200"
+                    height="900"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Večerní atmosféra v Shades Lounge Baru ve Vyškově"
+                  />
+                  <figcaption>
+                    <span class="gallery-cap-title">Večer v baru</span>
+                    <span class="gallery-cap-cat">Atmosféra</span>
+                  </figcaption>
+                </figure>
+              </a>
+            </li>
+
+            <li class="gallery-item" data-cat="drinky">
+              <a class="gallery-link" href="galerie/galerie-06-drinky.svg">
+                <figure>
+                  <img
+                    src="galerie/galerie-06-drinky.svg"
+                    width="900"
+                    height="1200"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Míchané drinky a koktejly z nabídky Shades Lounge Baru"
+                  />
+                  <figcaption>
+                    <span class="gallery-cap-title">Míchané drinky</span>
+                    <span class="gallery-cap-cat">Drinky</span>
+                  </figcaption>
+                </figure>
+              </a>
+            </li>
+
+            <li class="gallery-item" data-cat="interier">
+              <a class="gallery-link" href="galerie/galerie-07-detail.svg">
+                <figure>
+                  <img
+                    src="galerie/galerie-07-detail.svg"
+                    width="1200"
+                    height="900"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Detail interiéru s oblouky a zlatými linkami v Shades Lounge Baru"
+                  />
+                  <figcaption>
+                    <span class="gallery-cap-title">Detail interiéru</span>
+                    <span class="gallery-cap-cat">Interiér</span>
+                  </figcaption>
+                </figure>
+              </a>
+            </li>
+
+            <li class="gallery-item" data-cat="dymky">
+              <a class="gallery-link" href="galerie/galerie-08-mix.svg">
+                <figure>
+                  <img
+                    src="galerie/galerie-08-mix.svg"
+                    width="1000"
+                    height="1000"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Míchání tabáku do vodní dýmky na míru podle chuti hosta"
+                  />
+                  <figcaption>
+                    <span class="gallery-cap-title">Míchání tabáku</span>
+                    <span class="gallery-cap-cat">Vodní dýmky</span>
+                  </figcaption>
+                </figure>
+              </a>
+            </li>
+
+            <li class="gallery-item" data-cat="atmosfera">
+              <a class="gallery-link" href="galerie/galerie-09-oslava.svg">
+                <figure>
+                  <img
+                    src="galerie/galerie-09-oslava.svg"
+                    width="1200"
+                    height="800"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Dýmkařský a barový catering na oslavě mimo prostory baru"
+                  />
+                  <figcaption>
+                    <span class="gallery-cap-title">Oslava a catering</span>
+                    <span class="gallery-cap-cat">Atmosféra</span>
+                  </figcaption>
+                </figure>
+              </a>
+            </li>
+          </ul>
+
+          <p class="gallery-empty" id="gallery-empty" hidden>
+            V této kategorii zatím nic není.
+          </p>
+
+          <p class="gallery-note">
+            Fotografie jsou zatím náhradní — skutečné snímky doplníme, soubory v
+            <code>galerie/</code> stačí přepsat. Nejnovější fotky mezitím
+            najdete na
+            <a
+              href="https://www.instagram.com/shadesloungebar/"
+              target="_blank"
+              rel="noopener"
+              >Instagramu</a
+            >.
+          </p>
         </div>
+      </section>
+
+      <section id="cennik" class="section-alt">
+        <!-- Icon sprite — jednoduché linkové ikony v barvě zlata -->
+        <svg class="icon-sprite" aria-hidden="true" focusable="false">
+          <symbol id="i-hookah" viewBox="0 0 24 24">
+            <path d="M12 1.5c0 1-1 1.3-1 2.1" />
+            <path d="M10 5.5h4l-.6 2.6h-2.8Z" />
+            <path d="M12 8.1v4.2" />
+            <path d="M12.4 10.4c2.4 0 4.1 1.1 4.6 2.8" />
+            <circle cx="12" cy="17" r="4.4" />
+          </symbol>
+          <symbol id="i-sparkle" viewBox="0 0 24 24">
+            <path
+              d="M12 2.5l1.9 5.6 5.6 1.9-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.9Z"
+            />
+            <path d="M18.5 16.5l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7Z" />
+          </symbol>
+          <symbol id="i-cocktail" viewBox="0 0 24 24">
+            <path d="M3.5 4.5h17l-8.5 9.5Z" />
+            <path d="M12 14v5.5" />
+            <path d="M8 20h8" />
+          </symbol>
+          <symbol id="i-lemonade" viewBox="0 0 24 24">
+            <path d="M6.5 5h11l-1.3 15H7.8Z" />
+            <path d="M15.5 2.5 13.2 7" />
+            <path d="M7.2 11h9.1" />
+          </symbol>
+          <symbol id="i-soda" viewBox="0 0 24 24">
+            <path d="M9 2.5h6v3.2l1.7 3.1V21H7.3V8.8L9 5.7Z" />
+            <path d="M7.3 12.5h9.4" />
+          </symbol>
+          <symbol id="i-coffee" viewBox="0 0 24 24">
+            <path
+              d="M4 8.5h11v5.5a4.5 4.5 0 0 1-4.5 4.5h-2A4.5 4.5 0 0 1 4 14Z"
+            />
+            <path d="M15 10h2.2a2.6 2.6 0 0 1 0 5.2H15" />
+            <path d="M3 21h13.5" />
+            <path d="M8 5.5c0-1 1-1.3 1-2.3" />
+          </symbol>
+          <symbol id="i-beer" viewBox="0 0 24 24">
+            <path d="M5.5 7.5h9.5V20H5.5Z" />
+            <path d="M15 10.5h3v6.5h-3" />
+            <path
+              d="M5.5 7.5a2 2 0 1 1 2.3-2.4 2.6 2.6 0 0 1 4.4 0A2 2 0 1 1 15 7.5"
+            />
+          </symbol>
+          <symbol id="i-bottle" viewBox="0 0 24 24">
+            <path d="M10 2.5h4v4l1.8 3.2V21H8.2V9.7L10 6.5Z" />
+            <path d="M8.2 13h7.6" />
+            <path d="M8.2 17.5h7.6" />
+          </symbol>
+          <symbol id="i-tumbler" viewBox="0 0 24 24">
+            <path d="M6.5 5.5h11l-1.2 14H7.7Z" />
+            <path d="M7.4 13.5h9.2" />
+          </symbol>
+          <symbol id="i-shot" viewBox="0 0 24 24">
+            <path d="M8 6h8l-1 9.5H9Z" />
+            <path d="M12 15.5v3" />
+            <path d="M8.5 20h7" />
+          </symbol>
+          <symbol id="i-liqueur" viewBox="0 0 24 24">
+            <path d="M7.5 4h9l-1.1 6.2a3.5 3.5 0 0 1-6.8 0Z" />
+            <path d="M12 13.5V19" />
+            <path d="M8.8 19.5h6.4" />
+          </symbol>
+        </svg>
+
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Ceník</span>
+            <h2>Celá nabídka, přehledně</h2>
+            <p>
+              Vodní dýmky, míchané drinky, destiláty i nealko — všechno s
+              cenami, bez listování v PDF. Ceny jsou uvedené v Kč.
+            </p>
+          </div>
+
+          <nav class="menu-quicknav" aria-label="Kategorie ceníku">
+            <a href="#m-dymky"
+              ><svg class="menu-icon"><use href="#i-hookah"></use></svg>Vodní
+              dýmky</a
+            >
+            <a href="#m-signature"
+              ><svg class="menu-icon"><use href="#i-sparkle"></use></svg
+              >Signature</a
+            >
+            <a href="#m-drinky"
+              ><svg class="menu-icon"><use href="#i-cocktail"></use></svg
+              >Míchané drinky</a
+            >
+            <a href="#m-limonady"
+              ><svg class="menu-icon"><use href="#i-lemonade"></use></svg
+              >Limonády</a
+            >
+            <a href="#m-nealko"
+              ><svg class="menu-icon"><use href="#i-soda"></use></svg>Nealko</a
+            >
+            <a href="#m-kava"
+              ><svg class="menu-icon"><use href="#i-coffee"></use></svg>Káva</a
+            >
+            <a href="#m-pivo"
+              ><svg class="menu-icon"><use href="#i-beer"></use></svg>Pivo</a
+            >
+            <a href="#m-rum"
+              ><svg class="menu-icon"><use href="#i-bottle"></use></svg
+              >Destiláty</a
+            >
+          </nav>
+
+          <div class="menu-highlights">
+            <article class="menu-highlight" id="m-dymky">
+              <div class="menu-card-head">
+                <span class="menu-icon-badge"
+                  ><svg class="menu-icon"><use href="#i-hookah"></use></svg
+                ></span>
+                <h3>Vodní dýmka</h3>
+              </div>
+              <p class="menu-highlight-note">
+                Mícháme na míru — sílu si řeknete podle chuti.
+              </p>
+              <ul class="menu-list">
+                <li>
+                  <span class="item">Soft</span><span class="leader"></span
+                  ><span class="price">355,-</span>
+                </li>
+                <li>
+                  <span class="item">Medium</span><span class="leader"></span
+                  ><span class="price">355,-</span>
+                </li>
+                <li>
+                  <span class="item">Hard</span><span class="leader"></span
+                  ><span class="price">403,-</span>
+                </li>
+              </ul>
+            </article>
+
+            <article class="menu-highlight" id="m-signature">
+              <div class="menu-card-head">
+                <span class="menu-icon-badge"
+                  ><svg class="menu-icon"><use href="#i-sparkle"></use></svg
+                ></span>
+                <h3>Signature drinks</h3>
+                <span class="menu-tag">190,-</span>
+              </div>
+              <p class="menu-highlight-note">
+                Koktejly, které namícháme jen u nás.
+              </p>
+              <ul class="menu-list menu-list-desc">
+                <li>
+                  <span class="item"
+                    >Monika&rsquo;s Kiss<em
+                      >Becherovka Grepfruit, Sprite, růžový tonic</em
+                    ></span
+                  >
+                </li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="menu-grid">
+            <article class="menu-card menu-card-wide" id="m-drinky">
+              <div class="menu-card-head">
+                <span class="menu-icon-badge"
+                  ><svg class="menu-icon"><use href="#i-cocktail"></use></svg
+                ></span>
+                <h3>Míchané drinky</h3>
+                <span class="menu-tag">145,- / ks</span>
+              </div>
+              <div class="cocktail-grid">
+                <div>
+                  <span class="cocktail-name">Cosmopolitan</span
+                  ><span class="cocktail-desc"
+                    >Vodka, pomerančový likér, brusinkový džus</span
+                  >
+                </div>
+                <div>
+                  <span class="cocktail-name">Kamikaze</span
+                  ><span class="cocktail-desc"
+                    >Vodka, pomerančový likér, limetová šťáva</span
+                  >
+                </div>
+                <div>
+                  <span class="cocktail-name">Blue Lagoon</span
+                  ><span class="cocktail-desc"
+                    >Vodka, Blue Curacao, Sprite</span
+                  >
+                </div>
+                <div>
+                  <span class="cocktail-name">Sex on the Beach</span
+                  ><span class="cocktail-desc"
+                    >Vodka, broskvový likér, džus</span
+                  >
+                </div>
+                <div>
+                  <span class="cocktail-name">Mojito</span
+                  ><span class="cocktail-desc"
+                    >Bílý rum, limetová šťáva, soda</span
+                  >
+                </div>
+                <div>
+                  <span class="cocktail-name">Daiquiri</span
+                  ><span class="cocktail-desc"
+                    >Bílý rum, limetová šťáva, cukrový sirup</span
+                  >
+                </div>
+                <div>
+                  <span class="cocktail-name">Mai Tai</span
+                  ><span class="cocktail-desc"
+                    >Rum, pomerančový likér, mandlový sirup</span
+                  >
+                </div>
+                <div>
+                  <span class="cocktail-name">Cuba Libre</span
+                  ><span class="cocktail-desc"
+                    >Rum, limetová šťáva, Coca-Cola</span
+                  >
+                </div>
+                <div>
+                  <span class="cocktail-name">Gin Fizz</span
+                  ><span class="cocktail-desc"
+                    >Gin, citronová šťáva, sirup, soda</span
+                  >
+                </div>
+                <div>
+                  <span class="cocktail-name">White Lady</span
+                  ><span class="cocktail-desc"
+                    >Gin, pomerančový likér, citronová šťáva</span
+                  >
+                </div>
+                <div>
+                  <span class="cocktail-name">Negroni</span
+                  ><span class="cocktail-desc"
+                    >Gin, Campari, červený vermut</span
+                  >
+                </div>
+                <div>
+                  <span class="cocktail-name">Margarita</span
+                  ><span class="cocktail-desc"
+                    >Tequila, pomerančový likér, limetová šťáva</span
+                  >
+                </div>
+                <div>
+                  <span class="cocktail-name">Tequila Sunrise</span
+                  ><span class="cocktail-desc"
+                    >Tequila, pomerančový džus, grenadina</span
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article class="menu-card" id="m-limonady">
+              <div class="menu-card-head">
+                <span class="menu-icon-badge"
+                  ><svg class="menu-icon"><use href="#i-lemonade"></use></svg
+                ></span>
+                <h3>Domácí limonády</h3>
+                <span class="menu-unit">0,4 l</span>
+              </div>
+              <ul class="menu-list">
+                <li>
+                  <span class="item">Passion fruit</span
+                  ><span class="leader"></span><span class="price">80,-</span>
+                </li>
+                <li>
+                  <span class="item">Bezinka</span><span class="leader"></span
+                  ><span class="price">80,-</span>
+                </li>
+                <li>
+                  <span class="item">Citrusová</span><span class="leader"></span
+                  ><span class="price">80,-</span>
+                </li>
+              </ul>
+            </article>
+
+            <article class="menu-card" id="m-kava">
+              <div class="menu-card-head">
+                <span class="menu-icon-badge"
+                  ><svg class="menu-icon"><use href="#i-coffee"></use></svg
+                ></span>
+                <h3>Káva</h3>
+              </div>
+              <ul class="menu-list">
+                <li>
+                  <span class="item">Espresso</span><span class="leader"></span
+                  ><span class="price">60,-</span>
+                </li>
+                <li>
+                  <span class="item">Latte</span><span class="leader"></span
+                  ><span class="price">80,-</span>
+                </li>
+                <li>
+                  <span class="item">Cappuccino</span
+                  ><span class="leader"></span><span class="price">78,-</span>
+                </li>
+              </ul>
+            </article>
+
+            <article class="menu-card" id="m-nealko">
+              <div class="menu-card-head">
+                <span class="menu-icon-badge"
+                  ><svg class="menu-icon"><use href="#i-soda"></use></svg
+                ></span>
+                <h3>Nealkoholické nápoje</h3>
+              </div>
+              <ul class="menu-list">
+                <li>
+                  <span class="item">Coca-Cola / Zero<em>0,33 l</em></span
+                  ><span class="leader"></span><span class="price">58,-</span>
+                </li>
+                <li>
+                  <span class="item">Fanta<em>0,33 l</em></span
+                  ><span class="leader"></span><span class="price">58,-</span>
+                </li>
+                <li>
+                  <span class="item">Sprite<em>0,33 l</em></span
+                  ><span class="leader"></span><span class="price">58,-</span>
+                </li>
+                <li>
+                  <span class="item">Tonic<em>0,33 l</em></span
+                  ><span class="leader"></span><span class="price">58,-</span>
+                </li>
+                <li>
+                  <span class="item">Tonic pink<em>0,33 l</em></span
+                  ><span class="leader"></span><span class="price">58,-</span>
+                </li>
+                <li>
+                  <span class="item">Tonic Ginger beer<em>0,2 l</em></span
+                  ><span class="leader"></span><span class="price">60,-</span>
+                </li>
+                <li>
+                  <span class="item">Tonic Ginger ale<em>0,2 l</em></span
+                  ><span class="leader"></span><span class="price">60,-</span>
+                </li>
+                <li>
+                  <span class="item">Birell Pomelo-grep<em>0,5 l</em></span
+                  ><span class="leader"></span><span class="price">50,-</span>
+                </li>
+                <li>
+                  <span class="item">Birell Pomelo-grep<em>0,3 l</em></span
+                  ><span class="leader"></span><span class="price">35,-</span>
+                </li>
+                <li>
+                  <span class="item">Red Bull<em>0,33 l</em></span
+                  ><span class="leader"></span><span class="price">85,-</span>
+                </li>
+                <li>
+                  <span class="item">Karafa vody</span
+                  ><span class="leader"></span><span class="price">80,-</span>
+                </li>
+              </ul>
+            </article>
+
+            <article class="menu-card" id="m-pivo">
+              <div class="menu-card-head">
+                <span class="menu-icon-badge"
+                  ><svg class="menu-icon"><use href="#i-beer"></use></svg
+                ></span>
+                <h3>Pivo</h3>
+              </div>
+              <ul class="menu-list">
+                <li>
+                  <span class="item">Pilsner Urquell<em>0,5 l</em></span
+                  ><span class="leader"></span><span class="price">65,-</span>
+                </li>
+                <li>
+                  <span class="item">Pilsner Urquell<em>0,3 l</em></span
+                  ><span class="leader"></span><span class="price">40,-</span>
+                </li>
+              </ul>
+            </article>
+
+            <article class="menu-card" id="m-rum">
+              <div class="menu-card-head">
+                <span class="menu-icon-badge"
+                  ><svg class="menu-icon"><use href="#i-bottle"></use></svg
+                ></span>
+                <h3>Rum</h3>
+                <span class="menu-unit">0,04 l</span>
+              </div>
+              <ul class="menu-list">
+                <li>
+                  <span class="item">Cortez Blanco / Spiced</span
+                  ><span class="leader"></span><span class="price">75,-</span>
+                </li>
+                <li>
+                  <span class="item">Republica Exclusive</span
+                  ><span class="leader"></span><span class="price">78,-</span>
+                </li>
+                <li>
+                  <span class="item">Don Papa Masskara</span
+                  ><span class="leader"></span><span class="price">132,-</span>
+                </li>
+                <li>
+                  <span class="item">Kraken Black Spiced</span
+                  ><span class="leader"></span><span class="price">100,-</span>
+                </li>
+                <li>
+                  <span class="item">Legendario</span
+                  ><span class="leader"></span><span class="price">135,-</span>
+                </li>
+              </ul>
+            </article>
+
+            <article class="menu-card" id="m-vodka">
+              <div class="menu-card-head">
+                <span class="menu-icon-badge"
+                  ><svg class="menu-icon"><use href="#i-bottle"></use></svg
+                ></span>
+                <h3>Vodka</h3>
+                <span class="menu-unit">0,04 l</span>
+              </div>
+              <ul class="menu-list">
+                <li>
+                  <span class="item">Smirnoff</span><span class="leader"></span
+                  ><span class="price">70,-</span>
+                </li>
+                <li>
+                  <span class="item">Pravda</span><span class="leader"></span
+                  ><span class="price">110,-</span>
+                </li>
+                <li>
+                  <span class="item">Grey Goose</span
+                  ><span class="leader"></span><span class="price">145,-</span>
+                </li>
+                <li>
+                  <span class="item">Broskvová</span><span class="leader"></span
+                  ><span class="price">65,-</span>
+                </li>
+              </ul>
+            </article>
+
+            <article class="menu-card" id="m-gin">
+              <div class="menu-card-head">
+                <span class="menu-icon-badge"
+                  ><svg class="menu-icon"><use href="#i-bottle"></use></svg
+                ></span>
+                <h3>Gin</h3>
+                <span class="menu-unit">0,04 l</span>
+              </div>
+              <ul class="menu-list">
+                <li>
+                  <span class="item">Gordon&rsquo;s</span
+                  ><span class="leader"></span><span class="price">75,-</span>
+                </li>
+                <li>
+                  <span class="item">Gordon&rsquo;s Pink</span
+                  ><span class="leader"></span><span class="price">75,-</span>
+                </li>
+                <li>
+                  <span class="item">Roku</span><span class="leader"></span
+                  ><span class="price">135,-</span>
+                </li>
+                <li>
+                  <span class="item">Malfy con Arancia</span
+                  ><span class="leader"></span><span class="price">107,-</span>
+                </li>
+              </ul>
+            </article>
+
+            <article class="menu-card" id="m-whiskey">
+              <div class="menu-card-head">
+                <span class="menu-icon-badge"
+                  ><svg class="menu-icon"><use href="#i-tumbler"></use></svg
+                ></span>
+                <h3>Whiskey</h3>
+                <span class="menu-unit">0,04 l</span>
+              </div>
+              <ul class="menu-list">
+                <li>
+                  <span class="item">Clan Campbell</span
+                  ><span class="leader"></span><span class="price">75,-</span>
+                </li>
+                <li>
+                  <span class="item">Jack Daniel&rsquo;s</span
+                  ><span class="leader"></span><span class="price">85,-</span>
+                </li>
+                <li>
+                  <span class="item">Johnnie Walker Black</span
+                  ><span class="leader"></span><span class="price">100,-</span>
+                </li>
+              </ul>
+            </article>
+
+            <article class="menu-card" id="m-tequila">
+              <div class="menu-card-head">
+                <span class="menu-icon-badge"
+                  ><svg class="menu-icon"><use href="#i-shot"></use></svg
+                ></span>
+                <h3>Tequila</h3>
+                <span class="menu-unit">0,04 l</span>
+              </div>
+              <ul class="menu-list">
+                <li>
+                  <span class="item">Sierra Blanco</span
+                  ><span class="leader"></span><span class="price">75,-</span>
+                </li>
+                <li>
+                  <span class="item">Sierra Reposado</span
+                  ><span class="leader"></span><span class="price">75,-</span>
+                </li>
+              </ul>
+            </article>
+
+            <article class="menu-card" id="m-likery">
+              <div class="menu-card-head">
+                <span class="menu-icon-badge"
+                  ><svg class="menu-icon"><use href="#i-liqueur"></use></svg
+                ></span>
+                <h3>Likéry</h3>
+                <span class="menu-unit">0,04 l</span>
+              </div>
+              <ul class="menu-list">
+                <li>
+                  <span class="item">Fernet Stock Blood Orange</span
+                  ><span class="leader"></span><span class="price">65,-</span>
+                </li>
+                <li>
+                  <span class="item">Peppermint zelená</span
+                  ><span class="leader"></span><span class="price">62,-</span>
+                </li>
+                <li>
+                  <span class="item">Cointreau</span><span class="leader"></span
+                  ><span class="price">85,-</span>
+                </li>
+                <li>
+                  <span class="item">Malibu</span><span class="leader"></span
+                  ><span class="price">70,-</span>
+                </li>
+                <li>
+                  <span class="item">Jägermeister</span
+                  ><span class="leader"></span><span class="price">65,-</span>
+                </li>
+                <li>
+                  <span class="item">Aperol</span><span class="leader"></span
+                  ><span class="price">58,-</span>
+                </li>
+              </ul>
+            </article>
+          </div>
+
+          <p class="menu-note">
+            Ceny jsou v Kč včetně DPH. Nabídka se může sezónně měnit — aktuální
+            novinky najdete na
+            <a
+              href="https://www.instagram.com/shadesloungebar/"
+              target="_blank"
+              rel="noopener"
+              >Instagramu</a
+            >.
+          </p>
+        </div>
+      </section>
+
+      <section id="kontakt">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Kontakt</span>
+            <h2>Najdete nás tady</h2>
+          </div>
+          <div class="contact-grid">
+            <div>
+              <div class="contact-block">
+                <h3>Adresa</h3>
+                <p>Nádražní 2/1<br />682 01 Vyškov</p>
+              </div>
+              <div class="contact-block">
+                <h3>Otevírací doba</h3>
+                <table class="hours-table">
+                  <tr>
+                    <td>Pondělí</td>
+                    <td>17:00 — 23:00</td>
+                  </tr>
+                  <tr>
+                    <td>Úterý</td>
+                    <td>17:00 — 23:00</td>
+                  </tr>
+                  <tr>
+                    <td>Středa</td>
+                    <td>17:00 — 23:00</td>
+                  </tr>
+                  <tr>
+                    <td>Čtvrtek</td>
+                    <td>17:00 — 23:00</td>
+                  </tr>
+                  <tr>
+                    <td>Pátek</td>
+                    <td>17:00 — 01:00</td>
+                  </tr>
+                  <tr>
+                    <td>Sobota</td>
+                    <td>17:00 — 01:00</td>
+                  </tr>
+                  <tr>
+                    <td>Neděle</td>
+                    <td>17:00 — 23:00</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="contact-block">
+                <h3>Rezervace a catering</h3>
+                <p><a href="tel:+420731050372">+420 731 050 372</a></p>
+              </div>
+              <div class="contact-block">
+                <h3>Sledujte nás</h3>
+                <div class="social-row">
+                  <a
+                    href="https://www.instagram.com/shadesloungebar/"
+                    target="_blank"
+                    rel="noopener"
+                    >Instagram</a
+                  >
+                  <a
+                    href="https://linktr.ee/Shadesloungebar"
+                    target="_blank"
+                    rel="noopener"
+                    >Linktree</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="map-frame">
+              <iframe
+                src="https://www.google.com/maps?q=N%C3%A1dra%C5%BEn%C3%AD%202%2F1%2C%20682%2001%20Vy%C5%A1kov&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Mapa — Shades Lounge Bar, Nádražní 2/1, Vyškov"
+              >
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <span>&copy; <span id="year"></span> Shades Lounge Bar</span>
+        <span
+          ><a href="tel:+420731050372">+420 731 050 372</a> &middot; Nádražní
+          2/1, Vyškov</span
+        >
       </div>
+    </footer>
+
+    <!-- Lightbox — bez JS se odkazy v galerii chovají jako běžné odkazy na obrázek -->
+    <div
+      class="lightbox"
+      id="lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Fotogalerie Shades Lounge Bar"
+      hidden
+    >
+      <div class="lightbox-backdrop" data-lightbox-close></div>
+      <button
+        type="button"
+        class="lightbox-btn lightbox-close"
+        data-lightbox-close
+        aria-label="Zavřít galerii"
+      >
+        &times;
+      </button>
+      <button
+        type="button"
+        class="lightbox-btn lightbox-prev"
+        data-lightbox-prev
+        aria-label="Předchozí fotka"
+      >
+        &#8249;
+      </button>
+      <button
+        type="button"
+        class="lightbox-btn lightbox-next"
+        data-lightbox-next
+        aria-label="Další fotka"
+      >
+        &#8250;
+      </button>
+      <figure class="lightbox-figure">
+        <img id="lightbox-img" alt="" />
+        <figcaption>
+          <span id="lightbox-caption"></span>
+          <span
+            class="lightbox-counter"
+            id="lightbox-counter"
+            aria-live="polite"
+          ></span>
+        </figcaption>
+      </figure>
     </div>
-  </section>
 
-</main>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ImageGallery",
+        "name": "Fotogalerie — Shades Lounge Bar Vyškov",
+        "description": "Interiér, vodní dýmky, míchané drinky a večerní atmosféra v Shades Lounge Baru na Nádražní 2/1 ve Vyškově.",
+        "inLanguage": "cs",
+        "about": {
+          "@type": "BarOrPub",
+          "name": "Shades Lounge Bar",
+          "telephone": "+420731050372",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Nádražní 2/1",
+            "addressLocality": "Vyškov",
+            "postalCode": "682 01",
+            "addressCountry": "CZ"
+          }
+        },
+        "associatedMedia": [
+          {
+            "@type": "ImageObject",
+            "contentUrl": "galerie/galerie-01-bar.svg",
+            "name": "Barový pult",
+            "description": "Barový pult v Shades Lounge Baru ve Vyškově",
+            "width": 1200,
+            "height": 900
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "galerie/galerie-02-dymka.svg",
+            "name": "Vodní dýmka",
+            "description": "Připravená vodní dýmka na stole v lounge baru ve Vyškově",
+            "width": 900,
+            "height": 1200
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "galerie/galerie-03-koktejl.svg",
+            "name": "Signature koktejl",
+            "description": "Signature koktejl namíchaný v Shades Lounge Baru",
+            "width": 1000,
+            "height": 1000
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "galerie/galerie-04-lounge.svg",
+            "name": "Lounge sezení",
+            "description": "Lounge sezení s pohovkami v Shades Lounge Baru ve Vyškově",
+            "width": 1200,
+            "height": 800
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "galerie/galerie-05-vecer.svg",
+            "name": "Večer v baru",
+            "description": "Večerní atmosféra v Shades Lounge Baru ve Vyškově",
+            "width": 1200,
+            "height": 900
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "galerie/galerie-06-drinky.svg",
+            "name": "Míchané drinky",
+            "description": "Míchané drinky a koktejly z nabídky Shades Lounge Baru",
+            "width": 900,
+            "height": 1200
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "galerie/galerie-07-detail.svg",
+            "name": "Detail interiéru",
+            "description": "Detail interiéru s oblouky a zlatými linkami v Shades Lounge Baru",
+            "width": 1200,
+            "height": 900
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "galerie/galerie-08-mix.svg",
+            "name": "Míchání tabáku",
+            "description": "Míchání tabáku do vodní dýmky na míru podle chuti hosta",
+            "width": 1000,
+            "height": 1000
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "galerie/galerie-09-oslava.svg",
+            "name": "Oslava a catering",
+            "description": "Dýmkařský a barový catering na oslavě mimo prostory baru",
+            "width": 1200,
+            "height": 800
+          }
+        ]
+      }
+    </script>
 
-<footer class="site-footer">
-  <div class="container">
-    <span>&copy; <span id="year"></span> Shades Lounge Bar</span>
-    <span><a href="tel:+420731050372">+420 731 050 372</a> &middot; Nádražní 2/1, Vyškov</span>
-  </div>
-</footer>
-
-<!-- Lightbox — bez JS se odkazy v galerii chovají jako běžné odkazy na obrázek -->
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Fotogalerie Shades Lounge Bar" hidden>
-  <div class="lightbox-backdrop" data-lightbox-close></div>
-  <button type="button" class="lightbox-btn lightbox-close" data-lightbox-close aria-label="Zavřít galerii">&times;</button>
-  <button type="button" class="lightbox-btn lightbox-prev" data-lightbox-prev aria-label="Předchozí fotka">&#8249;</button>
-  <button type="button" class="lightbox-btn lightbox-next" data-lightbox-next aria-label="Další fotka">&#8250;</button>
-  <figure class="lightbox-figure">
-    <img id="lightbox-img" alt="">
-    <figcaption>
-      <span id="lightbox-caption"></span>
-      <span class="lightbox-counter" id="lightbox-counter" aria-live="polite"></span>
-    </figcaption>
-  </figure>
-</div>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ImageGallery",
-  "name": "Fotogalerie — Shades Lounge Bar Vyškov",
-  "description": "Interiér, vodní dýmky, míchané drinky a večerní atmosféra v Shades Lounge Baru na Nádražní 2/1 ve Vyškově.",
-  "inLanguage": "cs",
-  "about": {
-    "@type": "BarOrPub",
-    "name": "Shades Lounge Bar",
-    "telephone": "+420731050372",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Nádražní 2/1",
-      "addressLocality": "Vyškov",
-      "postalCode": "682 01",
-      "addressCountry": "CZ"
-    }
-  },
-  "associatedMedia": [
-    { "@type": "ImageObject", "contentUrl": "galerie/galerie-01-bar.svg", "name": "Barový pult", "description": "Barový pult v Shades Lounge Baru ve Vyškově", "width": 1200, "height": 900 },
-    { "@type": "ImageObject", "contentUrl": "galerie/galerie-02-dymka.svg", "name": "Vodní dýmka", "description": "Připravená vodní dýmka na stole v lounge baru ve Vyškově", "width": 900, "height": 1200 },
-    { "@type": "ImageObject", "contentUrl": "galerie/galerie-03-koktejl.svg", "name": "Signature koktejl", "description": "Signature koktejl namíchaný v Shades Lounge Baru", "width": 1000, "height": 1000 },
-    { "@type": "ImageObject", "contentUrl": "galerie/galerie-04-lounge.svg", "name": "Lounge sezení", "description": "Lounge sezení s pohovkami v Shades Lounge Baru ve Vyškově", "width": 1200, "height": 800 },
-    { "@type": "ImageObject", "contentUrl": "galerie/galerie-05-vecer.svg", "name": "Večer v baru", "description": "Večerní atmosféra v Shades Lounge Baru ve Vyškově", "width": 1200, "height": 900 },
-    { "@type": "ImageObject", "contentUrl": "galerie/galerie-06-drinky.svg", "name": "Míchané drinky", "description": "Míchané drinky a koktejly z nabídky Shades Lounge Baru", "width": 900, "height": 1200 },
-    { "@type": "ImageObject", "contentUrl": "galerie/galerie-07-detail.svg", "name": "Detail interiéru", "description": "Detail interiéru s oblouky a zlatými linkami v Shades Lounge Baru", "width": 1200, "height": 900 },
-    { "@type": "ImageObject", "contentUrl": "galerie/galerie-08-mix.svg", "name": "Míchání tabáku", "description": "Míchání tabáku do vodní dýmky na míru podle chuti hosta", "width": 1000, "height": 1000 },
-    { "@type": "ImageObject", "contentUrl": "galerie/galerie-09-oslava.svg", "name": "Oslava a catering", "description": "Dýmkařský a barový catering na oslavě mimo prostory baru", "width": 1200, "height": 800 }
-  ]
-}
-</script>
-
-<script src="main.js"></script>
-
-</body>
+    <script src="main.js"></script>
+  </body>
 </html>
