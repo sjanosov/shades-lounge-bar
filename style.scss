@@ -12,7 +12,7 @@ $bg-card: #221f1a; // Pozadí pro jednotlivé menu položky
 $gold-accent: #d4af37; // Výrazné prvky (antické zlato) podle zadání
 $gold-light: #e5c463; // Světlejší zlato pro hover efekty
 $text-light: #ffffff; // Maximální kontrast pro hlavní texty a nadpisy
-$text-muted: #a39c93; // Čitelná šedá pro sekundární texty
+$text-muted: #ede8e2; // Čitelná šedá pro sekundární texty
 $line-gold: rgba(212, 175, 55, 0.3); // Jemné zlaté linky
 $line-soft: rgba(255, 255, 255, 0.08); // Jemné bílé předěly
 $max-width: 1100px;
@@ -53,6 +53,7 @@ h1 {
 }
 h2 {
   font-size: clamp(1.9rem, 3.2vw, 2.5rem);
+  line-height: 1.2;
 }
 h3 {
   font-size: 1.2rem;
@@ -265,40 +266,6 @@ html {
   margin: 0 0 35px;
 }
 
-.hero-info {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin: 32px 0;
-}
-
-.hero-info-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: #bdb6ae;
-  font-family: "Montserrat", sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-.hero-info-item i {
-  color: #d6af39;
-  font-size: 15px;
-  width: 18px;
-  flex-shrink: 0;
-}
-
-@media (max-width: 768px) {
-  .hero-info {
-    margin: 24px 0;
-  }
-
-  .hero-info-item {
-    font-size: 13px;
-  }
-}
-
 .hero-actions {
   display: flex;
   align-items: center;
@@ -478,13 +445,28 @@ section {
   max-width: 56ch;
   margin: 0 auto 56px;
 }
+
+.section-head-aligned {
+  text-align: left;
+
+  p {
+    color: $text-muted;
+    margin: 25px auto 0;
+  }
+
+  .eyebrow {
+    display: block;
+    margin-bottom: 14px;
+  }
+}
+
 .section-head .eyebrow {
   display: block;
   margin-bottom: 14px;
 }
 .section-head p {
   color: $text-muted;
-  margin: 16px auto 0;
+  margin: 25px auto 0;
 }
 
 .divider {
@@ -498,24 +480,26 @@ section {
 
 .about-grid {
   display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: 56px;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 64px;
   align-items: center;
 }
 
 .about-art {
-  aspect-ratio: 3/4;
-  max-width: 320px;
+  height: 550px;
+  max-width: 420px;
   margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
 }
 
 .about-art img {
-  width: 70%;
-  opacity: 0.9;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .about-copy .eyebrow {
@@ -530,7 +514,10 @@ section {
 }
 
 .feature-list li {
-  padding: 14px 0;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 7px 0;
   border-top: 1px solid $line-soft;
   color: $text-muted;
   font-size: 0.95rem;
@@ -542,10 +529,30 @@ section {
   color: $text-light;
   font-weight: 500;
 }
+.feature-list li i {
+  flex: 0 0 auto;
+  width: 20px;
+  font-size: 16px;
+  color: #d6af39;
+  text-align: center;
+}
 
 @media (max-width: 820px) {
   .about-grid {
     grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-art {
+    height: 420px;
+    max-width: 360px;
+  }
+}
+
+@media (max-width: 520px) {
+  .about-art {
+    height: 340px;
+    max-width: 280px;
   }
 }
 
@@ -850,17 +857,17 @@ section[id],
   cursor: pointer;
   transition: all 0.25s ease;
 }
-.gallery-chip:hover {
-  color: $gold-light;
-  border-color: $gold-accent;
-  background: rgba(212, 175, 55, 0.08);
-}
-.gallery-chip.is-active {
-  background: $gold-accent;
-  border-color: $gold-accent;
-  color: $ink-nav-footer;
-  font-weight: 500;
-}
+// .gallery-chip:hover {
+//   color: $gold-light;
+//   border-color: $gold-accent;
+//   background: rgba(212, 175, 55, 0.08);
+// }
+// .gallery-chip.is-active {
+//   background: $gold-accent;
+//   border-color: $gold-accent;
+//   color: $ink-nav-footer;
+//   font-weight: 500;
+// }
 .chip-count {
   font-size: 0.68rem;
   letter-spacing: 0.06em;
@@ -899,9 +906,9 @@ section[id],
   background: $bg-card;
   transition: border-color 0.3s ease;
 }
-.gallery-link:hover {
-  border-color: $gold-accent;
-}
+// .gallery-link:hover {
+//   border-color: $gold-accent;
+// }
 .gallery-link figure {
   margin: 0;
   position: relative;

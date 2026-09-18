@@ -48,16 +48,17 @@
           <span class="eyebrow">Vodní dýmky &amp; míchané drinky</span>
           <h1>Shades Lounge <span class="hero-h1-soft">Bar Vyškov</span></h1>
           <p class="hero-invite">Přijďte na dýmku a zůstaňte celý večer.</p>
-          <ul class="feature-list">
-            <li>
-              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+          <div class="hero-info">
+            <div class="hero-info-item">
+              <i class="fa-solid fa-location-dot"></i>
               <span>Nádražní 2/1, Vyškov — přímo v centru</span>
-            </li>
-            <li>
-              <i class="fa-regular fa-clock" aria-hidden="true"></i>
+            </div>
+
+            <div class="hero-info-item">
+              <i class="fa-regular fa-clock"></i>
               <span>Otevřeno denně od 17:00, pá–so do 01:00</span>
-            </li>
-          </ul>
+            </div>
+          </div>
           <div class="hero-actions">
             <a href="#kontakt" class="btn btn-primary"> Rezervovat stůl </a
             ><a href="#cennik" class="btn btn-ghost">Zobrazit ceník</a>
@@ -75,44 +76,29 @@
         <div class="container">
           <div class="about-grid">
             <div class="about-art arch arch-fill">
-              <img
-                src="galerie/bar.webp"
-                width="630"
-                height="850"
-                loading="lazy"
-                decoding="async"
-                alt="Barový pult v Shades Lounge Baru ve Vyškově"
-              />
+              <img src="logo.png" alt="" />
             </div>
             <div class="about-copy">
               <span class="eyebrow">O nás</span>
-              <h2>Místo, kam se rádi vracíte.</h2>
-              <div class="section-head-aligned">
-                <p>
-                  Shades Lounge není jen o dýmkách a drincích. Je hlavně o
-                  lidech. Čeká vás přátelský tým, osobní přístup a atmosféra, ve
-                  které se budete cítit jako mezi svými.
-                </p>
-
-                <p>
-                  Ať už přijdete s partou přátel, nebo jen tak posedět, rádi vás
-                  u nás přivítáme.
-                </p>
-              </div>
-
+              <h2>Bar s nabídkou vodní dýmky</h2>
+              <p>
+                Shades Lounge Bar najdete přímo v centru Vyškova, kousek od
+                nádraží. Dýmky mícháme na míru podle chuti, k tomu poctivé
+                drinky a pár signature koktejlů, které jinde neochutnáte.
+              </p>
+              <p>
+                Řešíte oslavu nebo firemní akci? Zajišťujeme i dýmkařský a
+                barový catering přímo u vás.
+              </p>
               <ul class="feature-list">
                 <li>
-                  <i class="fa-solid fa-handshake" aria-hidden="true"></i>
-                  <strong>Přátelský tým</strong> — osobní přístup
+                  <strong>Vodní dýmky</strong> — namíchané na místě, síla podle
+                  přání
                 </li>
                 <li>
-                  <i class="fa-solid fa-house" aria-hidden="true"></i>
-                  <strong>Domácí atmosféra</strong> — u nás jste jako doma
+                  <strong>Míchané drinky</strong> — klasika i signature koktejly
                 </li>
-                <li>
-                  <i class="fa-solid fa-users" aria-hidden="true"></i>
-                  <strong>Společné chvíle</strong> — místo pro setkávání
-                </li>
+                <li><strong>Catering</strong> — dýmky a bar na vaší akci</li>
               </ul>
             </div>
           </div>
@@ -122,10 +108,10 @@
         <div class="container">
           <div class="section-head">
             <span class="eyebrow">Fotogalerie</span>
-            <h2>Nahlédněte k nám</h2>
+            <h2>Nahlédněte k nám do baru</h2>
             <p>
-              Útulné posezení, dobré drinky a místo, kde si večer užijete po
-              svém.
+              Interiér, dýmky, drinky i večery ve Vyškově. Vyberte si kategorii,
+              klikněte na fotku a projděte galerii jako promítačku.
             </p>
           </div>
 
@@ -140,7 +126,7 @@
               data-filter="vse"
               aria-pressed="true"
             >
-              Vše<span class="chip-count">6</span>
+              Vše<span class="chip-count">9</span>
             </button>
             <button
               type="button"
@@ -150,7 +136,14 @@
             >
               Interiér<span class="chip-count">3</span>
             </button>
-
+            <button
+              type="button"
+              class="gallery-chip"
+              data-filter="dymky"
+              aria-pressed="false"
+            >
+              Vodní dýmky<span class="chip-count">2</span>
+            </button>
             <button
               type="button"
               class="gallery-chip"
@@ -165,115 +158,177 @@
               data-filter="atmosfera"
               aria-pressed="false"
             >
-              Atmosféra<span class="chip-count">1</span>
+              Atmosféra<span class="chip-count">2</span>
             </button>
           </div>
 
           <ul class="gallery-grid" id="gallery-grid">
             <li class="gallery-item" data-cat="interier">
-              <a class="gallery-link" href="galerie/bar.webp">
+              <a class="gallery-link" href="galerie/galerie-01-bar.svg">
                 <figure>
                   <img
-                    src="galerie/bar.webp"
-                    width="618"
-                    height="861"
+                    src="galerie/galerie-01-bar.svg"
+                    width="1200"
+                    height="900"
                     loading="lazy"
                     decoding="async"
                     alt="Barový pult v Shades Lounge Baru ve Vyškově"
                   />
                   <figcaption>
-                    <span class="gallery-cap-title">Barový pult</span
-                    ><span class="gallery-cap-cat">Interiér</span>
+                    <span class="gallery-cap-title">Barový pult</span>
+                    <span class="gallery-cap-cat">Interiér</span>
                   </figcaption>
                 </figure>
               </a>
             </li>
-            <li class="gallery-item" data-cat="interier">
-              <a class="gallery-link" href="galerie/interier-lounge.webp">
+
+            <li class="gallery-item" data-cat="dymky">
+              <a class="gallery-link" href="galerie/galerie-02-dymka.svg">
                 <figure>
                   <img
-                    src="galerie/interier-lounge.webp"
-                    width="630"
-                    height="884"
+                    src="galerie/galerie-02-dymka.svg"
+                    width="900"
+                    height="1200"
                     loading="lazy"
                     decoding="async"
-                    alt="Posezení v cihlovém interiéru"
+                    alt="Připravená vodní dýmka na stole v lounge baru ve Vyškově"
                   />
                   <figcaption>
-                    <span class="gallery-cap-title">Lounge sezení</span
-                    ><span class="gallery-cap-cat">Interiér</span>
+                    <span class="gallery-cap-title">Vodní dýmka</span>
+                    <span class="gallery-cap-cat">Vodní dýmky</span>
                   </figcaption>
                 </figure>
               </a>
             </li>
-            <li class="gallery-item" data-cat="interier">
-              <a class="gallery-link" href="galerie/interier-posezeni.webp">
+
+            <li class="gallery-item" data-cat="drinky">
+              <a class="gallery-link" href="galerie/galerie-03-koktejl.svg">
                 <figure>
                   <img
-                    src="galerie/interier-posezeni.webp"
-                    width="646"
-                    height="851"
+                    src="galerie/galerie-03-koktejl.svg"
+                    width="1000"
+                    height="1000"
                     loading="lazy"
                     decoding="async"
-                    alt="Stolky a pohovka"
+                    alt="Signature koktejl namíchaný v Shades Lounge Baru"
                   />
                   <figcaption>
-                    <span class="gallery-cap-title">Posezení</span
-                    ><span class="gallery-cap-cat">Interiér</span>
+                    <span class="gallery-cap-title">Signature koktejl</span>
+                    <span class="gallery-cap-cat">Drinky</span>
                   </figcaption>
                 </figure>
               </a>
             </li>
+
+            <li class="gallery-item" data-cat="interier">
+              <a class="gallery-link" href="galerie/galerie-04-lounge.svg">
+                <figure>
+                  <img
+                    src="galerie/galerie-04-lounge.svg"
+                    width="1200"
+                    height="800"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Lounge sezení s pohovkami v Shades Lounge Baru ve Vyškově"
+                  />
+                  <figcaption>
+                    <span class="gallery-cap-title">Lounge sezení</span>
+                    <span class="gallery-cap-cat">Interiér</span>
+                  </figcaption>
+                </figure>
+              </a>
+            </li>
+
             <li class="gallery-item" data-cat="atmosfera">
-              <a class="gallery-link" href="galerie/interier-krb.webp">
+              <a class="gallery-link" href="galerie/galerie-05-vecer.svg">
                 <figure>
                   <img
-                    src="galerie/interier-krb.webp"
-                    width="629"
-                    height="847"
+                    src="galerie/galerie-05-vecer.svg"
+                    width="1200"
+                    height="900"
                     loading="lazy"
                     decoding="async"
-                    alt="Krb a útulné zákoutí"
+                    alt="Večerní atmosféra v Shades Lounge Baru ve Vyškově"
                   />
                   <figcaption>
-                    <span class="gallery-cap-title">Útulný interiér</span
-                    ><span class="gallery-cap-cat">Atmosféra</span>
+                    <span class="gallery-cap-title">Večer v baru</span>
+                    <span class="gallery-cap-cat">Atmosféra</span>
                   </figcaption>
                 </figure>
               </a>
             </li>
+
             <li class="gallery-item" data-cat="drinky">
-              <a class="gallery-link" href="galerie/drink-modry.webp">
+              <a class="gallery-link" href="galerie/galerie-06-drinky.svg">
                 <figure>
                   <img
-                    src="galerie/drink-modry.webp"
-                    width="646"
-                    height="852"
+                    src="galerie/galerie-06-drinky.svg"
+                    width="900"
+                    height="1200"
                     loading="lazy"
                     decoding="async"
-                    alt="Modrý míchaný drink s citronem a mátou"
+                    alt="Míchané drinky a koktejly z nabídky Shades Lounge Baru"
                   />
                   <figcaption>
-                    <span class="gallery-cap-title">Modrý koktejl</span
-                    ><span class="gallery-cap-cat">Drinky</span>
+                    <span class="gallery-cap-title">Míchané drinky</span>
+                    <span class="gallery-cap-cat">Drinky</span>
                   </figcaption>
                 </figure>
               </a>
             </li>
-            <li class="gallery-item" data-cat="drinky">
-              <a class="gallery-link" href="galerie/koktejl.webp">
+
+            <li class="gallery-item" data-cat="interier">
+              <a class="gallery-link" href="galerie/galerie-07-detail.svg">
                 <figure>
                   <img
-                    src="galerie/koktejl.webp"
-                    width="631"
-                    height="880"
+                    src="galerie/galerie-07-detail.svg"
+                    width="1200"
+                    height="900"
                     loading="lazy"
                     decoding="async"
-                    alt="Koktejl"
+                    alt="Detail interiéru s oblouky a zlatými linkami v Shades Lounge Baru"
                   />
                   <figcaption>
-                    <span class="gallery-cap-title">Koktejl</span
-                    ><span class="gallery-cap-cat">Drinky</span>
+                    <span class="gallery-cap-title">Detail interiéru</span>
+                    <span class="gallery-cap-cat">Interiér</span>
+                  </figcaption>
+                </figure>
+              </a>
+            </li>
+
+            <li class="gallery-item" data-cat="dymky">
+              <a class="gallery-link" href="galerie/galerie-08-mix.svg">
+                <figure>
+                  <img
+                    src="galerie/galerie-08-mix.svg"
+                    width="1000"
+                    height="1000"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Míchání tabáku do vodní dýmky na míru podle chuti hosta"
+                  />
+                  <figcaption>
+                    <span class="gallery-cap-title">Míchání tabáku</span>
+                    <span class="gallery-cap-cat">Vodní dýmky</span>
+                  </figcaption>
+                </figure>
+              </a>
+            </li>
+
+            <li class="gallery-item" data-cat="atmosfera">
+              <a class="gallery-link" href="galerie/galerie-09-oslava.svg">
+                <figure>
+                  <img
+                    src="galerie/galerie-09-oslava.svg"
+                    width="1200"
+                    height="800"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Dýmkařský a barový catering na oslavě mimo prostory baru"
+                  />
+                  <figcaption>
+                    <span class="gallery-cap-title">Oslava a catering</span>
+                    <span class="gallery-cap-cat">Atmosféra</span>
                   </figcaption>
                 </figure>
               </a>
@@ -282,6 +337,18 @@
 
           <p class="gallery-empty" id="gallery-empty" hidden>
             V této kategorii zatím nic není.
+          </p>
+
+          <p class="gallery-note">
+            Fotografie jsou zatím náhradní — skutečné snímky doplníme, soubory v
+            <code>galerie/</code> stačí přepsat. Nejnovější fotky mezitím
+            najdete na
+            <a
+              href="https://www.instagram.com/shadesloungebar/"
+              target="_blank"
+              rel="noopener"
+              >Instagramu</a
+            >.
           </p>
         </div>
       </section>
@@ -998,51 +1065,75 @@
         "associatedMedia": [
           {
             "@type": "ImageObject",
-            "contentUrl": "galerie/bar.webp",
+            "contentUrl": "galerie/galerie-01-bar.svg",
             "name": "Barový pult",
             "description": "Barový pult v Shades Lounge Baru ve Vyškově",
-            "width": 618,
-            "height": 861
+            "width": 1200,
+            "height": 900
           },
           {
             "@type": "ImageObject",
-            "contentUrl": "galerie/interier-lounge.webp",
+            "contentUrl": "galerie/galerie-02-dymka.svg",
+            "name": "Vodní dýmka",
+            "description": "Připravená vodní dýmka na stole v lounge baru ve Vyškově",
+            "width": 900,
+            "height": 1200
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "galerie/galerie-03-koktejl.svg",
+            "name": "Signature koktejl",
+            "description": "Signature koktejl namíchaný v Shades Lounge Baru",
+            "width": 1000,
+            "height": 1000
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "galerie/galerie-04-lounge.svg",
             "name": "Lounge sezení",
-            "description": "Posezení v cihlovém interiéru Shades Lounge Baru",
-            "width": 630,
-            "height": 884
+            "description": "Lounge sezení s pohovkami v Shades Lounge Baru ve Vyškově",
+            "width": 1200,
+            "height": 800
           },
           {
             "@type": "ImageObject",
-            "contentUrl": "galerie/interier-posezeni.webp",
-            "name": "Posezení",
-            "description": "Stolky a pohovka v interiéru Shades Lounge Baru",
-            "width": 646,
-            "height": 851
+            "contentUrl": "galerie/galerie-05-vecer.svg",
+            "name": "Večer v baru",
+            "description": "Večerní atmosféra v Shades Lounge Baru ve Vyškově",
+            "width": 1200,
+            "height": 900
           },
           {
             "@type": "ImageObject",
-            "contentUrl": "galerie/interier-krb.webp",
-            "name": "Útulný interiér",
-            "description": "Krb a útulné zákoutí v Shades Lounge Baru",
-            "width": 629,
-            "height": 847
+            "contentUrl": "galerie/galerie-06-drinky.svg",
+            "name": "Míchané drinky",
+            "description": "Míchané drinky a koktejly z nabídky Shades Lounge Baru",
+            "width": 900,
+            "height": 1200
           },
           {
             "@type": "ImageObject",
-            "contentUrl": "galerie/drink-modry.webp",
-            "name": "Modrý koktejl",
-            "description": "Modrý míchaný drink s citronem a mátou na baru",
-            "width": 646,
-            "height": 852
+            "contentUrl": "galerie/galerie-07-detail.svg",
+            "name": "Detail interiéru",
+            "description": "Detail interiéru s oblouky a zlatými linkami v Shades Lounge Baru",
+            "width": 1200,
+            "height": 900
           },
           {
             "@type": "ImageObject",
-            "contentUrl": "galerie/koktejl.webp",
-            "name": "Koktejl",
-            "description": "Koktejl ve sklenici v Shades Lounge Baru",
-            "width": 631,
-            "height": 880
+            "contentUrl": "galerie/galerie-08-mix.svg",
+            "name": "Míchání tabáku",
+            "description": "Míchání tabáku do vodní dýmky na míru podle chuti hosta",
+            "width": 1000,
+            "height": 1000
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "galerie/galerie-09-oslava.svg",
+            "name": "Oslava a catering",
+            "description": "Dýmkařský a barový catering na oslavě mimo prostory baru",
+            "width": 1200,
+            "height": 800
           }
         ]
       }
