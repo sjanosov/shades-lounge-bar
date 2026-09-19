@@ -1,5 +1,1554 @@
+// /* ==========================================================================
+//    SHADES LOUNGE BAR — SCSS verze s upravenou paletou barev
+//    ========================================================================== */
+
+// @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap");
+
+// // --- SCSS PROMĚNNÉ (VARIABLES) ---
+// $ink-nav-footer: #0d0b08; // Navigace a patička — stejná hluboká černá jako pozadí
+// $bg-main: #0d0b08; // Hluboká, teplá černá — pozadí celého webu i navigace
+// $bg-alt: #161411; // Mírně světlejší temný tón pro sekce a karty níže
+// $bg-card: #221f1a; // Pozadí pro jednotlivé menu položky
+// $gold-accent: #d4af37; // Výrazné prvky (antické zlato) podle zadání
+// $gold-light: #e5c463; // Světlejší zlato pro hover efekty
+// $text-light: #ffffff; // Maximální kontrast pro hlavní texty a nadpisy
+// $text-muted: #ede8e2; // Čitelná šedá pro sekundární texty
+// $line-gold: rgba(212, 175, 55, 0.3); // Jemné zlaté linky
+// $line-soft: rgba(255, 255, 255, 0.18); // Jemné bílé předěly
+// $max-width: 1100px;
+
+// * {
+//   box-sizing: border-box;
+// }
+
+// body {
+//   margin: 0;
+//   background: $bg-main;
+//   color: $text-light;
+//   font-family: "Montserrat", sans-serif;
+//   font-weight: 300;
+//   font-size: 17px;
+//   line-height: 1.7;
+//   -webkit-font-smoothing: antialiased;
+// }
+
+// img {
+//   max-width: 100%;
+//   display: block;
+// }
+
+// h1,
+// h2,
+// h3 {
+//   font-family: "Playfair Display", serif;
+//   font-weight: 600;
+//   color: $text-light;
+//   margin: 0;
+// }
+
+// h1 {
+//   font-size: clamp(2.6rem, 6vw, 4.2rem);
+//   line-height: 1.05;
+//   letter-spacing: 0.01em;
+// }
+// h2 {
+//   font-size: clamp(1.9rem, 3.2vw, 2.5rem);
+//   line-height: 1.2;
+// }
+// h3 {
+//   font-size: 1.2rem;
+//   font-weight: 600;
+// }
+
+// p {
+//   margin: 0 0 1em;
+//   color: $text-light;
+//   max-width: 58ch;
+// }
+
+// a {
+//   color: inherit;
+//   text-decoration: none;
+// }
+
+// .container {
+//   max-width: $max-width;
+//   margin: 0 auto;
+//   padding: 0 28px;
+// }
+
+// .eyebrow {
+//   font-family: "Jost", sans-serif;
+//   font-size: 0.8rem;
+//   letter-spacing: 0.28em;
+//   text-transform: uppercase;
+//   color: $gold-light;
+// }
+
+// a:focus-visible,
+// button:focus-visible {
+//   outline: 1px solid $gold-accent;
+//   outline-offset: 3px;
+// }
+
+// @media (prefers-reduced-motion: reduce) {
+//   * {
+//     scroll-behavior: auto !important;
+//     animation: none !important;
+//     transition: none !important;
+//   }
+// }
+
+// html {
+//   scroll-behavior: smooth;
+// }
+
+// /* ---------- Arch motif ---------- */
+
+// .arch {
+//   border-radius: 200px 200px 4px 4px;
+//   border: 1px solid $line-gold;
+// }
+
+// .arch-fill {
+//   background: $bg-alt;
+// }
+
+// /* ---------- Header / nav ---------- */
+// .site-header {
+//   position: sticky;
+//   top: 0;
+//   z-index: 50;
+//   background: rgba(13, 11, 8, 0.92);
+//   backdrop-filter: blur(6px);
+//   width: 100%;
+// }
+
+// .site-header .container {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   height: 100px;
+//   max-width: 100%;
+//   margin: 0;
+//   padding: 0 8% 0 7%;
+//   box-sizing: border-box; // DŮLEŽITÉ: Zajistí, že padding se započítá DO šířky a nevytlačí menu ven
+// }
+
+// .brand {
+//   display: flex;
+//   align-items: center;
+//   gap: 12px;
+//   font-family: "Playfair Display", serif;
+//   font-size: 1.25rem;
+//   color: $text-light;
+// }
+
+// .brand img {
+//   height: 65px;
+//   width: auto;
+// }
+
+// .nav-links {
+//   display: flex;
+//   gap: 36px;
+//   list-style: none;
+//   margin: 0;
+//   padding: 0;
+//   font-size: 0.85rem;
+//   letter-spacing: 0.12em;
+//   text-transform: uppercase;
+//   align-items: center;
+//   align-self: center;
+// }
+
+// .nav-links a {
+//   color: $text-muted;
+//   padding: 4px 0;
+//   border-bottom: 1px solid transparent;
+//   transition:
+//     color 0.3s ease,
+//     border-color 0.3s ease;
+// }
+// .nav-links a:hover {
+//   color: $gold-light;
+//   border-color: $gold-accent;
+// }
+
+// .nav-toggle {
+//   display: none;
+//   background: none;
+//   color: $text-light;
+//   padding: 8px 14px;
+//   border: none;
+//   font-size: 1.2rem;
+// }
+
+// .nav-toggle:hover {
+//   cursor: pointer;
+// }
+
+// /* Sociální ikony — jedna sada, sdílená navigací a sekcí Kontakt */
+// .social-icon {
+//   display: inline-flex;
+//   align-items: center;
+//   justify-content: center;
+//   flex: 0 0 auto;
+//   width: 40px;
+//   height: 40px;
+//   border: 1px solid transparent;
+//   border-radius: 999px;
+//   color: $text-muted;
+//   font-size: 1rem;
+//   line-height: 1;
+//   transition:
+//     color 0.3s ease,
+//     border-color 0.3s ease,
+//     background-color 0.3s ease;
+// }
+
+// .social-icon:hover {
+//   color: $gold-light;
+//   border-color: $line-gold;
+//   background: rgba(212, 175, 55, 0.08);
+// }
+
+// // Ikony jsou poslední položkou seznamu, takže na desktopu sedí vpravo za
+// // menu a na mobilu se zobrazí přímo v rozbalovacím menu (jediná sada).
+// .nav-social {
+//   display: flex;
+//   align-items: center;
+//   gap: 6px;
+//   margin-left: -18px; // vyrovná gap seznamu, aby ikony nestály příliš daleko
+// }
+
+// .nav-links .social-icon {
+//   padding: 0;
+//   border: 1px solid transparent;
+// }
+
+// // Pojistka pro střední šířky, aby se hlavička nerozjela mimo obrazovku
+// @media (min-width: 761px) and (max-width: 1040px) {
+//   .site-header .container {
+//     gap: 18px;
+//     padding: 0 4%;
+//   }
+//   .nav-links {
+//     gap: 22px;
+//     font-size: 0.8rem;
+//   }
+//   .nav-social {
+//     gap: 2px;
+//     margin-left: -10px;
+//   }
+//   .nav-links .social-icon {
+//     width: 34px;
+//     height: 34px;
+//     font-size: 0.95rem;
+//   }
+// }
+
+// // Responzivita pro mobily
+// @media (max-width: 760px) {
+//   .site-header .container {
+//     padding: 0 28px;
+//   }
+
+//   .nav-links {
+//     position: absolute;
+//     top: 100px;
+//     left: 0;
+//     right: 0;
+//     background: $ink-nav-footer;
+//     flex-direction: column;
+//     gap: 0;
+//     border-bottom: 1px solid $line-soft;
+//     display: none;
+//   }
+//   .nav-links.open {
+//     display: flex;
+//   }
+//   .nav-links a {
+//     display: block;
+//     padding: 18px 28px;
+//     border-bottom: 1px solid $line-soft;
+//   }
+//   .nav-social {
+//     justify-content: center;
+//     gap: 14px;
+//     margin: 0;
+//     padding: 16px 28px;
+//   }
+//   .nav-links .nav-social .social-icon {
+//     display: inline-flex;
+//     width: 46px;
+//     height: 46px;
+//     padding: 0;
+//     border: 1px solid $line-soft;
+//     border-radius: 999px;
+//     font-size: 1.05rem;
+//   }
+//   .nav-toggle {
+//     display: inline-block;
+//   }
+// }
+
+// /* ---------- Hero — atmospheric dark split 50/50 ---------- */
+
+// .hero {
+//   position: relative;
+//   display: grid;
+//   grid-template-columns: 1fr 0.6fr;
+//   width: 100vw;
+//   max-width: 100%; // 100vw bez vodorovného přeteku kvůli šířce scrollbaru
+//   padding: 0;
+//   background: $bg-main;
+//   overflow: hidden;
+// }
+
+// /* Levá strana — čistá typografie v prostoru */
+
+// .hero-copy {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   padding: 120px 8% 120px 12%;
+//   background: $bg-main;
+// }
+
+// .hero .eyebrow {
+//   display: block;
+//   margin-bottom: 22px;
+// }
+
+// .hero-copy h1 {
+//   font-size: clamp(3.2rem, 6.5vw, 5.2rem);
+//   line-height: 1;
+//   font-weight: 700;
+//   letter-spacing: -0.01em;
+//   color: $text-light;
+//   max-width: 16ch;
+//   margin-bottom: 32px;
+// }
+
+// // "Bar Vyškov" jemnější šedou, aby "Shades Lounge" dominovalo čistou bílou
+// .hero-h1-soft {
+//   color: $text-muted;
+// }
+
+// .hero-invite {
+//   font-family: "Cormorant Garamond", serif;
+//   font-size: 30px;
+//   font-weight: 500;
+//   line-height: 1.3;
+//   color: #f2eee7;
+//   margin: 0 0 35px;
+// }
+
+// .hero-actions {
+//   display: flex;
+//   align-items: center;
+//   gap: 18px;
+//   margin-top: 44px;
+//   flex-wrap: wrap;
+// }
+
+// /* Pravá strana — fotografie lícující s okraji sloupce */
+
+// .hero-photo {
+//   min-height: 80vh;
+//   position: relative;
+//   overflow: hidden;
+//   background-image: url("galerie/hero image.webp");
+//   background-size: cover;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   width: 100%;
+
+//   &::after {
+//     content: "";
+//     position: absolute;
+//     inset: 0;
+//     pointer-events: none; // Aby vrstva neblokovala interakciu s webom
+//     background:
+//       // JEMNEJŠÍ ĽAVÝ OKRAJ: transparentnosť posunutá až do 65%, prechod do čiernej je pozvoľnejší
+//       linear-gradient(
+//         to left,
+//         rgba(13, 11, 8, 0) 65%,
+//         rgba(13, 11, 8, 0.4) 80%,
+//         #0d0b08 100%
+//       ),
+//       // SPODNÝ OKRAJ: posunutý na 60% pre zachovanie atmosféry v spodnej časti fotky
+//       linear-gradient(to bottom, rgba(13, 11, 8, 0) 60%, #0d0b08 100%);
+//   }
+// }
+
+// // Responzivita pre mobily — na smartfónoch stmavíme horný okraj namiesto ľavého
+// @media (max-width: 760px) {
+//   .hero-photo {
+//     height: 400px;
+//     min-height: auto;
+
+//     &::after {
+//       background:
+//         // Na mobile sa fotka posunie pod text, preto stmavíme vrchný okraj do stratena
+//         linear-gradient(
+//         to bottom,
+//         #0d0b08 0%,
+//         rgba(13, 11, 8, 0) 30%,
+//         rgba(13, 11, 8, 0) 80%,
+//         #0d0b08 100%
+//       );
+//     }
+//   }
+// }
+
+// /* ---------- Minimalistická tlačítka ---------- */
+
+// .btn {
+//   display: inline-block;
+//   padding: 18px 40px;
+//   border-radius: 0;
+//   font-family: "Jost", sans-serif;
+//   font-size: 0.9rem;
+//   font-weight: 500;
+//   letter-spacing: 0.2em;
+//   text-transform: uppercase;
+//   border: 1px solid transparent;
+//   transition:
+//     background-color 0.35s ease,
+//     color 0.35s ease,
+//     border-color 0.35s ease,
+//     transform 0.35s ease;
+// }
+
+// /* Primární — plné zlato, praští do očí */
+// .btn-primary {
+//   background: $gold-accent;
+//   border-color: $gold-accent;
+//   color: $bg-main;
+// }
+
+// .btn-primary:hover {
+//   background: $gold-light;
+//   border-color: $gold-light;
+//   color: $bg-main;
+//   transform: translateY(-2px);
+// }
+
+// /* Sekundární — tenká bílá linka, při hoveru se vyplní bílou */
+// .btn-ghost {
+//   background: transparent;
+//   color: $text-light;
+//   border-color: $text-light;
+// }
+
+// .btn-ghost:hover {
+//   background: $text-light;
+//   color: $bg-main;
+//   border-color: $text-light;
+//   transform: translateY(-2px);
+// }
+
+// @media (max-width: 1100px) {
+//   .hero-copy {
+//     padding: 96px 7% 96px 8%;
+//   }
+//   .hero-copy h1 {
+//     max-width: none;
+//   }
+// }
+
+// @media (max-width: 760px) {
+//   .hero {
+//     grid-template-columns: 1fr;
+//   }
+
+//   .hero-copy {
+//     padding: 60px 28px 72px;
+//   }
+
+//   .hero p.lede {
+//     max-width: none;
+//   }
+
+//   .hero-photo {
+//     grid-row: 1; // fotka jako samostatný blok nad textem
+//     min-height: 0;
+//     height: 56vh;
+//   }
+
+//   .hero-scroll-indicator {
+//     display: none;
+//   }
+// }
+
+// @media (max-width: 520px) {
+//   // Na úzkých displejích zmenšíme nadpis i vnitřní odsazení tlačítek,
+//   // aby se delší popisky ("Rezervovat přes WhatsApp") vešly na jednu řádku
+//   .hero-copy h1 {
+//     font-size: clamp(2.6rem, 11vw, 3.2rem);
+//     margin-bottom: 24px;
+//   }
+
+//   .hero p.lede {
+//     font-size: 1.1rem;
+//     margin-bottom: 32px;
+//   }
+
+//   .hero-actions {
+//     gap: 14px;
+//   }
+
+//   .hero-actions .btn {
+//     width: 100%;
+//     text-align: center;
+//     padding: 18px 20px;
+//     font-size: 0.82rem;
+//     letter-spacing: 0.12em;
+//   }
+// }
+
+// /* ---------- Sections ---------- */
+
+// section {
+//   padding: 88px 0;
+// }
+
+// .section-alt {
+//   background: $bg-alt;
+// }
+
+// .section-head {
+//   text-align: center;
+//   max-width: 56ch;
+//   margin: 0 auto 56px;
+// }
+
+// .section-head-aligned {
+//   text-align: left;
+
+//   p {
+//     color: $text-muted;
+//     margin: 25px auto 0;
+//   }
+
+//   .eyebrow {
+//     display: block;
+//     margin-bottom: 14px;
+//   }
+// }
+
+// .section-head .eyebrow {
+//   display: block;
+//   margin-bottom: 14px;
+// }
+// .section-head p {
+//   color: $text-muted;
+//   margin: 25px auto 0;
+// }
+
+// .divider {
+//   width: 1px;
+//   height: 44px;
+//   background: linear-gradient($gold-accent, transparent);
+//   margin: 0 auto 20px;
+// }
+
+// /* ---------- O nás ---------- */
+
+// .about-grid {
+//   display: grid;
+//   grid-template-columns: 0.9fr 1.1fr;
+//   gap: 64px;
+//   align-items: center;
+// }
+
+// .about-art {
+//   height: 550px;
+//   max-width: 420px;
+//   margin: 0 auto;
+//   width: 100%;
+//   padding: 0;
+//   border: 0;
+//   overflow: hidden;
+// }
+
+// .about-art img {
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover;
+//   display: block;
+// }
+
+// .about-copy .eyebrow {
+//   display: block;
+//   margin-bottom: 16px;
+// }
+
+// .feature-list {
+//   list-style: none;
+//   margin: 28px 0 0;
+//   padding: 0;
+// }
+
+// .feature-list li {
+//   display: flex;
+//   align-items: baseline;
+//   gap: 14px;
+//   padding: 7px 0;
+//   color: $text-muted;
+//   font-size: 0.95rem;
+// }
+
+// .feature-list li strong {
+//   color: $text-light;
+//   font-weight: 500;
+// }
+// .feature-list li i {
+//   flex: 0 0 auto;
+//   width: 20px;
+//   font-size: 16px;
+//   color: #d6af39;
+//   text-align: center;
+// }
+
+// @media (max-width: 820px) {
+//   .about-grid {
+//     grid-template-columns: 1fr;
+//     gap: 40px;
+//   }
+
+//   .about-art {
+//     height: 420px;
+//     max-width: 360px;
+//   }
+// }
+
+// @media (max-width: 520px) {
+//   .about-art {
+//     height: 340px;
+//     max-width: 280px;
+//   }
+// }
+
+// /* ---------- Ceník (text menu + line icons) ---------- */
+
+// section[id],
+// .menu-card,
+// .menu-highlight {
+//   scroll-margin-top: 104px;
+// }
+
+// .icon-sprite {
+//   position: absolute;
+//   width: 0;
+//   height: 0;
+//   overflow: hidden;
+// }
+
+// .menu-icon {
+//   width: 22px;
+//   height: 22px;
+//   fill: none;
+//   stroke: currentColor;
+//   stroke-width: 1.3;
+//   stroke-linecap: round;
+//   stroke-linejoin: round;
+// }
+
+// .menu-quicknav {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: center;
+//   gap: 10px;
+//   max-width: 900px;
+//   margin: -16px auto 52px;
+// }
+
+// .menu-quicknav a {
+//   display: inline-flex;
+//   align-items: center;
+//   justify-content: center;
+//   gap: 9px;
+//   min-height: 42px;
+//   padding: 8px 18px;
+//   border: 1px solid $line-soft;
+//   border-radius: 999px;
+//   color: $text-muted;
+//   font-size: 0.76rem;
+//   line-height: 1.25;
+//   letter-spacing: 0.12em;
+//   text-align: center;
+//   text-transform: uppercase;
+//   overflow-wrap: break-word;
+//   transition:
+//     color 0.25s ease,
+//     border-color 0.25s ease,
+//     background-color 0.25s ease;
+// }
+
+// .menu-quicknav a:hover {
+//   color: $gold-light;
+//   border-color: $gold-accent;
+//   background: rgba(212, 175, 55, 0.08);
+// }
+
+// .menu-quicknav .menu-icon {
+//   flex: 0 0 auto;
+//   width: 16px;
+//   height: 16px;
+//   color: $gold-accent;
+// }
+
+// /* Karty */
+
+// .menu-highlights {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr;
+//   gap: 22px;
+//   margin-bottom: 22px;
+// }
+
+// .menu-grid {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr;
+//   gap: 22px;
+//   align-items: start;
+// }
+
+// .menu-card,
+// .menu-highlight {
+//   background: $bg-card;
+//   padding: 28px 30px 24px;
+//   transition: border-color 0.3s ease;
+// }
+
+// .menu-card:hover,
+// .menu-highlight:hover {
+//   border-color: $line-gold;
+// }
+
+// .menu-highlight {
+//   background:
+//     radial-gradient(
+//       ellipse at 15% 0%,
+//       rgba(212, 175, 55, 0.16),
+//       transparent 62%
+//     ),
+//     $bg-card;
+// }
+
+// .menu-card-wide {
+//   grid-column: 1 / -1;
+// }
+
+// .menu-card-head {
+//   display: flex;
+//   align-items: center;
+//   flex-wrap: wrap;
+//   gap: 14px;
+//   padding-bottom: 16px;
+//   border-bottom: 1px solid $line-gold;
+// }
+
+// .menu-card-head h3 {
+//   flex: 1 1 auto;
+//   min-width: 0;
+//   font-size: 1.12rem;
+//   line-height: 1.3;
+//   letter-spacing: 0.01em;
+//   overflow-wrap: break-word;
+// }
+
+// .menu-icon-badge {
+//   flex: 0 0 44px;
+//   width: 44px;
+//   height: 44px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   border: 1px solid $line-gold;
+//   border-radius: 22px 22px 6px 6px;
+//   background: rgba(212, 175, 55, 0.07);
+//   color: $gold-light;
+// }
+
+// .menu-unit {
+//   margin-left: auto;
+//   font-size: 0.72rem;
+//   letter-spacing: 0.16em;
+//   text-transform: uppercase;
+//   color: $text-muted;
+//   white-space: nowrap;
+// }
+
+// .menu-tag {
+//   margin-left: auto;
+//   padding: 6px 14px;
+//   border: 1px solid $gold-accent;
+//   border-radius: 999px;
+//   color: $gold-light;
+//   font-size: 0.74rem;
+//   letter-spacing: 0.12em;
+//   white-space: nowrap;
+// }
+
+// .menu-highlight-note {
+//   color: $text-muted;
+//   font-size: 0.88rem;
+//   margin: 14px 0 2px;
+//   max-width: none;
+// }
+
+// /* Řádky s cenou */
+
+// .menu-list {
+//   list-style: none;
+//   margin: 6px 0 0;
+//   padding: 0;
+// }
+
+// .menu-list li {
+//   display: flex;
+//   align-items: baseline;
+//   gap: 12px;
+//   padding: 11px 0;
+//   border-bottom: 1px solid $line-soft;
+//   font-size: 0.97rem;
+// }
+
+// .menu-list li:last-child {
+//   border-bottom: 0;
+//   padding-bottom: 4px;
+// }
+
+// // Název vlevo, cena vpravo. Dlouhý název se zlomí a zúží se,
+// // takže nikdy nenaběhne pod cenu ani ji nepřekryje.
+// .menu-list .item {
+//   flex: 0 1 auto;
+//   min-width: 0;
+//   color: $text-light;
+//   font-weight: 400;
+//   text-align: left;
+//   overflow-wrap: break-word;
+// }
+
+// .menu-list .item em {
+//   display: block;
+//   font-style: normal;
+//   font-size: 0.78rem;
+//   letter-spacing: 0.06em;
+//   color: $text-muted;
+// }
+
+// .menu-list .leader {
+//   flex: 1 1 24px;
+//   min-width: 24px;
+//   align-self: center;
+//   border-bottom: 1px dotted rgba(255, 255, 255, 0.16);
+// }
+
+// .menu-list .price {
+//   flex: 0 0 auto;
+//   margin-left: auto;
+//   font-family: "Playfair Display", serif;
+//   font-size: 1.05rem;
+//   color: $gold-light;
+//   text-align: right;
+//   white-space: nowrap;
+// }
+
+// .menu-list-desc .item em {
+//   font-size: 0.82rem;
+//   margin-top: 3px;
+// }
+
+// /* Míchané drinky */
+
+// .cocktail-grid {
+//   display: grid;
+//   grid-template-columns: repeat(3, 1fr);
+//   gap: 0 34px;
+//   margin-top: 6px;
+// }
+
+// .cocktail-grid > div {
+//   min-width: 0;
+//   padding: 13px 0;
+//   border-bottom: 1px solid $line-soft;
+// }
+
+// .cocktail-name {
+//   display: block;
+//   color: $text-light;
+//   font-size: 1rem;
+// }
+
+// .cocktail-desc {
+//   display: block;
+//   color: $text-muted;
+//   font-size: 0.83rem;
+//   line-height: 1.5;
+// }
+// .menu-note {
+//   max-width: 60ch;
+//   margin: 44px auto 0;
+//   text-align: center;
+//   color: $text-muted;
+//   font-size: 0.85rem;
+// }
+// .menu-note a {
+//   border-bottom: 1px solid $line-gold;
+// }
+// .menu-note a:hover {
+//   color: $gold-light;
+//   border-color: $gold-accent;
+// }
+// @media (max-width: 900px) {
+//   .cocktail-grid {
+//     grid-template-columns: repeat(2, 1fr);
+//     gap: 0 26px;
+//   }
+// }
+// @media (max-width: 760px) {
+//   .menu-highlights,
+//   .menu-grid {
+//     grid-template-columns: 1fr;
+//   }
+//   .menu-card,
+//   .menu-highlight {
+//     padding: 24px 22px 20px;
+//   }
+//   .cocktail-grid {
+//     grid-template-columns: 1fr;
+//   }
+//   .menu-quicknav {
+//     gap: 8px;
+//   }
+//   .menu-quicknav a {
+//     min-height: 40px;
+//     padding: 8px 14px;
+//     font-size: 0.7rem;
+//   }
+// }
+
+// // Na mobilu mřížka 2 x N — kategorie se zalomí, nikdy se neroluje do strany
+// @media (max-width: 560px) {
+//   .menu-quicknav {
+//     display: grid;
+//     grid-template-columns: repeat(2, minmax(0, 1fr));
+//     gap: 8px;
+//   }
+//   .menu-quicknav a {
+//     gap: 7px;
+//     padding: 8px 10px;
+//     font-size: 0.68rem;
+//     letter-spacing: 0.08em;
+//   }
+//   .menu-quicknav .menu-icon {
+//     width: 14px;
+//     height: 14px;
+//   }
+// }
+
+// @media (max-width: 480px) {
+//   .menu-icon-badge {
+//     flex: 0 0 38px;
+//     width: 38px;
+//     height: 38px;
+//     border-radius: 19px 19px 5px 5px;
+//   }
+//   .menu-card-head {
+//     gap: 12px;
+//   }
+//   .menu-card-head h3 {
+//     font-size: 1.05rem;
+//   }
+// } /* ---------- Fotogalerie ---------- */
+// .gallery-section {
+//   background: linear-gradient(180deg, $bg-main 0%, $bg-alt 100%);
+// }
+// .gallery-filter {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: center;
+//   gap: 10px;
+//   margin: -18px 0 46px;
+// }
+// .gallery-chip {
+//   display: inline-flex;
+//   align-items: center;
+//   gap: 9px;
+//   padding: 9px 18px;
+//   background: none;
+//   border: 1px solid $line-soft;
+//   border-radius: 999px;
+//   color: $text-muted;
+//   font-family: "Jost", sans-serif;
+//   font-size: 0.76rem;
+//   letter-spacing: 0.12em;
+//   text-transform: uppercase;
+//   cursor: pointer;
+//   transition: all 0.25s ease;
+// }
+// // .gallery-chip:hover {
+// //   color: $gold-light;
+// //   border-color: $gold-accent;
+// //   background: rgba(212, 175, 55, 0.08);
+// // }
+// // .gallery-chip.is-active {
+// //   background: $gold-accent;
+// //   border-color: $gold-accent;
+// //   color: $ink-nav-footer;
+// //   font-weight: 500;
+// // }
+// .chip-count {
+//   font-size: 0.68rem;
+//   letter-spacing: 0.06em;
+//   color: $gold-accent;
+// }
+// .gallery-chip.is-active .chip-count {
+//   color: rgba(13, 11, 8, 0.7);
+// }
+// .gallery-grid {
+//   columns: 3;
+//   column-gap: 18px;
+//   list-style: none;
+//   margin: 0;
+//   padding: 0;
+// }
+// .gallery-item {
+//   break-inside: avoid;
+//   margin: 0 0 18px;
+// }
+// .has-js .gallery-item {
+//   opacity: 0;
+//   transform: translateY(22px);
+// }
+// .has-js .gallery-item.is-visible {
+//   opacity: 1;
+//   transform: none;
+//   transition:
+//     opacity 0.6s ease,
+//     transform 0.6s ease;
+// }
+// .gallery-link {
+//   position: relative;
+//   display: block;
+//   overflow: hidden;
+//   background: $bg-card;
+//   transition: border-color 0.3s ease;
+// }
+// .gallery-link figure {
+//   margin: 0;
+//   position: relative;
+//   display: block;
+// }
+// .gallery-link img {
+//   width: 100%;
+//   height: auto;
+//   filter: saturate(0.92) brightness(0.9);
+//   transition:
+//     transform 0.7s ease,
+//     filter 0.5s ease;
+// }
+// .gallery-link:hover img,
+// .gallery-link:focus-visible img {
+//   transform: scale(1.05);
+//   filter: none;
+// }
+// .gallery-link figcaption {
+//   position: absolute;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   padding: 52px 20px 18px;
+//   background: linear-gradient(transparent, rgba(13, 11, 8, 0.95));
+//   opacity: 0;
+//   transform: translateY(10px);
+//   transition:
+//     opacity 0.4s ease,
+//     transform 0.4s ease;
+// }
+// .gallery-link:hover figcaption,
+// .gallery-link:focus-visible figcaption {
+//   opacity: 1;
+//   transform: none;
+// }
+// .gallery-cap-title {
+//   display: block;
+//   font-family: "Playfair Display", serif;
+//   font-size: 1.05rem;
+//   color: $text-light;
+// }
+// .gallery-cap-cat {
+//   display: block;
+//   font-size: 0.7rem;
+//   letter-spacing: 0.18em;
+//   text-transform: uppercase;
+//   color: $gold-light;
+// }
+// .gallery-link::after {
+//   content: "+";
+//   position: absolute;
+//   top: 12px;
+//   right: 12px;
+//   width: 36px;
+//   height: 36px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   border: 1px solid $line-gold;
+//   border-radius: 18px 18px 5px 5px;
+//   background: rgba(13, 11, 8, 0.8);
+//   color: $gold-light;
+//   font-size: 1.1rem;
+//   line-height: 1;
+//   opacity: 0;
+//   transform: translateY(-6px);
+//   transition:
+//     opacity 0.35s ease,
+//     transform 0.35s ease;
+// }
+// .gallery-link:hover::after,
+// .gallery-link:focus-visible::after {
+//   opacity: 1;
+//   transform: none;
+// }
+// .gallery-empty,
+// .gallery-note {
+//   max-width: 62ch;
+//   margin: 32px auto 0;
+//   text-align: center;
+//   color: $text-muted;
+//   font-size: 0.85rem;
+// }
+// .gallery-note code {
+//   font-size: 0.8rem;
+//   color: $gold-light;
+//   background: rgba(212, 175, 55, 0.1);
+//   padding: 1px 6px;
+// }
+// .gallery-note a {
+//   border-bottom: 1px solid $line-gold;
+// }
+// .gallery-note a:hover {
+//   color: $gold-light;
+//   border-color: $gold-accent;
+// }
+// @media (hover: none) {
+//   .gallery-link figcaption {
+//     opacity: 1;
+//     transform: none;
+//   }
+//   .gallery-link::after {
+//     opacity: 1;
+//     transform: none;
+//   }
+// }
+// @media (max-width: 900px) {
+//   .gallery-grid {
+//     columns: 2;
+//   }
+// }
+// @media (max-width: 560px) {
+//   .gallery-grid {
+//     columns: 1;
+//   }
+// }
+// @media (prefers-reduced-motion: reduce) {
+//   .has-js .gallery-item {
+//     opacity: 1;
+//     transform: none;
+//   }
+// } /* ---------- Lightbox ---------- */
+// .lightbox {
+//   position: fixed;
+//   inset: 0;
+//   z-index: 100;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   padding: 72px 24px;
+// }
+// .lightbox[hidden] {
+//   display: none;
+// }
+// .lightbox-backdrop {
+//   position: absolute;
+//   inset: 0;
+//   background: rgba(13, 11, 8, 0.96);
+//   backdrop-filter: blur(4px);
+// }
+// .lightbox-figure {
+//   position: relative;
+//   margin: 0;
+//   max-width: min(1100px, 100%);
+//   display: flex;
+//   flex-direction: column;
+//   gap: 14px;
+//   animation: lightbox-in 0.35s ease;
+// }
+// .lightbox-figure img {
+//   max-height: 74vh;
+//   max-width: 100%;
+//   width: auto;
+//   margin: 0 auto;
+//   border: 1px solid $line-gold;
+// }
+// .lightbox-figure figcaption {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: baseline;
+//   gap: 20px;
+//   color: $text-light;
+//   font-size: 0.9rem;
+// }
+// .lightbox-counter {
+//   color: $gold-light;
+//   font-size: 0.78rem;
+//   letter-spacing: 0.16em;
+//   white-space: nowrap;
+// }
+// @keyframes lightbox-in {
+//   from {
+//     opacity: 0;
+//     transform: scale(0.97);
+//   }
+//   to {
+//     opacity: 1;
+//     transform: none;
+//   }
+// }
+// .lightbox-btn {
+//   position: absolute;
+//   z-index: 2;
+//   width: 48px;
+//   height: 48px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   background: rgba(13, 11, 8, 0.86);
+//   border: 1px solid $line-gold;
+//   color: $text-light;
+//   font-family: "Jost", sans-serif;
+//   font-size: 1.7rem;
+//   line-height: 1;
+//   cursor: pointer;
+//   transition: all 0.25s ease;
+// }
+// .lightbox-btn:hover {
+//   color: $gold-light;
+//   border-color: $gold-accent;
+//   background: rgba(212, 175, 55, 0.12);
+// }
+// .lightbox-btn[hidden] {
+//   display: none;
+// }
+// .lightbox-close {
+//   top: 18px;
+//   right: 20px;
+//   border-radius: 4px;
+// }
+// .lightbox-prev,
+// .lightbox-next {
+//   top: 50%;
+//   transform: translateY(-50%);
+//   border-radius: 24px;
+// }
+// .lightbox-prev {
+//   left: 20px;
+// }
+// .lightbox-next {
+//   right: 20px;
+// }
+// body.lightbox-open {
+//   overflow: hidden;
+// }
+// @media (max-width: 680px) {
+//   .lightbox {
+//     padding: 64px 14px 96px;
+//   }
+//   .lightbox-figure figcaption {
+//     flex-direction: column;
+//     gap: 4px;
+//   }
+//   .lightbox-prev,
+//   .lightbox-next {
+//     top: auto;
+//     bottom: 22px;
+//     transform: none;
+//   }
+//   .lightbox-prev {
+//     left: 22%;
+//   }
+//   .lightbox-next {
+//     right: 22%;
+//   }
+// } /* ---------- Kontakt ---------- */
+// .contact-grid {
+//   display: grid;
+//   grid-template-columns: 1.05fr 1fr;
+//   gap: 48px;
+//   align-items: stretch;
+// }
+
+// .contact-card {
+//   min-width: 0;
+// }
+
+// /* Adresa / otevírací doba / telefon — jeden rytmus, stejné ikony jako dřív */
+// .contact-details {
+//   list-style: none;
+//   margin: 0;
+//   padding: 0;
+// }
+
+// .contact-details > li {
+//   display: flex;
+//   gap: 18px;
+//   padding: 22px 0;
+//   border-top: 1px solid $line-soft;
+// }
+
+// .contact-details > li:first-child {
+//   padding-top: 0;
+//   border-top: 0;
+// }
+
+// .contact-ico {
+//   flex: 0 0 44px;
+//   width: 44px;
+//   height: 44px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   border: 1px solid $line-gold;
+//   border-radius: 22px 22px 6px 6px;
+//   background: rgba(212, 175, 55, 0.07);
+//   color: $gold-light;
+//   font-size: 1rem;
+// }
+
+// .contact-body {
+//   flex: 1 1 auto;
+//   min-width: 0;
+// }
+
+// .contact-body h3,
+// .contact-social h3 {
+//   font-family: "Montserrat", sans-serif;
+//   font-size: 0.75rem;
+//   font-weight: 500;
+//   letter-spacing: 0.2em;
+//   text-transform: uppercase;
+//   color: $gold-light;
+//   margin: 0 0 8px;
+// }
+
+// .contact-value {
+//   max-width: none;
+//   margin: 0;
+//   color: $text-light;
+//   font-size: 1.02rem;
+//   line-height: 1.55;
+// }
+
+// .contact-phone a {
+//   font-family: "Playfair Display", serif;
+//   font-size: 1.2rem;
+//   letter-spacing: 0.02em;
+//   color: $gold-light;
+//   white-space: nowrap;
+//   border-bottom: 1px solid transparent;
+//   transition:
+//     color 0.3s ease,
+//     border-color 0.3s ease;
+// }
+
+// .contact-phone a:hover {
+//   border-color: $gold-accent;
+// }
+
+// .hours-list {
+//   list-style: none;
+//   margin: 0;
+//   padding: 0;
+//   font-size: 0.95rem;
+// }
+
+// .hours-list li {
+//   display: flex;
+//   flex-wrap: wrap;
+//   align-items: baseline;
+//   justify-content: space-between;
+//   gap: 6px 16px;
+//   padding: 7px 0;
+//   border-top: 1px solid $line-soft;
+// }
+
+// .hours-list li:first-child {
+//   padding-top: 0;
+//   border-top: 0;
+// }
+
+// .hours-days {
+//   flex: 1 1 auto;
+//   min-width: 0;
+//   color: $text-muted;
+// }
+
+// .hours-time {
+//   flex: 0 0 auto;
+//   margin-left: auto;
+//   color: $text-light;
+//   white-space: nowrap;
+// }
+
+// /* CTA — hlavní je telefon, vedle něj navigace na Google Maps */
+// .contact-actions {
+//   display: flex;
+//   flex-wrap: wrap;
+//   gap: 14px;
+//   margin-top: 30px;
+// }
+
+// .contact-actions .btn {
+//   display: inline-flex;
+//   align-items: center;
+//   justify-content: center;
+//   gap: 12px;
+//   min-width: 0;
+//   padding: 16px 26px;
+//   font-size: 0.8rem;
+//   letter-spacing: 0.14em;
+//   text-align: center;
+// }
+
+// .contact-actions .btn i {
+//   flex: 0 0 auto;
+//   font-size: 0.95rem;
+// }
+
+// .contact-actions .btn span {
+//   min-width: 0;
+// }
+
+// /* Sociální sítě a Linktree až za hlavními kontaktními údaji */
+// .contact-social {
+//   margin-top: 34px;
+//   padding-top: 26px;
+//   border-top: 1px solid $line-soft;
+// }
+
+// .social-icons {
+//   display: flex;
+//   flex-wrap: wrap;
+//   gap: 12px;
+//   margin-top: 12px;
+// }
+
+// .social-icons .social-icon {
+//   width: 46px;
+//   height: 46px;
+//   border-color: $line-gold;
+//   color: $text-light;
+//   font-size: 1.1rem;
+// }
+
+// .social-icons .social-icon:hover {
+//   border-color: $gold-accent;
+//   color: $gold-light;
+//   background: rgba(212, 175, 55, 0.08);
+//   transform: translateY(-2px);
+// }
+
+// .contact-linktree {
+//   display: inline-block;
+//   max-width: 100%;
+//   margin-top: 20px;
+//   padding-bottom: 3px;
+//   color: $text-muted;
+//   font-size: 0.78rem;
+//   letter-spacing: 0.1em;
+//   text-transform: uppercase;
+//   border-bottom: 1px solid $line-gold;
+//   transition:
+//     color 0.3s ease,
+//     border-color 0.3s ease;
+// }
+
+// .contact-linktree:hover {
+//   color: $gold-light;
+//   border-color: $gold-accent;
+// }
+
+// .map-frame {
+//   width: 100%;
+//   min-height: 340px;
+//   aspect-ratio: 4/3;
+//   border: 1px solid $line-gold;
+//   overflow: hidden;
+// }
+
+// .map-frame iframe {
+//   width: 100%;
+//   height: 100%;
+//   border: 0;
+//   filter: grayscale(0.5) invert(0.92) contrast(0.9);
+// }
+
+// // Nad 820 px mapa dorovná výšku levého sloupce, jinak platí poměr 4:3
+// @media (min-width: 821px) {
+//   .map-frame {
+//     aspect-ratio: auto;
+//   }
+// }
+
+// @media (max-width: 820px) {
+//   .contact-grid {
+//     grid-template-columns: 1fr;
+//     gap: 40px;
+//   }
+// }
+
+// @media (max-width: 560px) {
+//   .contact-details > li {
+//     gap: 14px;
+//     padding: 18px 0;
+//   }
+//   .contact-ico {
+//     flex: 0 0 38px;
+//     width: 38px;
+//     height: 38px;
+//     border-radius: 19px 19px 5px 5px;
+//     font-size: 0.9rem;
+//   }
+//   .contact-actions {
+//     flex-direction: column;
+//     gap: 12px;
+//   }
+//   .contact-actions .btn {
+//     width: 100%;
+//     padding: 15px 18px;
+//     font-size: 0.76rem;
+//     letter-spacing: 0.1em;
+//   }
+//   .contact-linktree {
+//     font-size: 0.74rem;
+//     letter-spacing: 0.06em;
+//   }
+//   .map-frame {
+//     aspect-ratio: 1/1;
+//   }
+// } /* ---------- Footer ---------- */
+// .site-footer {
+//   background: $ink-nav-footer; // Barva patičky podle zadáníborder-top: 1px solid $line-soft;padding: 40px 0;}.site-footer .container {display: flex; justify-content: space-between; flex-wrap: wrap;gap: 16px; color: $text-muted; font-size: 0.85rem;}.site-footer a:hover { color: $gold-light;
+// }
+
 /* ==========================================================================
-   SHADES LOUNGE BAR — SCSS verze s upravenou paletou barev
+   SHADES LOUNGE BAR — SCSS (konzervativní refaktor bez změny deklarací)
    ========================================================================== */
 
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap");
@@ -14,7 +1563,7 @@ $gold-light: #e5c463; // Světlejší zlato pro hover efekty
 $text-light: #ffffff; // Maximální kontrast pro hlavní texty a nadpisy
 $text-muted: #ede8e2; // Čitelná šedá pro sekundární texty
 $line-gold: rgba(212, 175, 55, 0.3); // Jemné zlaté linky
-$line-soft: rgba(255, 255, 255, 0.08); // Jemné bílé předěly
+$line-soft: rgba(255, 255, 255, 0.18); // Jemné bílé předěly
 $max-width: 1100px;
 
 * {
@@ -121,8 +1670,7 @@ html {
   z-index: 50;
   background: rgba(13, 11, 8, 0.92);
   backdrop-filter: blur(6px);
-  border-bottom: 1px solid $line-soft;
-  width: 100%; // Změněno z 100vw na 100%, což zabrání vzniku horizontálního scrollbaru
+  width: 100%;
 }
 
 .site-header .container {
@@ -176,14 +1724,22 @@ html {
   border-color: $gold-accent;
 }
 
-.nav-toggle {
+.nav-toggle,
+.nav-close {
   display: none;
   background: none;
-  border: 1px solid $line-gold;
   color: $text-light;
   padding: 8px 14px;
-  font-family: "Jost", sans-serif;
-  font-size: 0.85rem;
+  border: none;
+  font-size: 1.2rem;
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+
+.nav-toggle:hover,
+.nav-close:hover {
+  cursor: pointer;
+  color: $gold-light;
 }
 
 /* Sociální ikony — jedna sada, sdílená navigací a sekcí Kontakt */
@@ -252,6 +1808,8 @@ html {
     padding: 0 28px;
   }
 
+  // Panel je pořád v layoutu (display: flex), sbalení řeší max-height + opacity,
+  // aby šlo rozbalení plynule animovat. visibility ho drží mimo tab pořadí.
   .nav-links {
     position: absolute;
     top: 100px;
@@ -260,11 +1818,33 @@ html {
     background: $ink-nav-footer;
     flex-direction: column;
     gap: 0;
-    border-bottom: 1px solid $line-soft;
-    display: none;
+    border-bottom: 1px solid transparent;
+    display: flex;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition:
+      max-height 0.38s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.24s ease,
+      transform 0.32s cubic-bezier(0.4, 0, 0.2, 1),
+      border-color 0.24s ease,
+      visibility 0s linear 0.38s;
   }
   .nav-links.open {
-    display: flex;
+    max-height: 80vh;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    border-bottom-color: $line-soft;
+    //overflow-y: auto;
+    transition:
+      max-height 0.38s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.24s ease 0.04s,
+      transform 0.32s cubic-bezier(0.4, 0, 0.2, 1),
+      border-color 0.24s ease,
+      visibility 0s linear 0s;
   }
   .nav-links a {
     display: block;
@@ -288,6 +1868,38 @@ html {
   }
   .nav-toggle {
     display: inline-block;
+  }
+
+  // Po rozbalení se hamburger schová a na jeho místo nastoupí křížek.
+  // Stav čteme z aria-expanded, které nastavuje main.js — žádná další třída.
+  .nav-toggle[aria-expanded="true"] {
+    display: none;
+  }
+  .nav-toggle[aria-expanded="true"] + .nav-close {
+    display: inline-block;
+    animation: nav-close-in 0.28s cubic-bezier(0.34, 1.4, 0.64, 1) both;
+  }
+}
+
+@keyframes nav-close-in {
+  from {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+
+// Respekt k systémovému nastavení „omezit pohyb“
+@media (prefers-reduced-motion: reduce) {
+  .nav-links,
+  .nav-links.open {
+    transition: none;
+  }
+  .nav-toggle[aria-expanded="true"] + .nav-close {
+    animation: none;
   }
 }
 
@@ -595,13 +2207,10 @@ section {
   align-items: baseline;
   gap: 14px;
   padding: 7px 0;
-  border-top: 1px solid $line-soft;
   color: $text-muted;
   font-size: 0.95rem;
 }
-.feature-list li:last-child {
-  border-bottom: 1px solid $line-soft;
-}
+
 .feature-list li strong {
   color: $text-light;
   font-weight: 500;
@@ -704,23 +2313,23 @@ section[id],
 
 /* Karty */
 
-.menu-highlights {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 22px;
-  margin-bottom: 22px;
-}
-
+.menu-highlights,
 .menu-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 22px;
+}
+
+.menu-highlights {
+  margin-bottom: 22px;
+}
+
+.menu-grid {
   align-items: start;
 }
 
 .menu-card,
 .menu-highlight {
-  border: 1px solid $line-soft;
   background: $bg-card;
   padding: 28px 30px 24px;
   transition: border-color 0.3s ease;
@@ -732,7 +2341,6 @@ section[id],
 }
 
 .menu-highlight {
-  border-color: rgba(212, 175, 55, 0.45);
   background:
     radial-gradient(
       ellipse at 15% 0%,
@@ -867,6 +2475,25 @@ section[id],
   margin-top: 3px;
 }
 
+// Ceník na celou šířku karty ve 2–3 sloupcích (viz .menu-card-wide).
+// Položky se plní po řádcích, takže skupiny (tonicy, Birell) zůstanou u sebe.
+.menu-list-cols {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 34px;
+}
+
+.menu-list-cols li {
+  min-width: 0;
+}
+
+// V mřížce není poslední položka opticky poslední ve svém sloupci,
+// proto linku drží všechny řádky — stejně jako u .cocktail-grid.
+.menu-list-cols li:last-child {
+  padding-bottom: 11px;
+  border-bottom: 1px solid $line-soft;
+}
+
 /* Míchané drinky */
 
 .cocktail-grid {
@@ -909,7 +2536,8 @@ section[id],
   border-color: $gold-accent;
 }
 @media (max-width: 900px) {
-  .cocktail-grid {
+  .cocktail-grid,
+  .menu-list-cols {
     grid-template-columns: repeat(2, 1fr);
     gap: 0 26px;
   }
@@ -938,6 +2566,14 @@ section[id],
 
 // Na mobilu mřížka 2 x N — kategorie se zalomí, nikdy se neroluje do strany
 @media (max-width: 560px) {
+  // Na úzkém displeji se cena nevejde vedle názvu ve dvou sloupcích
+  .menu-list-cols {
+    grid-template-columns: 1fr;
+  }
+  .menu-list-cols li:last-child {
+    padding-bottom: 4px;
+    border-bottom: 0;
+  }
   .menu-quicknav {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -968,7 +2604,9 @@ section[id],
   .menu-card-head h3 {
     font-size: 1.05rem;
   }
-} /* ---------- Fotogalerie ---------- */
+}
+
+/* ---------- Fotogalerie ---------- */
 .gallery-section {
   background: linear-gradient(180deg, $bg-main 0%, $bg-alt 100%);
 }
@@ -995,17 +2633,6 @@ section[id],
   cursor: pointer;
   transition: all 0.25s ease;
 }
-// .gallery-chip:hover {
-//   color: $gold-light;
-//   border-color: $gold-accent;
-//   background: rgba(212, 175, 55, 0.08);
-// }
-// .gallery-chip.is-active {
-//   background: $gold-accent;
-//   border-color: $gold-accent;
-//   color: $ink-nav-footer;
-//   font-weight: 500;
-// }
 .chip-count {
   font-size: 0.68rem;
   letter-spacing: 0.06em;
@@ -1040,13 +2667,9 @@ section[id],
   position: relative;
   display: block;
   overflow: hidden;
-  border: 1px solid $line-soft;
   background: $bg-card;
   transition: border-color 0.3s ease;
 }
-// .gallery-link:hover {
-//   border-color: $gold-accent;
-// }
 .gallery-link figure {
   margin: 0;
   position: relative;
@@ -1169,7 +2792,9 @@ section[id],
     opacity: 1;
     transform: none;
   }
-} /* ---------- Lightbox ---------- */
+}
+
+/* ---------- Lightbox ---------- */
 .lightbox {
   position: fixed;
   inset: 0;
@@ -1293,7 +2918,9 @@ body.lightbox-open {
   .lightbox-next {
     right: 22%;
   }
-} /* ---------- Kontakt ---------- */
+}
+
+/* ---------- Kontakt ---------- */
 .contact-grid {
   display: grid;
   grid-template-columns: 1.05fr 1fr;
@@ -1549,7 +3176,13 @@ body.lightbox-open {
   .map-frame {
     aspect-ratio: 1/1;
   }
-} /* ---------- Footer ---------- */
+}
+
+/* ---------- Footer ---------- */
 .site-footer {
   background: $ink-nav-footer; // Barva patičky podle zadáníborder-top: 1px solid $line-soft;padding: 40px 0;}.site-footer .container {display: flex; justify-content: space-between; flex-wrap: wrap;gap: 16px; color: $text-muted; font-size: 0.85rem;}.site-footer a:hover { color: $gold-light;
+
+  .container {
+    text-align: center;
+  }
 }

@@ -3,14 +3,34 @@ document.documentElement.classList.add("has-js");
 document.getElementById("year").textContent = new Date().getFullYear();
 
 const toggle = document.querySelector(".nav-toggle");
+const navClose = document.querySelector(".nav-close");
 const links = document.getElementById("nav-links");
+
+// aria-expanded na hamburgeru je zdroj pravdy i pro CSS — podle něj se
+// přepíná hamburger ↔ křížek, takže se musí měnit při každém zavření.
+const setNavOpen = (open) => {
+  links.classList.toggle("open", open);
+  toggle.setAttribute("aria-expanded", String(open));
+};
+
 toggle.addEventListener("click", () => {
-  const open = links.classList.toggle("open");
-  toggle.setAttribute("aria-expanded", open);
+  setNavOpen(!links.classList.contains("open"));
+});
+
+navClose.addEventListener("click", () => {
+  setNavOpen(false);
+  toggle.focus(); // křížek se skryje, fokus nesmí spadnout na <body>
 });
 
 links.querySelectorAll("a").forEach((a) => {
-  a.addEventListener("click", () => links.classList.remove("open"));
+  a.addEventListener("click", () => setNavOpen(false));
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && links.classList.contains("open")) {
+    setNavOpen(false);
+    toggle.focus();
+  }
 });
 
 /* ==========================================================================
