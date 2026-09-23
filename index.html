@@ -5,7 +5,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Shades Lounge Bar — Vyškov</title>
+<!-- Nezávazný návrh. Před spuštěním pro klienta tento blok odstranit,
+     jinak se web nedostane do Googlu. -->
+<meta content="noindex, nofollow" name="robots"/>
+<title>Shades Lounge Bar — návrh webu | by simona</title>
 <meta content="Shades Lounge Bar — vodní dýmky, míchané drinky a signature koktejly v centru Vyškova. Ceník, fotogalerie a kontakt. Nádražní 2/1, Vyškov." name="description"/>
 <link href="style.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet"/>
@@ -29,16 +32,6 @@
 <li><a href="#cennik">Ceník</a></li>
 <li><a href="#kontakt">Kontakt</a></li>
 <li class="nav-social">
-<!-- TODO: chybí URL facebookového profilu. Po doplnění odkomentujte:
-            <a
-              class="social-icon"
-              href="DOPLNIT_URL_FACEBOOKU"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-              ><i class="fa-brands fa-facebook-f" aria-hidden="true"></i
-            ></a>
-            -->
 <a aria-label="Instagram" class="social-icon" href="https://www.instagram.com/shadesloungebar/" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fa-brands fa-instagram"></i></a>
 </li>
 <li class="language-switch"><a href="index-en.html" hreflang="en" lang="en">EN</a></li></ul>
@@ -640,24 +633,20 @@
 <div class="contact-social">
 <h3>Sledujte nás</h3>
 <div class="social-icons">
-<!-- TODO: chybí URL facebookového profilu. Po doplnění odkomentujte:
-                  <a
-                    class="social-icon"
-                    href="DOPLNIT_URL_FACEBOOKU"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Facebook"
-                    ><i class="fa-brands fa-facebook-f" aria-hidden="true"></i
-                  ></a>
-                  -->
 <a aria-label="Instagram" class="social-icon" href="https://www.instagram.com/shadesloungebar/" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fa-brands fa-instagram"></i></a>
 </div>
 <a class="contact-linktree" href="https://linktr.ee/Shadesloungebar" rel="noopener noreferrer" target="_blank">Všechny naše odkazy na Linktree</a>
 </div>
 </div>
-<div class="map-frame">
-<iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=N%C3%A1dra%C5%BEn%C3%AD%202%2F1%2C%20682%2001%20Vy%C5%A1kov&amp;output=embed" title="Mapa — Shades Lounge Bar, Nádražní 2/1, Vyškov">
-</iframe>
+<!-- Google Maps ukládá cookies, proto se iframe načte až po kliknutí (souhlasu) -->
+<div class="map-frame map-consent" data-map-src="https://www.google.com/maps?q=N%C3%A1dra%C5%BEn%C3%AD%202%2F1%2C%20682%2001%20Vy%C5%A1kov&amp;output=embed" data-map-title="Mapa — Shades Lounge Bar, Nádražní 2/1, Vyškov">
+<div class="map-consent-inner">
+<span class="map-consent-ico"><i aria-hidden="true" class="fa-solid fa-map-location-dot"></i></span>
+<p class="map-consent-title">Nádražní 2/1, Vyškov</p>
+<p class="map-consent-text">Mapa se načte ze služby Google Maps, která může ukládat cookies. Kliknutím s tím souhlasíte.</p>
+<button class="btn btn-ghost map-consent-btn" type="button">Zobrazit mapu</button>
+<a class="map-consent-link" href="https://www.google.com/maps/search/?api=1&amp;query=N%C3%A1dra%C5%BEn%C3%AD+2%2F1%2C+682+01+Vy%C5%A1kov" rel="noopener noreferrer" target="_blank">Otevřít v Google Maps</a>
+</div>
 </div>
 </div>
 </div>
@@ -668,6 +657,7 @@
 <span>© <span id="year"></span> Shades Lounge Bar</span>
 <span><a href="tel:+420731050372">+420 731 050 372</a> · Nádražní
           2/1, Vyškov</span>
+<span class="footer-legal">Shades lounge bar, s.r.o. · IČO 23660635 · <a href="ochrana-osobnich-udaju.html">Ochrana osobních údajů</a></span>
 </div>
 </footer>
 <!-- Lightbox — bez JS se odkazy v galerii chovají jako běžné odkazy na obrázek -->

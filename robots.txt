@@ -1,0 +1,4 @@
+# Nezávazný návrh webu – nemá se objevovat ve vyhledávání.
+# Před spuštěním pro klienta tento soubor odstranit.
+User-agent: *
+Disallow: /

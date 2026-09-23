@@ -33,6 +33,23 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
+/* ---------- Mapa až po kliknutí (Google Maps ukládá cookies) ---------- */
+
+document.querySelectorAll(".map-consent").forEach((box) => {
+  const btn = box.querySelector(".map-consent-btn");
+  if (!btn) return;
+  btn.addEventListener("click", () => {
+    const iframe = document.createElement("iframe");
+    iframe.src = box.dataset.mapSrc;
+    iframe.title = box.dataset.mapTitle;
+    iframe.referrerPolicy = "no-referrer-when-downgrade";
+    iframe.setAttribute("allowfullscreen", "");
+    box.replaceChildren(iframe);
+    box.classList.add("is-loaded");
+    iframe.focus();
+  });
+});
+
 /* ==========================================================================
    Fotogalerie — filtr kategorií + lightbox
    Vše je progresivní vylepšení: bez JS zůstanou všechny fotky v DOM

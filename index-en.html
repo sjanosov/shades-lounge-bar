@@ -5,7 +5,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Shades Lounge Bar — Hookah &amp; Cocktails in Vyškov</title>
+<!-- Nezávazný návrh. Před spuštěním pro klienta tento blok odstranit,
+     jinak se web nedostane do Googlu. -->
+<meta content="noindex, nofollow" name="robots"/>
+<title>Shades Lounge Bar — website proposal | by simona</title>
 <meta content="Visit Shades Lounge Bar in central Vyškov for hookah, cocktails and drinks. Browse our menu, photo gallery, opening hours and contact details." name="description"/>
 <link href="style.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet"/>
@@ -29,16 +32,6 @@
 <li><a href="#cennik">Menu</a></li>
 <li><a href="#kontakt">Contact</a></li>
 <li class="nav-social">
-<!-- TODO: chybí URL facebookového profilu. Po doplnění odkomentujte:
-            <a
-              class="social-icon"
-              href="DOPLNIT_URL_FACEBOOKU"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-              ><i class="fa-brands fa-facebook-f" aria-hidden="true"></i
-            ></a>
-            -->
 <a aria-label="Instagram" class="social-icon" href="https://www.instagram.com/shadesloungebar/" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fa-brands fa-instagram"></i></a>
 </li>
 <li class="language-switch"><a href="index.html" hreflang="cs" lang="cs">CZ</a></li></ul>
@@ -633,24 +626,20 @@
 <div class="contact-social">
 <h3>Follow us</h3>
 <div class="social-icons">
-<!-- TODO: chybí URL facebookového profilu. Po doplnění odkomentujte:
-                  <a
-                    class="social-icon"
-                    href="DOPLNIT_URL_FACEBOOKU"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Facebook"
-                    ><i class="fa-brands fa-facebook-f" aria-hidden="true"></i
-                  ></a>
-                  -->
 <a aria-label="Instagram" class="social-icon" href="https://www.instagram.com/shadesloungebar/" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fa-brands fa-instagram"></i></a>
 </div>
 <a class="contact-linktree" href="https://linktr.ee/Shadesloungebar" rel="noopener noreferrer" target="_blank">All our links on Linktree</a>
 </div>
 </div>
-<div class="map-frame">
-<iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=N%C3%A1dra%C5%BEn%C3%AD%202%2F1%2C%20682%2001%20Vy%C5%A1kov&amp;output=embed" title="Mapa — Shades Lounge Bar, Nádražní 2/1, Vyškov">
-</iframe>
+<!-- Google Maps sets cookies, so the iframe loads only after a click (consent) -->
+<div class="map-frame map-consent" data-map-src="https://www.google.com/maps?q=N%C3%A1dra%C5%BEn%C3%AD%202%2F1%2C%20682%2001%20Vy%C5%A1kov&amp;output=embed&amp;hl=en" data-map-title="Map — Shades Lounge Bar, Nádražní 2/1, Vyškov">
+<div class="map-consent-inner">
+<span class="map-consent-ico"><i aria-hidden="true" class="fa-solid fa-map-location-dot"></i></span>
+<p class="map-consent-title">Nádražní 2/1, Vyškov</p>
+<p class="map-consent-text">The map is loaded from Google Maps, which may set cookies. By clicking, you agree to this.</p>
+<button class="btn btn-ghost map-consent-btn" type="button">Show map</button>
+<a class="map-consent-link" href="https://www.google.com/maps/search/?api=1&amp;query=N%C3%A1dra%C5%BEn%C3%AD+2%2F1%2C+682+01+Vy%C5%A1kov" rel="noopener noreferrer" target="_blank">Open in Google Maps</a>
+</div>
 </div>
 </div>
 </div>
@@ -660,6 +649,7 @@
 <div class="container">
 <span>© <span id="year"></span> Shades Lounge Bar</span>
 <span><a href="tel:+420731050372">+420 731 050 372</a> · Nádražní 2/1, Vyškov</span>
+<span class="footer-legal">Shades lounge bar, s.r.o. · Company ID 23660635 · <a href="privacy-policy.html">Privacy Policy</a></span>
 </div>
 </footer>
 <!-- Lightbox — bez JS se odkazy v galerii chovají jako běžné odkazy na obrázek -->

@@ -3133,6 +3133,89 @@ body.lightbox-open {
   filter: grayscale(0.5) invert(0.92) contrast(0.9);
 }
 
+// Zástupný panel místo mapy, dokud návštěvník neklikne (souhlas s cookies Google)
+.map-consent {
+  display: grid;
+  place-items: center;
+  padding: 32px 24px;
+  text-align: center;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(212, 175, 55, 0.12), transparent 60%),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 48px),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 48px),
+    $bg-alt;
+
+  &.is-loaded {
+    display: block;
+    padding: 0;
+    background: $bg-alt;
+  }
+}
+
+.map-consent-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 340px;
+}
+
+.map-consent-ico {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 18px;
+  border: 1px solid $line-gold;
+  border-radius: 29px 29px 8px 8px;
+  color: $gold-accent;
+  font-size: 1.3rem;
+}
+
+.map-consent-title {
+  margin: 0 0 10px;
+  font-family: "Playfair Display", serif;
+  font-size: 1.35rem;
+  color: $text-light;
+}
+
+.map-consent-text {
+  margin: 0 0 24px;
+  color: $text-muted;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+// Bez JS tlačítko nic neudělá, zůstane jen odkaz do Google Maps
+.map-consent-btn {
+  display: none;
+  padding: 15px 30px;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  cursor: pointer;
+}
+
+.has-js .map-consent-btn {
+  display: inline-block;
+}
+
+.map-consent-link {
+  margin-top: 18px;
+  padding-bottom: 3px;
+  color: $text-muted;
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-bottom: 1px solid $line-gold;
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease;
+
+  &:hover {
+    color: $gold-light;
+    border-color: $gold-accent;
+  }
+}
+
 // Nad 820 px mapa dorovná výšku levého sloupce, jinak platí poměr 4:3
 @media (min-width: 821px) {
   .map-frame {
@@ -3180,9 +3263,101 @@ body.lightbox-open {
 
 /* ---------- Footer ---------- */
 .site-footer {
-  background: $ink-nav-footer; // Barva patičky podle zadáníborder-top: 1px solid $line-soft;padding: 40px 0;}.site-footer .container {display: flex; justify-content: space-between; flex-wrap: wrap;gap: 16px; color: $text-muted; font-size: 0.85rem;}.site-footer a:hover { color: $gold-light;
+  background: $ink-nav-footer; // Barva patičky podle zadání
+  border-top: 1px solid $line-soft;
+  padding: 40px 0;
 
   .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 16px;
+    color: $text-muted;
+    font-size: 0.85rem;
     text-align: center;
   }
+
+  a:hover {
+    color: $gold-light;
+  }
+}
+
+@media (max-width: 560px) {
+  .site-footer .container {
+    justify-content: center;
+  }
+}
+
+/* Decentní řádek v patičce — IČO a odkaz na ochranu osobních údajů */
+.footer-legal {
+  flex: 0 0 100%;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: rgba($text-muted, 0.55);
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  a:hover,
+  a:focus-visible {
+    color: $gold-light;
+  }
+}
+
+/* ---------- Právní stránky (ochrana osobních údajů) ---------- */
+.legal {
+  padding: 72px 0 96px;
+
+  .container {
+    max-width: 820px;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    line-height: 1.15;
+    margin-bottom: 8px;
+  }
+
+  h2 {
+    font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+    margin: 40px 0 12px;
+  }
+
+  p,
+  li {
+    color: $text-muted;
+    font-size: 0.95rem;
+    max-width: 68ch;
+  }
+
+  ul {
+    margin: 0 0 1em;
+    padding-left: 20px;
+  }
+
+  li {
+    margin-bottom: 6px;
+  }
+
+  a:not(.btn) {
+    color: $gold-light;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+
+.legal-updated {
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: rgba($text-muted, 0.55);
+  margin-bottom: 32px;
+}
+
+.legal-back {
+  display: inline-block;
+  margin-top: 40px;
 }
