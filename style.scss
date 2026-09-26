@@ -2633,6 +2633,17 @@ section[id],
   cursor: pointer;
   transition: all 0.25s ease;
 }
+.gallery-chip:hover {
+  color: $gold-light;
+  border-color: $gold-accent;
+  background: rgba(212, 175, 55, 0.08);
+}
+.gallery-chip.is-active {
+  background: $gold-accent;
+  border-color: $gold-accent;
+  color: $ink-nav-footer;
+  font-weight: 500;
+}
 .chip-count {
   font-size: 0.68rem;
   letter-spacing: 0.06em;
