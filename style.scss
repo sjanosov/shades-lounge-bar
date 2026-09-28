@@ -2134,7 +2134,18 @@ html {
     left: -46vw;
     top: 4%;
     width: 105vw;
-    opacity: 0.12;
+    // Na mobile je mandala na tmavom pozadí slabo čitateľná — svetlejší
+    // odtieň, vyššia priehľadnosť a silnejší ťah ju zvýraznia
+    color: #b0a99f;
+    opacity: 0.26;
+    stroke-width: 1.2;
+
+    .hm-spokes {
+      stroke-width: 0.9;
+    }
+    .hm-petals {
+      stroke-width: 1.5;
+    }
   }
 
   .hero-scroll-indicator {
@@ -3200,9 +3211,21 @@ body.lightbox-open {
   padding: 32px 24px;
   text-align: center;
   background:
-    radial-gradient(circle at 50% 42%, rgba(212, 175, 55, 0.12), transparent 60%),
-    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 48px),
-    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 48px),
+    radial-gradient(
+      circle at 50% 42%,
+      rgba(212, 175, 55, 0.12),
+      transparent 60%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.035) 0 1px,
+      transparent 1px 48px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.035) 0 1px,
+      transparent 1px 48px
+    ),
     $bg-alt;
 
   &.is-loaded {
