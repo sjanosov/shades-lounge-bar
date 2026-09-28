@@ -2,7 +2,7 @@
 /* ==========================================================================
    SHADES LOUNGE BAR — SCSS (konzervativní refaktor bez změny deklarací)
    ========================================================================== */
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@400;500;600&family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -16,6 +16,7 @@ body {
   font-size: 17px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
 }
 
 img {
@@ -319,16 +320,55 @@ html {
   max-width: 100%;
   padding: 0;
   background: #0d0b08;
-  overflow: hidden;
+  overflow: visible;
 }
 
 /* Levá strana — čistá typografie v prostoru */
 .hero-copy {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 120px 8% 120px 12%;
   background: #0d0b08;
+}
+.hero-copy > :not(.hero-mandala) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Šedá mřížka ve tvaru mandaly za textem hera */
+.hero-mandala {
+  position: absolute;
+  z-index: 0;
+  left: clamp(-52rem, -30vw, -20rem);
+  top: -8%;
+  width: clamp(34rem, 68vw, 68rem);
+  aspect-ratio: 1;
+  pointer-events: none;
+  color: #8f8a82;
+  opacity: 0.14;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 0.9;
+}
+.hero-mandala .hm-spokes {
+  stroke-width: 0.6;
+  opacity: 0.55;
+}
+.hero-mandala .hm-petals {
+  stroke-width: 1.1;
+}
+.hero-mandala .hm-seeds {
+  opacity: 0.75;
+}
+.hero-mandala .hm-beads {
+  opacity: 0.85;
+}
+
+#o-nas {
+  position: relative;
+  z-index: 1;
 }
 
 .hero .eyebrow {
@@ -383,7 +423,7 @@ html {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(to left, rgba(13, 11, 8, 0) 65%, rgba(13, 11, 8, 0.4) 80%, #0d0b08 100%), linear-gradient(to bottom, rgba(13, 11, 8, 0) 60%, #0d0b08 100%);
+  background: linear-gradient(to left, rgba(13, 11, 8, 0) 60%, #0d0b08 100%), linear-gradient(to bottom, rgba(13, 11, 8, 0) 60%, #0d0b08 100%);
 }
 
 @media (max-width: 760px) {
@@ -402,7 +442,7 @@ html {
   border-radius: 0;
   font-family: "Jost", sans-serif;
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   border: 1px solid transparent;
@@ -459,6 +499,12 @@ html {
     grid-row: 1;
     min-height: 0;
     height: 56vh;
+  }
+  .hero-mandala {
+    left: -46vw;
+    top: 4%;
+    width: 105vw;
+    opacity: 0.12;
   }
   .hero-scroll-indicator {
     display: none;

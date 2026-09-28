@@ -1551,7 +1551,7 @@
    SHADES LOUNGE BAR — SCSS (konzervativní refaktor bez změny deklarací)
    ========================================================================== */
 
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@400;500;600&family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap");
 
 // --- SCSS PROMĚNNÉ (VARIABLES) ---
 $ink-nav-footer: #0d0b08; // Navigace a patička — stejná hluboká černá jako pozadí
@@ -1579,6 +1579,9 @@ body {
   font-size: 17px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+  // Mandala v heru přetéká vlevo mimo obrazovku; clip (ne hidden) ořízne
+  // vodorovné přetečení, ale nechá funkční sticky hlavičku
+  overflow-x: clip;
 }
 
 img {
@@ -1913,17 +1916,61 @@ html {
   max-width: 100%; // 100vw bez vodorovného přeteku kvůli šířce scrollbaru
   padding: 0;
   background: $bg-main;
-  overflow: hidden;
+  overflow: visible; // mandala pod textem přetéká ven a do sekce O nás
 }
 
 /* Levá strana — čistá typografie v prostoru */
 
 .hero-copy {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 120px 8% 120px 12%;
   background: $bg-main;
+
+  // Text drží nad mandalou, ta zůstává na pozadí sloupce
+  > :not(.hero-mandala) {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+/* Šedá mřížka ve tvaru mandaly za textem hera */
+
+.hero-mandala {
+  position: absolute;
+  z-index: 0;
+  left: clamp(-52rem, -30vw, -20rem);
+  top: -8%;
+  width: clamp(34rem, 68vw, 68rem);
+  aspect-ratio: 1;
+  pointer-events: none;
+  color: #8f8a82; // tmavší, menej výrazný odtieň
+  opacity: 0.14;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 0.9;
+
+  .hm-spokes {
+    stroke-width: 0.6;
+    opacity: 0.55;
+  }
+  .hm-petals {
+    stroke-width: 1.1;
+  }
+  .hm-seeds {
+    opacity: 0.75;
+  }
+  .hm-beads {
+    opacity: 0.85;
+  }
+}
+
+// Obsah sekce pod herem zůstává nad přetékající mandalou
+#o-nas {
+  position: relative;
+  z-index: 1;
 }
 
 .hero .eyebrow {
@@ -1981,13 +2028,8 @@ html {
     inset: 0;
     pointer-events: none; // Aby vrstva neblokovala interakciu s webom
     background: 
-      // JEMNEJŠÍ ĽAVÝ OKRAJ: transparentnosť posunutá až do 65%, prechod do čiernej je pozvoľnejší
-      linear-gradient(
-        to left,
-        rgba(13, 11, 8, 0) 65%,
-        rgba(13, 11, 8, 0.4) 80%,
-        #0d0b08 100%
-      ),
+      // ĽAVÝ OKRAJ: rovnaké rozmazanie ako spodný okraj (prechod od 60% do čiernej)
+      linear-gradient(to left, rgba(13, 11, 8, 0) 60%, #0d0b08 100%),
       // SPODNÝ OKRAJ: posunutý na 60% pre zachovanie atmosféry v spodnej časti fotky
       linear-gradient(to bottom, rgba(13, 11, 8, 0) 60%, #0d0b08 100%);
   }
@@ -2021,7 +2063,7 @@ html {
   border-radius: 0;
   font-family: "Jost", sans-serif;
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   border: 1px solid transparent;
@@ -2086,6 +2128,13 @@ html {
     grid-row: 1; // fotka jako samostatný blok nad textem
     min-height: 0;
     height: 56vh;
+  }
+
+  .hero-mandala {
+    left: -46vw;
+    top: 4%;
+    width: 105vw;
+    opacity: 0.12;
   }
 
   .hero-scroll-indicator {
