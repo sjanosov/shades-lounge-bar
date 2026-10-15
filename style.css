@@ -1771,4 +1771,20 @@ body.lightbox-open {
 .legal-back {
   display: inline-block;
   margin-top: 40px;
+}
+
+.notfound .hero-mandala {
+  transform-origin: 50% 50%;
+  animation: notfound-mandala 150s linear infinite;
+}
+
+@keyframes notfound-mandala {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .notfound .hero-mandala {
+    animation: none;
+  }
 }/*# sourceMappingURL=style.css.map */
